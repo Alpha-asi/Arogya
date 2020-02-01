@@ -17,6 +17,8 @@ public class ArogyaFinal {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.print("arogya");
+         System.out.print("Test");
+        
     }
     
 }
