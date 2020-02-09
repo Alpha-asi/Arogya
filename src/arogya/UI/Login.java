@@ -47,9 +47,9 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 249, 196));
+        jPanel1.setBackground(new java.awt.Color(249, 251, 231));
 
-        jPanel2.setBackground(new java.awt.Color(255, 249, 196));
+        jPanel2.setBackground(new java.awt.Color(249, 251, 231));
 
         tfUsername1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tfUsername1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(224, 224, 224)));
