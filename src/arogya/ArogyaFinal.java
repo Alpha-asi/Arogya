@@ -5,6 +5,11 @@
  */
 package arogya;
 
+import arogya.UI.Login;
+import static com.sun.glass.ui.Cursor.setVisible;
+import static java.lang.System.gc;
+import javax.swing.JFrame;
+
 /**
  *
  * @author vimuk
@@ -16,9 +21,21 @@ public class ArogyaFinal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print("arogya");
-         System.out.print("Testt");
+         // Hide current frame
+         //dispose();
+        Login();
         
+        
+    }
+
+    private static void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void Login() {
+        
+         Login l = new Login();	
+		l.setVisible(true);
     }
     
 }
