@@ -5,9 +5,15 @@
  */
 package arogya.UI;
 
+import arogya.User;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -23,8 +29,8 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-            this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
-            this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -55,6 +61,11 @@ public class Login extends javax.swing.JFrame {
         tfUsername1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tfUsername1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(224, 224, 224)));
         tfUsername1.setPreferredSize(new java.awt.Dimension(59, 28));
+        tfUsername1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfUsername1ActionPerformed(evt);
+            }
+        });
 
         passwordFIELD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(224, 224, 224)));
 
@@ -68,6 +79,11 @@ public class Login extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButton1.setText("Log In");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(215, 215, 215)));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(235, 235, 235));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -162,6 +178,31 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tfUsername1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsername1ActionPerformed
+      
+    }//GEN-LAST:event_tfUsername1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       User u = new User();
+        try {
+            u.getConnection1();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            u.userlogin1();
+            DB();
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -201,7 +242,10 @@ public class Login extends javax.swing.JFrame {
         });
     }
     
-    public void DB(){
+    public String DB() throws SQLException, ClassNotFoundException{
+        String a = tfUsername1.getText();
+        String b = passwordFIELD.getText();
+        return User.userlogin(a,b);
 
     }
 
@@ -213,7 +257,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField passwordFIELD;
-    private javax.swing.JTextField tfUsername1;
+    public javax.swing.JPasswordField passwordFIELD;
+    public javax.swing.JTextField tfUsername1;
     // End of variables declaration//GEN-END:variables
+
+    private void userlogin() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

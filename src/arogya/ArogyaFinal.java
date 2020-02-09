@@ -37,9 +37,7 @@ public class ArogyaFinal {
         
          Login l = new Login();	
 	 l.setVisible(true);
-         User u = new User();
-         u.getConnection();
-         u.userlogin();
+         
     }
     
 }
