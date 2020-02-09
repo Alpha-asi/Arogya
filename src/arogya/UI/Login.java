@@ -44,7 +44,7 @@ public class Login extends javax.swing.JFrame {
         tfUsername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(224, 224, 224)));
         tfUsername.setPreferredSize(new java.awt.Dimension(59, 28));
 
-        jLabel1.setText("UserName");
+        jLabel1.setText("password");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
