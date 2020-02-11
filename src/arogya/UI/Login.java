@@ -7,14 +7,21 @@ package arogya.UI;
 
 import arogya.User;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 /**
@@ -200,6 +207,7 @@ public class Login extends javax.swing.JFrame {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
      
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -248,7 +256,7 @@ public class Login extends javax.swing.JFrame {
         return User.userlogin(a,b);
 
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
