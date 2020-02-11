@@ -39,28 +39,28 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        tfmid = new javax.swing.JTextField();
+        Idtf = new javax.swing.JTextField();
         Id = new javax.swing.JLabel();
         Firstname = new javax.swing.JLabel();
-        tfmname = new javax.swing.JTextField();
-        tfmnic = new javax.swing.JTextField();
+        Firstnametf = new javax.swing.JTextField();
+        Lastnametf = new javax.swing.JTextField();
         Lastname = new javax.swing.JLabel();
         Username = new javax.swing.JLabel();
-        tfgender = new javax.swing.JTextField();
+        Usernametf = new javax.swing.JTextField();
         Gender = new javax.swing.JLabel();
-        tfaddress = new javax.swing.JTextField();
+        Gendertf = new javax.swing.JTextField();
         DOB = new javax.swing.JLabel();
-        tfcontact = new javax.swing.JTextField();
+        DOBtf = new javax.swing.JTextField();
         Email = new javax.swing.JLabel();
-        tfptype = new javax.swing.JTextField();
+        Emailtf = new javax.swing.JTextField();
         Save = new javax.swing.JButton();
         Clear = new javax.swing.JButton();
         Password = new javax.swing.JLabel();
-        tfdob = new javax.swing.JTextField();
+        Passwordtf = new javax.swing.JTextField();
         Height = new javax.swing.JLabel();
-        tfptype1 = new javax.swing.JTextField();
+        Heighttf = new javax.swing.JTextField();
         Weight = new javax.swing.JLabel();
-        tfptype2 = new javax.swing.JTextField();
+        Weighttf = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
@@ -74,10 +74,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(33, 33, 33));
 
-        tfmid.setBackground(new java.awt.Color(33, 33, 33));
-        tfmid.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        tfmid.setForeground(new java.awt.Color(255, 255, 255));
-        tfmid.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Idtf.setBackground(new java.awt.Color(33, 33, 33));
+        Idtf.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        Idtf.setForeground(new java.awt.Color(255, 255, 255));
+        Idtf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         Id.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Id.setForeground(new java.awt.Color(153, 153, 153));
@@ -87,15 +87,15 @@ public class NewJFrame extends javax.swing.JFrame {
         Firstname.setForeground(new java.awt.Color(153, 153, 153));
         Firstname.setText("User Firstname");
 
-        tfmname.setBackground(new java.awt.Color(33, 33, 33));
-        tfmname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        tfmname.setForeground(new java.awt.Color(255, 255, 255));
-        tfmname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Firstnametf.setBackground(new java.awt.Color(33, 33, 33));
+        Firstnametf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        Firstnametf.setForeground(new java.awt.Color(255, 255, 255));
+        Firstnametf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
-        tfmnic.setBackground(new java.awt.Color(33, 33, 33));
-        tfmnic.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfmnic.setForeground(new java.awt.Color(204, 204, 204));
-        tfmnic.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Lastnametf.setBackground(new java.awt.Color(33, 33, 33));
+        Lastnametf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Lastnametf.setForeground(new java.awt.Color(204, 204, 204));
+        Lastnametf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         Lastname.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Lastname.setForeground(new java.awt.Color(153, 153, 153));
@@ -105,35 +105,35 @@ public class NewJFrame extends javax.swing.JFrame {
         Username.setForeground(new java.awt.Color(153, 153, 153));
         Username.setText("Username");
 
-        tfgender.setEditable(false);
-        tfgender.setBackground(new java.awt.Color(33, 33, 33));
-        tfgender.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfgender.setForeground(new java.awt.Color(204, 204, 204));
-        tfgender.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Usernametf.setEditable(false);
+        Usernametf.setBackground(new java.awt.Color(33, 33, 33));
+        Usernametf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Usernametf.setForeground(new java.awt.Color(204, 204, 204));
+        Usernametf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         Gender.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Gender.setForeground(new java.awt.Color(153, 153, 153));
         Gender.setText("User Gender");
 
-        tfaddress.setBackground(new java.awt.Color(33, 33, 33));
-        tfaddress.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfaddress.setForeground(new java.awt.Color(204, 204, 204));
-        tfaddress.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Gendertf.setBackground(new java.awt.Color(33, 33, 33));
+        Gendertf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Gendertf.setForeground(new java.awt.Color(204, 204, 204));
+        Gendertf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         DOB.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         DOB.setForeground(new java.awt.Color(153, 153, 153));
         DOB.setText("User DOB");
 
-        tfcontact.setBackground(new java.awt.Color(33, 33, 33));
-        tfcontact.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfcontact.setForeground(new java.awt.Color(255, 255, 255));
-        tfcontact.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        tfcontact.addKeyListener(new java.awt.event.KeyAdapter() {
+        DOBtf.setBackground(new java.awt.Color(33, 33, 33));
+        DOBtf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        DOBtf.setForeground(new java.awt.Color(255, 255, 255));
+        DOBtf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        DOBtf.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                tfcontactKeyReleased(evt);
+                DOBtfKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tfcontactKeyTyped(evt);
+                DOBtfKeyTyped(evt);
             }
         });
 
@@ -141,11 +141,11 @@ public class NewJFrame extends javax.swing.JFrame {
         Email.setForeground(new java.awt.Color(153, 153, 153));
         Email.setText("User Email");
 
-        tfptype.setEditable(false);
-        tfptype.setBackground(new java.awt.Color(33, 33, 33));
-        tfptype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfptype.setForeground(new java.awt.Color(255, 255, 255));
-        tfptype.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Emailtf.setEditable(false);
+        Emailtf.setBackground(new java.awt.Color(33, 33, 33));
+        Emailtf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Emailtf.setForeground(new java.awt.Color(255, 255, 255));
+        Emailtf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         Save.setBackground(new java.awt.Color(213, 0, 0));
         Save.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -168,30 +168,30 @@ public class NewJFrame extends javax.swing.JFrame {
         Password.setForeground(new java.awt.Color(153, 153, 153));
         Password.setText("Password");
 
-        tfdob.setBackground(new java.awt.Color(33, 33, 33));
-        tfdob.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfdob.setForeground(new java.awt.Color(204, 204, 204));
-        tfdob.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Passwordtf.setBackground(new java.awt.Color(33, 33, 33));
+        Passwordtf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Passwordtf.setForeground(new java.awt.Color(204, 204, 204));
+        Passwordtf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         Height.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Height.setForeground(new java.awt.Color(153, 153, 153));
         Height.setText("User Height");
 
-        tfptype1.setEditable(false);
-        tfptype1.setBackground(new java.awt.Color(33, 33, 33));
-        tfptype1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfptype1.setForeground(new java.awt.Color(255, 255, 255));
-        tfptype1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Heighttf.setEditable(false);
+        Heighttf.setBackground(new java.awt.Color(33, 33, 33));
+        Heighttf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Heighttf.setForeground(new java.awt.Color(255, 255, 255));
+        Heighttf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         Weight.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Weight.setForeground(new java.awt.Color(153, 153, 153));
         Weight.setText("User Weight");
 
-        tfptype2.setEditable(false);
-        tfptype2.setBackground(new java.awt.Color(33, 33, 33));
-        tfptype2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfptype2.setForeground(new java.awt.Color(255, 255, 255));
-        tfptype2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        Weighttf.setEditable(false);
+        Weighttf.setBackground(new java.awt.Color(33, 33, 33));
+        Weighttf.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        Weighttf.setForeground(new java.awt.Color(255, 255, 255));
+        Weighttf.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -200,21 +200,21 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfptype1)
+                    .addComponent(Heighttf)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(Height)
                         .addGap(0, 234, Short.MAX_VALUE))
-                    .addComponent(tfptype2)
+                    .addComponent(Weighttf)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfptype)
-                            .addComponent(tfdob)
-                            .addComponent(tfmname)
-                            .addComponent(tfaddress)
-                            .addComponent(tfcontact)
-                            .addComponent(tfmid)
-                            .addComponent(tfmnic)
-                            .addComponent(tfgender)
+                            .addComponent(Emailtf)
+                            .addComponent(Passwordtf)
+                            .addComponent(Firstnametf)
+                            .addComponent(Gendertf)
+                            .addComponent(DOBtf)
+                            .addComponent(Idtf)
+                            .addComponent(Lastnametf)
+                            .addComponent(Usernametf)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Gender)
@@ -239,43 +239,43 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Id)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfmid, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Idtf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Firstname)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfmname, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Firstnametf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Lastname)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfmnic, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Lastnametf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Username)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfgender, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Usernametf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfdob, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Passwordtf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Gender)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Gendertf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DOB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfcontact, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DOBtf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Email)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfptype, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Emailtf, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Height)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfptype1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Heighttf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Weight)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfptype2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Weighttf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,13 +352,13 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfcontactKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfcontactKeyTyped
+    private void DOBtfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DOBtfKeyTyped
 
-    }//GEN-LAST:event_tfcontactKeyTyped
+    }//GEN-LAST:event_DOBtfKeyTyped
 
-    private void tfcontactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfcontactKeyReleased
+    private void DOBtfKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DOBtfKeyReleased
 
-    }//GEN-LAST:event_tfcontactKeyReleased
+    }//GEN-LAST:event_DOBtfKeyReleased
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
@@ -407,30 +407,30 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel Back;
     private javax.swing.JButton Clear;
     private javax.swing.JLabel DOB;
+    private javax.swing.JTextField DOBtf;
     private javax.swing.JLabel Email;
+    private javax.swing.JTextField Emailtf;
     private javax.swing.JLabel Firstname;
+    private javax.swing.JTextField Firstnametf;
     private javax.swing.JLabel Gender;
+    private javax.swing.JTextField Gendertf;
     private javax.swing.JLabel Height;
+    private javax.swing.JTextField Heighttf;
     private javax.swing.JLabel Id;
+    private javax.swing.JTextField Idtf;
     private javax.swing.JLabel Lastname;
+    private javax.swing.JTextField Lastnametf;
     private javax.swing.JLabel Password;
+    private javax.swing.JTextField Passwordtf;
     private javax.swing.JButton Save;
     private javax.swing.JLabel Username;
+    private javax.swing.JTextField Usernametf;
     private javax.swing.JLabel Weight;
+    private javax.swing.JTextField Weighttf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField tfaddress;
-    private javax.swing.JTextField tfcontact;
-    private javax.swing.JTextField tfdob;
-    private javax.swing.JTextField tfgender;
-    private javax.swing.JTextField tfmid;
-    private javax.swing.JTextField tfmname;
-    private javax.swing.JTextField tfmnic;
-    private javax.swing.JTextField tfptype;
-    private javax.swing.JTextField tfptype1;
-    private javax.swing.JTextField tfptype2;
     // End of variables declaration//GEN-END:variables
 }

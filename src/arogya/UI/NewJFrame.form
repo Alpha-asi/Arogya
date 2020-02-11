@@ -93,22 +93,22 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tfptype1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Heighttf" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="Height" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="234" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="tfptype2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Weighttf" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tfptype" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfdob" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfmname" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfaddress" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfcontact" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfmid" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfmnic" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfgender" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Emailtf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Passwordtf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Firstnametf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Gendertf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="DOBtf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Idtf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Lastnametf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Usernametf" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="Gender" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -141,43 +141,43 @@
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="Id" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfmid" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Idtf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Firstname" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfmname" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Firstnametf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Lastname" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfmnic" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Lastnametf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Username" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfgender" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Usernametf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Password" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfdob" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Passwordtf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Gender" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfaddress" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Gendertf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="DOB" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfcontact" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="DOBtf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Email" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfptype" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="Emailtf" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Height" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfptype1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Heighttf" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="Weight" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tfptype2" min="-2" max="-2" attributes="0"/>
+                      <Component id="Weighttf" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Save" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
@@ -189,7 +189,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="tfmid">
+            <Component class="javax.swing.JTextField" name="Idtf">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
@@ -231,7 +231,7 @@
                 <Property name="text" type="java.lang.String" value="User Firstname"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfmname">
+            <Component class="javax.swing.JTextField" name="Firstnametf">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
@@ -251,7 +251,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfmnic">
+            <Component class="javax.swing.JTextField" name="Lastnametf">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
@@ -293,7 +293,7 @@
                 <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfgender">
+            <Component class="javax.swing.JTextField" name="Usernametf">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -325,7 +325,7 @@
                 <Property name="text" type="java.lang.String" value="User Gender"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfaddress">
+            <Component class="javax.swing.JTextField" name="Gendertf">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
@@ -356,7 +356,7 @@
                 <Property name="text" type="java.lang.String" value="User DOB"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfcontact">
+            <Component class="javax.swing.JTextField" name="DOBtf">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
@@ -376,8 +376,8 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfcontactKeyReleased"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfcontactKeyTyped"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="DOBtfKeyReleased"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="DOBtfKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Email">
@@ -391,7 +391,7 @@
                 <Property name="text" type="java.lang.String" value="User Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfptype">
+            <Component class="javax.swing.JTextField" name="Emailtf">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -468,7 +468,7 @@
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfdob">
+            <Component class="javax.swing.JTextField" name="Passwordtf">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
@@ -499,7 +499,7 @@
                 <Property name="text" type="java.lang.String" value="User Height"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfptype1">
+            <Component class="javax.swing.JTextField" name="Heighttf">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -531,7 +531,7 @@
                 <Property name="text" type="java.lang.String" value="User Weight"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfptype2">
+            <Component class="javax.swing.JTextField" name="Weighttf">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
