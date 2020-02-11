@@ -148,6 +148,11 @@ public class NewJFrame extends javax.swing.JFrame {
         Save.setForeground(new java.awt.Color(255, 255, 255));
         Save.setText("Save");
         Save.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
 
         lbstatus.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         lbstatus.setForeground(new java.awt.Color(76, 175, 80));
@@ -318,6 +323,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private void tfcontactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfcontactKeyReleased
 
     }//GEN-LAST:event_tfcontactKeyReleased
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SaveActionPerformed
 
     /**
      * @param args the command line arguments
