@@ -13,18 +13,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import arogya.UI.Login;
+import arogya.UI.Login;
+import arogya.UI.Menu;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import arogya.ArogyaFinal;
 
 /**
  *
  * @author vimuk
  */
-public class User {
-    
 
-    
+public class User {
+ 
+
+     String name,pass;
     public static Connection connection;
-    
-     public static void getConnection1() throws ClassNotFoundException, SQLException {
+  
+     public static void User() throws ClassNotFoundException, SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
@@ -38,29 +43,41 @@ public class User {
 
    
 
-    public static String userlogin(String a, String b) {
+    public static String userlogin(String a, String b) throws SQLException {
+        
+      //  name = String.valueOf(a)
+           
         System.out.print(a);
         System.out.print(b);
-        return null;
-    }
-           
- public void userlogin1() throws SQLException {
+      //  return null;
+        
      Statement stmt=connection.createStatement();  
      ResultSet rs=stmt.executeQuery("select * from user_log"); 
      while(rs.next())  
-     System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
-     connection.close();
+    // System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)); 
      
-     
+     if(a.equals(rs.getString(2))){
+         if(b.equals(rs.getString(3))){
        
-
+         new Menu().setVisible(true);
+         
+         
+     }else{
+         new Login().setVisible(true);
+         }
+          
+     }else{
+     new Login().setVisible(true);
+     }
      
+     connection.close();
+         return null;
      
-             
-     
- 
- } 
- 
+    }
 }
+           
+
+ 
+
 
 

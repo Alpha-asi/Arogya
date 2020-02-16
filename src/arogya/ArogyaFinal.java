@@ -6,6 +6,7 @@
 package arogya;
 
 import arogya.UI.Login;
+import arogya.UI.Menu;
 import static com.sun.glass.ui.Cursor.setVisible;
 import static java.lang.System.gc;
 import java.sql.SQLException;
@@ -20,6 +21,7 @@ public class ArogyaFinal {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // TODO code application logic here
          // Hide current frame
@@ -30,13 +32,15 @@ public class ArogyaFinal {
     }
 
     private static void dispose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     private static void Login() throws SQLException, ClassNotFoundException {
         
-         Login l = new Login();	
-	 l.setVisible(true);
+         new Login().setVisible(true);
+         
+        
          
     }
     

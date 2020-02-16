@@ -340,6 +340,11 @@ public class UserRegistration extends javax.swing.JFrame {
         jLabel5.setText("User Registration");
 
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-back-arrow-64.png"))); // NOI18N
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -435,6 +440,11 @@ public class UserRegistration extends javax.swing.JFrame {
         tfweight.setText("");// TODO add your handling code here:
         }
     }//GEN-LAST:event_ClearActionPerformed
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        this.dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments
