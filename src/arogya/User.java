@@ -17,6 +17,7 @@ import arogya.UI.Login;
 import arogya.UI.Menu;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import arogya.ArogyaFinal;
+import arogya.UI.Menu;
 
 /**
  *
@@ -59,7 +60,9 @@ public class User {
      if(a.equals(rs.getString(2))){
          if(b.equals(rs.getString(3))){
        
-         new Menu().setVisible(true);
+         Menu m = new Menu();
+         m.setVisible(true);
+         m.displayName(a);
          
          
      }else{
