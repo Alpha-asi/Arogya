@@ -230,7 +230,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        Back7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-add-user-male-64.png"))); // NOI18N
+        Back7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-account-64.png"))); // NOI18N
         Back7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Back7MouseClicked(evt);
@@ -238,7 +238,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText(" Add Account");
+        jLabel8.setText("     Account");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

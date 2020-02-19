@@ -334,7 +334,7 @@
         <Component class="javax.swing.JLabel" name="Back7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/arogya/Icons/icons8-add-user-male-64.png"/>
+              <Image iconType="3" name="/arogya/Icons/icons8-account-64.png"/>
             </Property>
           </Properties>
           <Events>
@@ -346,7 +346,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value=" Add Account"/>
+            <Property name="text" type="java.lang.String" value="     Account"/>
           </Properties>
         </Component>
       </SubComponents>
