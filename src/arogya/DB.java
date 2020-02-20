@@ -29,6 +29,7 @@ public class DB {
         if (connection == null) {
             getConnection();
         }
+      
         ResultSet rs = connection.createStatement().executeQuery(query);
         return rs;
     }
@@ -38,6 +39,7 @@ public class DB {
             getConnection();
         }
         connection.createStatement().executeUpdate(query);
+        connection.close();
     }
 
     public static void main(String[] args) {

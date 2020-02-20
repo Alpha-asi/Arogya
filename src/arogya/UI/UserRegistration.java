@@ -20,6 +20,10 @@ import javax.swing.UIManager;
 import net.java.balloontip.BalloonTip;
 import net.java.balloontip.styles.MinimalBalloonStyle;
 import net.java.balloontip.utils.FadingUtils;
+import arogya.User;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -88,8 +92,6 @@ public class UserRegistration extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        tfid = new javax.swing.JTextField();
-        Id = new javax.swing.JLabel();
         Firstname = new javax.swing.JLabel();
         tffname = new javax.swing.JTextField();
         tflname = new javax.swing.JTextField();
@@ -122,15 +124,6 @@ public class UserRegistration extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/arogya icon.png"))); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(33, 33, 33));
-
-        tfid.setBackground(new java.awt.Color(33, 33, 33));
-        tfid.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        tfid.setForeground(new java.awt.Color(255, 255, 255));
-        tfid.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-
-        Id.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        Id.setForeground(new java.awt.Color(153, 153, 153));
-        Id.setText("User Id");
 
         Firstname.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Firstname.setForeground(new java.awt.Color(153, 153, 153));
@@ -262,7 +255,6 @@ public class UserRegistration extends javax.swing.JFrame {
                             .addComponent(tffname)
                             .addComponent(tfgender)
                             .addComponent(tfdob)
-                            .addComponent(tfid)
                             .addComponent(tflname)
                             .addComponent(tfuname)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -271,7 +263,6 @@ public class UserRegistration extends javax.swing.JFrame {
                                     .addComponent(DOB)
                                     .addComponent(Email)
                                     .addComponent(Firstname)
-                                    .addComponent(Id)
                                     .addComponent(Username)
                                     .addComponent(Lastname)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -286,11 +277,7 @@ public class UserRegistration extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(Id)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfid, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addComponent(Firstname)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tffname, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,7 +313,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addComponent(Weight)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfweight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -385,12 +372,15 @@ public class UserRegistration extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(373, 373, 373)
                         .addComponent(jLabel1)
-                        .addGap(28, 28, 28))))
+                        .addGap(39, 39, 39))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -401,7 +391,7 @@ public class UserRegistration extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
         );
 
         pack();
@@ -417,18 +407,47 @@ public class UserRegistration extends javax.swing.JFrame {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
          boolean rt = false;
-         JTextField tf[] = {tflname,tfid,tffname,tfpass,tfdob,tfgender,tfheight,tfweight,tfemail,tfuname};
+         JTextField tf[] = {tflname,tffname,tfpass,tfdob,tfgender,tfheight,tfweight,tfemail,tfuname};
         for (int i = 0; i < tf.length; i++) {
             if (tf[i].getText().equals("")) {
                 System.out.println(tf[i].getText());
                 toolt(tf[i], "This field cannot be empty");
                 rt = true;
-            }   } 
+                
+            }else{
+                
+       String uname = tfuname.getText();
+       String pass = tfpass.getText();
+       String mail = tfemail.getText();
+       String dob = tfdob.getText();
+       String gender = tfgender.getText();
+       String hi = tfheight.getText();
+       String we = tfweight.getText();
+       String fn = tffname.getText();
+       String ln = tflname.getText();
+         
+         User newuser = new User();
+                try {
+                    newuser.userUpadate(uname, pass, mail, dob, gender, hi, we, fn, ln);
+                } catch (SQLException ex) {
+                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                
+                }
+        
+  
+                                                       
+                                                       
+               
+       
+       
     }//GEN-LAST:event_SaveActionPerformed
 
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
         {
-        tfid.setText("");
         tffname.setText("");
         tflname.setText("");
         tfuname.setText("");
@@ -496,7 +515,6 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel Firstname;
     private javax.swing.JLabel Gender;
     private javax.swing.JLabel Height;
-    private javax.swing.JLabel Id;
     private javax.swing.JLabel Lastname;
     private javax.swing.JLabel Password;
     private javax.swing.JButton Save;
@@ -512,7 +530,6 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JTextField tffname;
     private javax.swing.JTextField tfgender;
     private javax.swing.JTextField tfheight;
-    private javax.swing.JTextField tfid;
     private javax.swing.JTextField tflname;
     private javax.swing.JTextField tfpass;
     private javax.swing.JTextField tfuname;

@@ -18,7 +18,7 @@ import arogya.UI.Menu;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import arogya.ArogyaFinal;
 import arogya.UI.Menu;
-
+import arogya.DB;
 /**
  *
  * @author vimuk
@@ -77,6 +77,16 @@ public class User {
          return null;
      
     }
+    
+    
+    public void userUpadate(String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
+    
+        System.out.println("yyyyyyy");
+        DB.Execute("INSERT INTO user_log VALUES('" + uname + "','" + pass + "','" + mail + "','" + dob + "','" + gender + "','" + hi + "','" + we + "','" + fn + "','" + ln + "')");
+    // (Username,Password,User_email,User_dob,User_gender,User_height,User_weight,User_fname,User_lname)
+    }
+    
+    
 }
            
 
