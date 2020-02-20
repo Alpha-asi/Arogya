@@ -98,8 +98,8 @@ public class UserRegistration extends javax.swing.JFrame {
         Lastname = new javax.swing.JLabel();
         Username = new javax.swing.JLabel();
         tfuname = new javax.swing.JTextField();
-        Gender = new javax.swing.JLabel();
-        tfgender = new javax.swing.JTextField();
+        nic = new javax.swing.JLabel();
+        tfmnic = new javax.swing.JTextField();
         DOB = new javax.swing.JLabel();
         tfdob = new javax.swing.JTextField();
         Email = new javax.swing.JLabel();
@@ -112,6 +112,8 @@ public class UserRegistration extends javax.swing.JFrame {
         tfheight = new javax.swing.JTextField();
         Weight = new javax.swing.JLabel();
         tfweight = new javax.swing.JTextField();
+        gender = new javax.swing.JLabel();
+        tfgen = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
@@ -152,14 +154,19 @@ public class UserRegistration extends javax.swing.JFrame {
         tfuname.setForeground(new java.awt.Color(204, 204, 204));
         tfuname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
-        Gender.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        Gender.setForeground(new java.awt.Color(153, 153, 153));
-        Gender.setText("User Gender");
+        nic.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        nic.setForeground(new java.awt.Color(153, 153, 153));
+        nic.setText("User NIC");
 
-        tfgender.setBackground(new java.awt.Color(33, 33, 33));
-        tfgender.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfgender.setForeground(new java.awt.Color(204, 204, 204));
-        tfgender.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        tfmnic.setBackground(new java.awt.Color(33, 33, 33));
+        tfmnic.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        tfmnic.setForeground(new java.awt.Color(204, 204, 204));
+        tfmnic.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        tfmnic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfmnicActionPerformed(evt);
+            }
+        });
 
         DOB.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         DOB.setForeground(new java.awt.Color(153, 153, 153));
@@ -236,6 +243,15 @@ public class UserRegistration extends javax.swing.JFrame {
         tfweight.setForeground(new java.awt.Color(255, 255, 255));
         tfweight.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
+        gender.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        gender.setForeground(new java.awt.Color(153, 153, 153));
+        gender.setText("User Gender");
+
+        tfgen.setBackground(new java.awt.Color(33, 33, 33));
+        tfgen.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        tfgen.setForeground(new java.awt.Color(255, 255, 255));
+        tfgen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -253,13 +269,14 @@ public class UserRegistration extends javax.swing.JFrame {
                             .addComponent(tfemail)
                             .addComponent(tfpass)
                             .addComponent(tffname)
-                            .addComponent(tfgender)
+                            .addComponent(tfmnic)
                             .addComponent(tfdob)
                             .addComponent(tflname)
                             .addComponent(tfuname)
+                            .addComponent(tfgen)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Gender)
+                                    .addComponent(nic)
                                     .addComponent(DOB)
                                     .addComponent(Email)
                                     .addComponent(Firstname)
@@ -270,7 +287,8 @@ public class UserRegistration extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(Password)
-                                    .addComponent(Weight))
+                                    .addComponent(Weight)
+                                    .addComponent(gender))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
@@ -294,9 +312,9 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfpass, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Gender)
+                .addComponent(nic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfgender, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfmnic, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DOB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -313,6 +331,10 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addComponent(Weight)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfweight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(gender)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -407,7 +429,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
          boolean rt = false;
-         JTextField tf[] = {tflname,tffname,tfpass,tfdob,tfgender,tfheight,tfweight,tfemail,tfuname};
+         JTextField tf[] = {tflname,tffname,tfpass,tfdob,tfmnic,tfheight,tfweight,tfemail,tfuname};
         for (int i = 0; i < tf.length; i++) {
             if (tf[i].getText().equals("")) {
                 System.out.println(tf[i].getText());
@@ -420,7 +442,7 @@ public class UserRegistration extends javax.swing.JFrame {
        String pass = tfpass.getText();
        String mail = tfemail.getText();
        String dob = tfdob.getText();
-       String gender = tfgender.getText();
+       String gender = tfmnic.getText();
        String hi = tfheight.getText();
        String we = tfweight.getText();
        String fn = tffname.getText();
@@ -452,7 +474,7 @@ public class UserRegistration extends javax.swing.JFrame {
         tflname.setText("");
         tfuname.setText("");
         tfpass.setText("");
-        tfgender.setText("");
+        tfmnic.setText("");
         tfdob.setText("");
         tfemail.setText("");
         tfheight.setText("");
@@ -465,10 +487,95 @@ public class UserRegistration extends javax.swing.JFrame {
         new Login().setVisible(true);
     }//GEN-LAST:event_BackMouseClicked
 
+    private void tfmnicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfmnicActionPerformed
+         int Day = 0;
+        String year = "";
+//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//        Calendar c = Calendar.getInstance();
+
+        if (tfmnic.getText().length() == 10) {
+            String nic = tfmnic.getText().substring(0, 5);
+            year = "19" + nic.substring(0, 2);
+            String days = nic.substring(2);
+            Day = Integer.parseInt(days);
+        } else if (tfmnic.getText().length() == 12) {
+            String nic = tfmnic.getText().substring(0, 7);
+            System.out.println(nic);
+            year = nic.substring(0, 4);
+            System.out.println(year);
+            String days = nic.substring(4);
+            System.out.println(days);
+            Day = Integer.parseInt(days);
+        } else {
+
+        }
+//        String nic = tfmnic.getText().substring(0, 5);
+//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//        Calendar c = Calendar.getInstance();
+//        String year = "19" + nic.substring(0, 2);
+//        System.out.println(date);
+//        String days = nic.substring(2);
+//        System.out.println(days);
+//        c.setTime(new Date(date));
+//        int Day = Integer.parseInt(days);
+//        c.add(Calendar.DATE, (dt));
+//        System.out.println(sdf.format(c.getTime()));
+
+
+        if (Day > 500) //Can Be Women's NIC No
+        {
+            tfgen.setText("Female");
+            Day = Day - 500;
+        }
+
+        if (Day > 0 && Day < 367) {
+            tfgen.setText("Male");
+            if (Day > 335) {
+                Day = Day - 335;
+                showDate(year, "12", ""+ Day);
+            } else if (Day > 305) {
+                Day = Day - 305;
+                showDate(year, "11", "" + Day);
+            } else if (Day > 274) {
+                Day = Day - 274;
+                showDate(year, "10", "" + Day);
+            } else if (Day > 244) {
+                Day = Day - 244;
+                showDate(year, "09", "" + Day);
+            } else if (Day > 213) {
+                Day = Day - 213;
+                showDate(year, "08", "" + Day);
+            } else if (Day > 182) {
+                Day = Day - 182;
+                showDate(year, "07", "" + Day);
+            } else if (Day > 152) {
+                Day = Day - 152;
+                showDate(year, "06", "" + Day);
+            } else if (Day > 121) {
+                Day = Day - 121;
+                showDate(year, "05", "" + Day);
+            } else if (Day > 91) {
+                Day = Day - 91;
+                showDate(year, "04", "" + Day);
+            } else if (Day > 60) {
+                Day = Day - 60;
+                showDate(year, "03", "" + Day);
+            } else if (Day < 32) {
+                showDate(year, "-01", "" + Day);
+            } else if (Day > 31) {
+                Day = Day - 31;
+                showDate(year, "02", "" + Day);
+            }
+        }
+    }//GEN-LAST:event_tfmnicActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
+    private void showDate(String year, String month, String date) {
+        //System.out.println(year + " " + month + " " + date);
+        tfdob.setText(year + "-" + month + "-" + date);
+    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -513,24 +620,26 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel DOB;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel Firstname;
-    private javax.swing.JLabel Gender;
     private javax.swing.JLabel Height;
     private javax.swing.JLabel Lastname;
     private javax.swing.JLabel Password;
     private javax.swing.JButton Save;
     private javax.swing.JLabel Username;
     private javax.swing.JLabel Weight;
+    private javax.swing.JLabel gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel nic;
     private javax.swing.JTextField tfdob;
     private javax.swing.JTextField tfemail;
     private javax.swing.JTextField tffname;
-    private javax.swing.JTextField tfgender;
+    private javax.swing.JTextField tfgen;
     private javax.swing.JTextField tfheight;
     private javax.swing.JTextField tflname;
+    private javax.swing.JTextField tfmnic;
     private javax.swing.JTextField tfpass;
     private javax.swing.JTextField tfuname;
     private javax.swing.JTextField tfweight;
