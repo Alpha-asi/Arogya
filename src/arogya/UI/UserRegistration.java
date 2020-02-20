@@ -21,6 +21,7 @@ import net.java.balloontip.BalloonTip;
 import net.java.balloontip.styles.MinimalBalloonStyle;
 import net.java.balloontip.utils.FadingUtils;
 import arogya.User;
+import com.sun.glass.events.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -126,8 +127,13 @@ public class UserRegistration extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/arogya icon.png"))); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(33, 33, 33));
+        jPanel3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPanel3KeyTyped(evt);
+            }
+        });
 
-        Firstname.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Firstname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Firstname.setForeground(new java.awt.Color(153, 153, 153));
         Firstname.setText("User Firstname");
 
@@ -135,17 +141,32 @@ public class UserRegistration extends javax.swing.JFrame {
         tffname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         tffname.setForeground(new java.awt.Color(255, 255, 255));
         tffname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        tffname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tffnameActionPerformed(evt);
+            }
+        });
+        tffname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tffnameKeyTyped(evt);
+            }
+        });
 
         tflname.setBackground(new java.awt.Color(33, 33, 33));
         tflname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tflname.setForeground(new java.awt.Color(204, 204, 204));
         tflname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        tflname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tflnameActionPerformed(evt);
+            }
+        });
 
-        Lastname.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Lastname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lastname.setForeground(new java.awt.Color(153, 153, 153));
         Lastname.setText("User Lastname");
 
-        Username.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Username.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Username.setForeground(new java.awt.Color(153, 153, 153));
         Username.setText("Username");
 
@@ -154,7 +175,7 @@ public class UserRegistration extends javax.swing.JFrame {
         tfuname.setForeground(new java.awt.Color(204, 204, 204));
         tfuname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
-        nic.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        nic.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         nic.setForeground(new java.awt.Color(153, 153, 153));
         nic.setText("User NIC");
 
@@ -168,10 +189,11 @@ public class UserRegistration extends javax.swing.JFrame {
             }
         });
 
-        DOB.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        DOB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DOB.setForeground(new java.awt.Color(153, 153, 153));
         DOB.setText("User DOB");
 
+        tfdob.setEditable(false);
         tfdob.setBackground(new java.awt.Color(33, 33, 33));
         tfdob.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfdob.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,7 +207,7 @@ public class UserRegistration extends javax.swing.JFrame {
             }
         });
 
-        Email.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Email.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Email.setForeground(new java.awt.Color(153, 153, 153));
         Email.setText("User Email");
 
@@ -216,7 +238,7 @@ public class UserRegistration extends javax.swing.JFrame {
             }
         });
 
-        Password.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Password.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Password.setForeground(new java.awt.Color(153, 153, 153));
         Password.setText("Password");
 
@@ -225,7 +247,7 @@ public class UserRegistration extends javax.swing.JFrame {
         tfpass.setForeground(new java.awt.Color(204, 204, 204));
         tfpass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
-        Height.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Height.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Height.setForeground(new java.awt.Color(153, 153, 153));
         Height.setText("User Height");
 
@@ -233,8 +255,13 @@ public class UserRegistration extends javax.swing.JFrame {
         tfheight.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfheight.setForeground(new java.awt.Color(255, 255, 255));
         tfheight.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        tfheight.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfheightKeyTyped(evt);
+            }
+        });
 
-        Weight.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Weight.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Weight.setForeground(new java.awt.Color(153, 153, 153));
         Weight.setText("User Weight");
 
@@ -243,10 +270,11 @@ public class UserRegistration extends javax.swing.JFrame {
         tfweight.setForeground(new java.awt.Color(255, 255, 255));
         tfweight.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
-        gender.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        gender.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         gender.setForeground(new java.awt.Color(153, 153, 153));
         gender.setText("User Gender");
 
+        tfgen.setEditable(false);
         tfgen.setBackground(new java.awt.Color(33, 33, 33));
         tfgen.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         tfgen.setForeground(new java.awt.Color(255, 255, 255));
@@ -413,7 +441,7 @@ public class UserRegistration extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, Short.MAX_VALUE)
         );
 
         pack();
@@ -476,6 +504,7 @@ public class UserRegistration extends javax.swing.JFrame {
         tfpass.setText("");
         tfmnic.setText("");
         tfdob.setText("");
+        tfgen.setText("");
         tfemail.setText("");
         tfheight.setText("");
         tfweight.setText("");// TODO add your handling code here:
@@ -568,6 +597,35 @@ public class UserRegistration extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_tfmnicActionPerformed
+
+    private void tfheightKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfheightKeyTyped
+        // TODO add your handling code here:
+          int g=evt.getKeyChar();
+        if(!(Character.isDigit(g)||
+            (g==KeyEvent.VK_BACKSPACE)||g==KeyEvent.VK_DELETE))
+    evt.consume();
+    }//GEN-LAST:event_tfheightKeyTyped
+
+    private void tflnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tflnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tflnameActionPerformed
+
+    private void jPanel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel3KeyTyped
+        // TODO add your handling code here:
+  
+    }//GEN-LAST:event_jPanel3KeyTyped
+
+    private void tffnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tffnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tffnameActionPerformed
+
+    private void tffnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tffnameKeyTyped
+        // TODO add your handling code here:
+              char c=evt.getKeyChar();
+if(!(Character.isAlphabetic(c)||
+(c==KeyEvent.VK_SPACE)||c==KeyEvent.VK_DELETE))
+    evt.consume();
+    }//GEN-LAST:event_tffnameKeyTyped
 
     /**
      * @param args the command line arguments
