@@ -108,13 +108,13 @@ public class UserRegistration extends javax.swing.JFrame {
         Save = new javax.swing.JButton();
         Clear = new javax.swing.JButton();
         Password = new javax.swing.JLabel();
-        tfpass = new javax.swing.JTextField();
         Height = new javax.swing.JLabel();
         tfheight = new javax.swing.JTextField();
         Weight = new javax.swing.JLabel();
         tfweight = new javax.swing.JTextField();
         gender = new javax.swing.JLabel();
         tfgen = new javax.swing.JTextField();
+        tfpass = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
@@ -138,7 +138,7 @@ public class UserRegistration extends javax.swing.JFrame {
         Firstname.setText("User Firstname");
 
         tffname.setBackground(new java.awt.Color(33, 33, 33));
-        tffname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        tffname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tffname.setForeground(new java.awt.Color(255, 255, 255));
         tffname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         tffname.addActionListener(new java.awt.event.ActionListener() {
@@ -242,11 +242,6 @@ public class UserRegistration extends javax.swing.JFrame {
         Password.setForeground(new java.awt.Color(153, 153, 153));
         Password.setText("Password");
 
-        tfpass.setBackground(new java.awt.Color(33, 33, 33));
-        tfpass.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfpass.setForeground(new java.awt.Color(204, 204, 204));
-        tfpass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-
         Height.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Height.setForeground(new java.awt.Color(153, 153, 153));
         Height.setText("User Height");
@@ -266,7 +261,7 @@ public class UserRegistration extends javax.swing.JFrame {
         Weight.setText("User Weight");
 
         tfweight.setBackground(new java.awt.Color(33, 33, 33));
-        tfweight.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        tfweight.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfweight.setForeground(new java.awt.Color(255, 255, 255));
         tfweight.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
@@ -276,9 +271,14 @@ public class UserRegistration extends javax.swing.JFrame {
 
         tfgen.setEditable(false);
         tfgen.setBackground(new java.awt.Color(33, 33, 33));
-        tfgen.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        tfgen.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfgen.setForeground(new java.awt.Color(255, 255, 255));
         tfgen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+
+        tfpass.setBackground(new java.awt.Color(33, 33, 33));
+        tfpass.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        tfpass.setForeground(new java.awt.Color(204, 204, 204));
+        tfpass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -288,23 +288,18 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfheight)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(Height)
-                        .addGap(0, 234, Short.MAX_VALUE))
                     .addComponent(tfweight)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfemail)
-                            .addComponent(tfpass)
                             .addComponent(tffname)
-                            .addComponent(tfmnic)
                             .addComponent(tfdob)
                             .addComponent(tflname)
                             .addComponent(tfuname)
                             .addComponent(tfgen)
+                            .addComponent(tfpass)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nic)
                                     .addComponent(DOB)
                                     .addComponent(Email)
                                     .addComponent(Firstname)
@@ -317,8 +312,14 @@ public class UserRegistration extends javax.swing.JFrame {
                                     .addComponent(Password)
                                     .addComponent(Weight)
                                     .addComponent(gender))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                                .addGap(0, 105, Short.MAX_VALUE))
+                            .addComponent(tfmnic))
+                        .addContainerGap())
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Height)
+                            .addComponent(nic))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,7 +339,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfpass, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -426,11 +427,10 @@ public class UserRegistration extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(373, 373, 373)
                         .addComponent(jLabel1)
-                        .addGap(39, 39, 39))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addContainerGap(39, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -441,7 +441,7 @@ public class UserRegistration extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
         );
 
         pack();
@@ -470,15 +470,16 @@ public class UserRegistration extends javax.swing.JFrame {
        String pass = tfpass.getText();
        String mail = tfemail.getText();
        String dob = tfdob.getText();
-       String gender = tfmnic.getText();
+       String gender = tfgen.getText();
        String hi = tfheight.getText();
        String we = tfweight.getText();
        String fn = tffname.getText();
        String ln = tflname.getText();
+        String nic = tfmnic.getText();
          
          User newuser = new User();
                 try {
-                    newuser.userUpadate(uname, pass, mail, dob, gender, hi, we, fn, ln);
+                    newuser.userUpadate(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
                 } catch (SQLException ex) {
                     Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
@@ -561,39 +562,39 @@ public class UserRegistration extends javax.swing.JFrame {
             tfgen.setText("Male");
             if (Day > 335) {
                 Day = Day - 335;
-                showDate(year, "12", ""+ Day);
+                showDate(year, "12", "0"+ Day);
             } else if (Day > 305) {
                 Day = Day - 305;
-                showDate(year, "11", "" + Day);
+                showDate(year, "11", "0" + Day);
             } else if (Day > 274) {
                 Day = Day - 274;
-                showDate(year, "10", "" + Day);
+                showDate(year, "10", "0" + Day);
             } else if (Day > 244) {
                 Day = Day - 244;
-                showDate(year, "09", "" + Day);
+                showDate(year, "09", "0" + Day);
             } else if (Day > 213) {
                 Day = Day - 213;
-                showDate(year, "08", "" + Day);
+                showDate(year, "08", "0" + Day);
             } else if (Day > 182) {
                 Day = Day - 182;
-                showDate(year, "07", "" + Day);
+                showDate(year, "07", "0" + Day);
             } else if (Day > 152) {
                 Day = Day - 152;
-                showDate(year, "06", "" + Day);
+                showDate(year, "06", "0" + Day);
             } else if (Day > 121) {
                 Day = Day - 121;
-                showDate(year, "05", "" + Day);
+                showDate(year, "05", "0" + Day);
             } else if (Day > 91) {
                 Day = Day - 91;
-                showDate(year, "04", "" + Day);
+                showDate(year, "04", "0" + Day);
             } else if (Day > 60) {
                 Day = Day - 60;
-                showDate(year, "03", "" + Day);
+                showDate(year, "03", "0" + Day);
             } else if (Day < 32) {
-                showDate(year, "-01", "" + Day);
+                showDate(year, "-01", "0" + Day);
             } else if (Day > 31) {
                 Day = Day - 31;
-                showDate(year, "02", "" + Day);
+                showDate(year, "02", "0" + Day);
             }
         }
     }//GEN-LAST:event_tfmnicActionPerformed
@@ -698,7 +699,7 @@ if(!(Character.isAlphabetic(c)||
     private javax.swing.JTextField tfheight;
     private javax.swing.JTextField tflname;
     private javax.swing.JTextField tfmnic;
-    private javax.swing.JTextField tfpass;
+    private javax.swing.JPasswordField tfpass;
     private javax.swing.JTextField tfuname;
     private javax.swing.JTextField tfweight;
     // End of variables declaration//GEN-END:variables

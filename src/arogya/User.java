@@ -79,10 +79,12 @@ public class User {
     }
     
     
-    public void userUpadate(String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
+    public void userUpadate(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
     
         System.out.println("yyyyyyy");
-        DB.Execute("INSERT INTO user_log VALUES('" + uname + "','" + pass + "','" + mail + "','" + dob + "','" + gender + "','" + hi + "','" + we + "','" + fn + "','" + ln + "')");
+        float hif = Float.parseFloat(hi);
+        float wef = Float.parseFloat(we);
+        DB.Execute("INSERT INTO user_log VALUES('" + nic + "','" + uname + "','" + pass + "','" + mail + "','" + dob + "','" + gender + "','" + hif + "','" + wef + "','" + fn + "','" + ln + "',101)");
     // (Username,Password,User_email,User_dob,User_gender,User_height,User_weight,User_fname,User_lname)
     }
     
