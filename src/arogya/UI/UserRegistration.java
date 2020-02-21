@@ -490,6 +490,7 @@ public class UserRegistration extends javax.swing.JFrame {
          User newuser = new User();
                 try {
                     newuser.userUpadate(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
+                    ClearActionPerformed(evt);
                 } catch (SQLException ex) {
                     Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
