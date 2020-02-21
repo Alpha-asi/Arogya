@@ -250,6 +250,11 @@ public class UserRegistration extends javax.swing.JFrame {
         tfheight.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfheight.setForeground(new java.awt.Color(255, 255, 255));
         tfheight.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        tfheight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfheightActionPerformed(evt);
+            }
+        });
         tfheight.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tfheightKeyTyped(evt);
@@ -264,6 +269,11 @@ public class UserRegistration extends javax.swing.JFrame {
         tfweight.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfweight.setForeground(new java.awt.Color(255, 255, 255));
         tfweight.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        tfweight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfweightActionPerformed(evt);
+            }
+        });
 
         gender.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         gender.setForeground(new java.awt.Color(153, 153, 153));
@@ -601,10 +611,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
     private void tfheightKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfheightKeyTyped
         // TODO add your handling code here:
-          int g=evt.getKeyChar();
-        if(!(Character.isDigit(g)||
-            (g==KeyEvent.VK_BACKSPACE)||g==KeyEvent.VK_DELETE))
-    evt.consume();
+      
     }//GEN-LAST:event_tfheightKeyTyped
 
     private void tflnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tflnameActionPerformed
@@ -622,11 +629,16 @@ public class UserRegistration extends javax.swing.JFrame {
 
     private void tffnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tffnameKeyTyped
         // TODO add your handling code here:
-              char c=evt.getKeyChar();
-if(!(Character.isAlphabetic(c)||
-(c==KeyEvent.VK_SPACE)||c==KeyEvent.VK_DELETE))
-    evt.consume();
+
     }//GEN-LAST:event_tffnameKeyTyped
+
+    private void tfheightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfheightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfheightActionPerformed
+
+    private void tfweightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfweightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfweightActionPerformed
 
     /**
      * @param args the command line arguments
