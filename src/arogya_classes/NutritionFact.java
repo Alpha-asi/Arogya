@@ -11,4 +11,46 @@ package arogya_classes;
  */
 public class NutritionFact {
     
+    private String nutritionFactid,foodid,adminid;
+    private int perServing,calories,carbs,fat,protein,vitaminA,vitaminB,vitaminC,fiber,potassium,magnesium,sodium;
+    
+    private void getFoodData()
+    {
+        
+        
+        
+    }
+    
+    
+    private void sendFoodData()
+    {
+        
+        
+        
+    }
+    
+    
+    private void insertNutritionFact()
+    {
+        
+        
+        
+    }
+    
+    
+     private void updateNutritionFact()
+    {
+        
+        
+        
+    }
+     
+     
+      private void deleteNutritionFact()
+    {
+        
+        
+        
+    }
+    
 }

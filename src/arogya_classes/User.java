@@ -93,7 +93,7 @@ public class User {
     }
     
     
-    public void userRegistration(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
+    private void userRegistration(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
     
         System.out.println("yyyyyyy");
         float hif = Float.parseFloat(hi);
@@ -105,7 +105,7 @@ public class User {
  
     }
     
-    public void userUpdate(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws ClassNotFoundException, SQLException{
+    private void userUpdate(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws ClassNotFoundException, SQLException{
          float hif = Float.parseFloat(hi);
         float wef = Float.parseFloat(we);
         int i = 101;

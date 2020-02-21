@@ -11,4 +11,50 @@ package arogya_classes;
  */
 public class Food {
     
+    
+    private String foodid,adminid,foodName,deletefood,foodStatus;
+    
+    
+   
+    public void searchFood()
+    {
+        
+        
+        
+        
+    }
+    
+    public void sendFood()
+    {
+        
+        
+        
+    }
+    
+    
+    public void insertFood()
+    {
+        
+        
+        
+    }
+    
+    
+     public void updateFood()
+    {
+        
+        
+        
+    }
+     
+     
+     public void deleteFood()
+    {
+        
+        
+        
+    }
+    
+    
+    
 }

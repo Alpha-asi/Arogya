@@ -11,4 +11,22 @@ package arogya_classes;
  */
 public class HealthStatus {
     
+    private String IllnessId,userId,gender;
+    private int weight,height,age,waterQty,caloryty;
+    
+    private void calHealthStatus()
+    {
+        
+        
+        
+    }
+    
+    
+    private void displayHealthDeatails()
+    {
+        
+        
+        
+    }
+    
 }

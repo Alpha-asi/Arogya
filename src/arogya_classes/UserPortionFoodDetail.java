@@ -11,4 +11,18 @@ package arogya_classes;
  */
 public class UserPortionFoodDetail {
     
+     private String pdid,foodid,userid,date,foodName,foodStatus,mealName;
+     private int qty,noOFCalory;
+    
+     private void generateMealDetails()
+     {
+       
+         
+         
+     }
+     
+     
+     
+     
+    
 }

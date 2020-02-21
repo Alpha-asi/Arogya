@@ -11,4 +11,18 @@ package arogya_classes;
  */
 public class UserIllness {
     
+    private String illnessId,userId,illnessName;
+    
+    private void addUserIllness()
+    {
+        
+        
+    }
+    
+    private void sendUserIllness()
+    {
+        
+        
+    }
+
 }
