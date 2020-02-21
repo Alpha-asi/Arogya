@@ -385,6 +385,7 @@ public class Menu extends javax.swing.JFrame {
         ud.setVisible(true);
         try {
             ud.setValues(tempName);
+          //  ud.viewData();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

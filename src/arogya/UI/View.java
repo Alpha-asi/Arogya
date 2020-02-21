@@ -474,40 +474,7 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_tflnameActionPerformed
 
     private void tfmnicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfmnicActionPerformed
-        int Day = 0;
-        String year = "";
-        //        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        //        Calendar c = Calendar.getInstance();
-
-        if (tfmnic.getText().length() == 10) {
-            String nic = tfmnic.getText().substring(0, 5);
-            year = "19" + nic.substring(0, 2);
-            String days = nic.substring(2);
-            Day = Integer.parseInt(days);
-        } else if (tfmnic.getText().length() == 12) {
-            String nic = tfmnic.getText().substring(0, 7);
-            System.out.println(nic);
-            year = nic.substring(0, 4);
-            System.out.println(year);
-            String days = nic.substring(4);
-            System.out.println(days);
-            Day = Integer.parseInt(days);
-        } else {
-
-        }
-        //        String nic = tfmnic.getText().substring(0, 5);
-        //        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        //        Calendar c = Calendar.getInstance();
-        //        String year = "19" + nic.substring(0, 2);
-        //        System.out.println(date);
-        //        String days = nic.substring(2);
-        //        System.out.println(days);
-        //        c.setTime(new Date(date));
-        //        int Day = Integer.parseInt(days);
-        //        c.add(Calendar.DATE, (dt));
-        //        System.out.println(sdf.format(c.getTime()));
-
-        
+     
     }//GEN-LAST:event_tfmnicActionPerformed
 
     private void tfdobKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdobKeyReleased
@@ -575,6 +542,20 @@ static int xx,yy;
        
 
     }//GEN-LAST:event_SaveActionPerformed
+
+    public void setValues(String x1,String x2,String x3,String x4,String x5,String x6,String x7,String x8,String x9,String x10){
+        tffname.setText(x1);
+        tflname.setText(x2);
+        tfuname.setText(x3);
+        tfpass.setText(x4);
+        tfmnic.setText(x5);
+        tfdob.setText(x6);
+        tfgen.setText(x7);
+        tfemail.setText(x8);
+        tfheight.setText(x9);
+        tfweight.setText(x10);
+
+}
 
     /**
      * @param args the command line arguments

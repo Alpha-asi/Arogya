@@ -12,8 +12,11 @@ import java.awt.Rectangle;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import arogya.UI.UpdateUser;
+import arogya_classes.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author ADMIN
@@ -349,7 +352,13 @@ public class UserDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseClicked
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-        // TODO add your handling code here:
+        try {
+            viewData();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Back2MouseClicked
 
     private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
@@ -409,6 +418,11 @@ DisValue();
     this.dispose();
     }
     
+    public void viewData() throws ClassNotFoundException, SQLException{  
+    User u = new User();
+    u.view(z);
+    
+    }
     /**
      * @param args the command line arguments
      */

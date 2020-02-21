@@ -25,6 +25,7 @@ import arogya.UI.Supdate;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import javax.swing.UIManager;
 import arogya.UI.Supdate;
+import arogya.UI.View;
 /**
  *
  * @author vimuk
@@ -112,6 +113,28 @@ public class User {
       DB.Execute("UPDATE user_log SET User_id='" + nic + "',Username='" + uname + "',Password='" + pass + "',User_email='" + mail + "',User_gender='" + gender + "',User_height='" + hif + "',User_weight='" + wef + "',User_fname='" + fn + "',User_lname='" + ln + "',Admin_id='" + i + "' WHERE User_id='" + nic + "'");
       Supdate su = new Supdate();
       su.setVisible(true);
+    }
+    String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
+    public void view(String name) throws ClassNotFoundException, SQLException{
+    DB.getConnection();
+    ResultSet rs = DB.search("SELECT * FROM user_log WHERE Username='" + name + "'");
+    while(rs.next()){
+     x1=rs.getString(1);
+     x2=rs.getString(2);
+     x3=rs.getString(3);
+     x4=rs.getString(4);
+     x5=rs.getString(5);
+     x6=rs.getString(6);
+     x7=rs.getString(7);
+     x8=rs.getString(8);
+     x9=rs.getString(9);
+     x10=rs.getString(10);
+     
+        View v = new View();
+        v.setVisible(true);
+        v.setValues(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10);
+        
+    } 
     }
     
     
