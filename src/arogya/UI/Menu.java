@@ -38,7 +38,7 @@ public class Menu extends javax.swing.JFrame {
                 // disposing PageOne
                 
                 //     x.disp();
-;
+
         
         
     }
@@ -383,7 +383,15 @@ public class Menu extends javax.swing.JFrame {
     private void Back7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back7MouseClicked
         UserDetails ud = new UserDetails();
         ud.setVisible(true);
-        displayName(null);
+        try {
+            ud.setValues(tempName);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
+        
     }//GEN-LAST:event_Back7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked

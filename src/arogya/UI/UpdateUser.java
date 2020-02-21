@@ -48,6 +48,15 @@ public class UpdateUser extends javax.swing.JFrame {
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+   
+    }
+
+    public void setValue(String a,String b,String c){
+    tfmnic.setText(a);
+    tfdob.setText(b);
+    tfgen.setText(c);
+    
     }
 
     /**

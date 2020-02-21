@@ -5,12 +5,15 @@
  */
 package arogya.UI;
 
+import arogya.DB;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import arogya.UI.UpdateUser;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 /**
  *
  * @author ADMIN
@@ -350,8 +353,7 @@ public class UserDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_Back2MouseClicked
 
     private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
-        UpdateUser u1 = new UpdateUser();
-        u1.setVisible(true);
+DisValue();
     }//GEN-LAST:event_Back3MouseClicked
 
     private void Back4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back4MouseClicked
@@ -388,7 +390,25 @@ public class UserDetails extends javax.swing.JFrame {
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
-
+     String x,y,z,g;
+    public void setValues(String uname) throws ClassNotFoundException, SQLException{
+    DB.getConnection();
+    ResultSet rs = DB.search("SELECT User_id,User_dob,User_gender FROM user_log WHERE Username = '"+uname+"'");
+    while(rs.next()){
+     x=rs.getString(1);
+     y=rs.getString(2);
+     g=rs.getString(3);
+     z=uname;
+     System.out.print(x);
+    } 
+    }
+    public void DisValue(){
+    UpdateUser u1 = new UpdateUser();
+    u1.setVisible(true);
+    u1.setValue(x, y, g);
+    this.dispose();
+    }
+    
     /**
      * @param args the command line arguments
      */
