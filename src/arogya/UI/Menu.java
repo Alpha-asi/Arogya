@@ -13,6 +13,9 @@ import javax.swing.UIManager;
 import arogya.UI.Login;
 import java.util.concurrent.TimeUnit;
 import arogya.UI.Bmi;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author vimuk
@@ -368,8 +371,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Back4MouseClicked
 
     private void Back6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back6MouseClicked
-        // TODO add your handling code here:mjmhmbmbjm
-        openBmi();
+        try {
+            // TODO add your handling code here:mjmhmbmbjm
+            openBmi();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_Back6MouseClicked
 
@@ -411,7 +420,7 @@ public class Menu extends javax.swing.JFrame {
         tempName = n;
          
     }
-    public void openBmi(){
+    public void openBmi() throws ClassNotFoundException, SQLException{
 
          Bmi b = new Bmi();
          b.setVisible(true);

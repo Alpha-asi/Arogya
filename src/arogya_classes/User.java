@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arogya;
+package arogya_classes;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,6 +18,7 @@ import arogya.UI.Menu;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import arogya.ArogyaFinal;
 import arogya.UI.Menu;
+import arogya.DB;
 import arogya.DB;
 import java.util.concurrent.TimeUnit;
 import arogya.UI.success;
@@ -91,7 +92,7 @@ public class User {
     }
     
     
-    public void userUpadate(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
+    public void userRegistration(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
     
         System.out.println("yyyyyyy");
         float hif = Float.parseFloat(hi);

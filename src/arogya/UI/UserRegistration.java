@@ -20,7 +20,7 @@ import javax.swing.UIManager;
 import net.java.balloontip.BalloonTip;
 import net.java.balloontip.styles.MinimalBalloonStyle;
 import net.java.balloontip.utils.FadingUtils;
-import arogya.User;
+import arogya_classes.User;
 import com.sun.glass.events.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -555,7 +555,7 @@ public class UserRegistration extends javax.swing.JFrame {
          
          User newuser = new User();
                 try {
-                    newuser.userUpadate(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
+                    newuser.userRegistration(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
                     clear();
                 } catch (SQLException ex) {
                     new Fail().setVisible(true);

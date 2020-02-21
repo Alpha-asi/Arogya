@@ -5,7 +5,7 @@
  */
 package arogya.UI;
 
-import arogya.User;
+import arogya_classes.User;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.Color;
 import java.awt.Font;
