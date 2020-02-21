@@ -154,7 +154,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
         tflname.setBackground(new java.awt.Color(33, 33, 33));
         tflname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tflname.setForeground(new java.awt.Color(204, 204, 204));
+        tflname.setForeground(new java.awt.Color(255, 255, 255));
         tflname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         tflname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +172,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
         tfuname.setBackground(new java.awt.Color(33, 33, 33));
         tfuname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfuname.setForeground(new java.awt.Color(204, 204, 204));
+        tfuname.setForeground(new java.awt.Color(255, 255, 255));
         tfuname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         nic.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -181,7 +181,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
         tfmnic.setBackground(new java.awt.Color(33, 33, 33));
         tfmnic.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfmnic.setForeground(new java.awt.Color(204, 204, 204));
+        tfmnic.setForeground(new java.awt.Color(255, 255, 255));
         tfmnic.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         tfmnic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -287,7 +287,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
         tfpass.setBackground(new java.awt.Color(33, 33, 33));
         tfpass.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tfpass.setForeground(new java.awt.Color(204, 204, 204));
+        tfpass.setForeground(new java.awt.Color(255, 255, 255));
         tfpass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
