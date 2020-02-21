@@ -5,58 +5,19 @@
  */
 package arogya.UI;
 
-import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
-import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
-import javax.swing.JFrame;
-import javax.swing.UIManager;
-import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
-import net.java.balloontip.BalloonTip;
-import net.java.balloontip.styles.MinimalBalloonStyle;
-import net.java.balloontip.utils.FadingUtils;
-import arogya_classes.User;
-import com.sun.glass.events.KeyEvent;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import arogya.UI.Fail;
-import static arogya.UI.Login.xx;
 
 /**
  *
- * @author A4tours
+ * @author ADMIN
  */
-public class UpdateUser extends javax.swing.JFrame {
+public class View extends javax.swing.JFrame {
 
     /**
-     * Creates new form UpdateUser
+     * Creates new form View
      */
-    public UpdateUser() {
-        setUndecorated(true);
+    public View() {
         initComponents();
-        Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
-   
-    }
-
-    public void setValue(String a,String b,String c){
-    tfmnic.setText(a);
-    tfdob.setText(b);
-    tfgen.setText(c);
-    
     }
 
     /**
@@ -84,7 +45,6 @@ public class UpdateUser extends javax.swing.JFrame {
         Email = new javax.swing.JLabel();
         tfemail = new javax.swing.JTextField();
         Save = new javax.swing.JButton();
-        Clear = new javax.swing.JButton();
         Password = new javax.swing.JLabel();
         Height = new javax.swing.JLabel();
         tfheight = new javax.swing.JTextField();
@@ -161,7 +121,6 @@ public class UpdateUser extends javax.swing.JFrame {
         nic.setForeground(new java.awt.Color(153, 153, 153));
         nic.setText("User NIC");
 
-        tfmnic.setEditable(false);
         tfmnic.setBackground(new java.awt.Color(33, 33, 33));
         tfmnic.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfmnic.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,22 +161,11 @@ public class UpdateUser extends javax.swing.JFrame {
         Save.setBackground(new java.awt.Color(213, 0, 0));
         Save.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Save.setForeground(new java.awt.Color(255, 255, 255));
-        Save.setText("Update");
+        Save.setText("Save");
         Save.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
-            }
-        });
-
-        Clear.setBackground(new java.awt.Color(0, 204, 51));
-        Clear.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        Clear.setForeground(new java.awt.Color(255, 255, 255));
-        Clear.setText("Clear");
-        Clear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        Clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClearActionPerformed(evt);
             }
         });
 
@@ -298,21 +246,20 @@ public class UpdateUser extends javax.swing.JFrame {
                                     .addComponent(Firstname)
                                     .addComponent(Username)
                                     .addComponent(Lastname)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(Password)
                                     .addComponent(Weight)
                                     .addComponent(gender))
-                                .addGap(0, 105, Short.MAX_VALUE))
+                                .addGap(0, 209, Short.MAX_VALUE))
                             .addComponent(tfmnic))
                         .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Height)
                             .addComponent(nic))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,9 +305,7 @@ public class UpdateUser extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
 
@@ -378,7 +323,7 @@ public class UpdateUser extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Update User Data");
+        jLabel5.setText("View");
 
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-back-arrow-64.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -466,7 +411,7 @@ public class UpdateUser extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -479,7 +424,7 @@ public class UpdateUser extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(345, 345, 345)
                         .addComponent(jLabel1)
-                        .addContainerGap(74, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -489,11 +434,11 @@ public class UpdateUser extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
         );
 
         pack();
@@ -545,58 +490,9 @@ public class UpdateUser extends javax.swing.JFrame {
         //        c.add(Calendar.DATE, (dt));
         //        System.out.println(sdf.format(c.getTime()));
 
-        if (Day > 500) //Can Be Women's NIC No
-        {
-            tfgen.setText("Female");
-            Day = Day - 500;
-        }
-
-        if (Day > 0 && Day < 367) {
-            tfgen.setText("Male");
-            if (Day > 335) {
-                Day = Day - 335;
-                showDate(year, "12", "0"+ Day);
-            } else if (Day > 305) {
-                Day = Day - 305;
-                showDate(year, "11", "0" + Day);
-            } else if (Day > 274) {
-                Day = Day - 274;
-                showDate(year, "10", "0" + Day);
-            } else if (Day > 244) {
-                Day = Day - 244;
-                showDate(year, "09", "0" + Day);
-            } else if (Day > 213) {
-                Day = Day - 213;
-                showDate(year, "08", "0" + Day);
-            } else if (Day > 182) {
-                Day = Day - 182;
-                showDate(year, "07", "0" + Day);
-            } else if (Day > 152) {
-                Day = Day - 152;
-                showDate(year, "06", "0" + Day);
-            } else if (Day > 121) {
-                Day = Day - 121;
-                showDate(year, "05", "0" + Day);
-            } else if (Day > 91) {
-                Day = Day - 91;
-                showDate(year, "04", "0" + Day);
-            } else if (Day > 60) {
-                Day = Day - 60;
-                showDate(year, "03", "0" + Day);
-            } else if (Day < 32) {
-                showDate(year, "-01", "0" + Day);
-            } else if (Day > 31) {
-                Day = Day - 31;
-                showDate(year, "02", "0" + Day);
-            }
-        }
+        
     }//GEN-LAST:event_tfmnicActionPerformed
 
-    private void showDate(String year, String month, String date) {
-        //System.out.println(year + " " + month + " " + date);
-        tfdob.setText(year + "-" + month + "-" + date);
-    }
-    
     private void tfdobKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdobKeyReleased
 
     }//GEN-LAST:event_tfdobKeyReleased
@@ -604,114 +500,6 @@ public class UpdateUser extends javax.swing.JFrame {
     private void tfdobKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdobKeyTyped
 
     }//GEN-LAST:event_tfdobKeyTyped
-
-    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        boolean rt = false;
-        JTextField tf[] = {tflname,tffname,tfpass,tfdob,tfmnic,tfheight,tfweight,tfemail,tfuname};
-        for (int i = 0; i < tf.length; i++) {
-            if (tf[i].getText().equals("")) {
-                System.out.println(tf[i].getText());
-                toolt(tf[i], "This field cannot be empty");
-                rt = true;
-
-            }else{
-
-                String uname = tfuname.getText();
-                String pass = tfpass.getText();
-                String mail = tfemail.getText();
-                String dob = tfdob.getText();
-                String gender = tfgen.getText();
-                String hi = tfheight.getText();
-                String we = tfweight.getText();
-                String fn = tffname.getText();
-                String ln = tflname.getText();
-                String nic = tfmnic.getText();
-
-                User newuser = new User();
-                try {
-                    newuser.userUpdate(nic, uname, pass, mail, dob, gender, hi, we, fn, ln);
-                    clear();
-                } catch (SQLException ex) {
-                    new Fail().setVisible(true);
-                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ClassNotFoundException ex) {
-                    new Fail().setVisible(true);
-                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-
-        }
-
-    }//GEN-LAST:event_SaveActionPerformed
-
-    public void clear()
-    {
-        
-         tffname.setText("");
-        tflname.setText("");
-        tfuname.setText("");
-        tfpass.setText("");
-        tfmnic.setText("");
-        tfdob.setText("");
-        tfgen.setText("");
-        tfemail.setText("");
-        tfheight.setText("");
-        tfweight.setText("");
-        
-    }
-    
-    public void toolt(final JComponent tf, String message) {
-
-        JLabel lb = new JLabel();
-        lb.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        lb.setText(message);
-        lb.setForeground(Color.white);
-//        lb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/emoticon-15-16 (2).png")));
-
-        MinimalBalloonStyle minm = new MinimalBalloonStyle(Color.gray, 3);
-        final BalloonTip baloon = new BalloonTip(tf, lb, minm, BalloonTip.Orientation.RIGHT_BELOW, BalloonTip.AttachLocation.ALIGNED, 20, 5, false);
-        FadingUtils.fadeInBalloon(baloon, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        for (int i = 0; i < 20; i++) {
-                            if (i == 19) {
-                                FadingUtils.fadeOutBalloon(baloon, new ActionListener() {
-                                    @Override
-                                    public void actionPerformed(ActionEvent e) {
-                                        baloon.closeBalloon();
-                                    }
-                                }, 600, 24);
-                            }
-                            try {
-                                Thread.sleep(100);
-                            } catch (Exception e) {
-                            }
-                        }
-                    }
-                }).start();
-            }
-        }, 300, 24);
-
-        baloon.setVisible(true);
-    }
-    
-    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
-        {
-            tffname.setText("");
-            tflname.setText("");
-            tfuname.setText("");
-            tfpass.setText("");
-            tfmnic.setText("");
-            tfdob.setText("");
-            tfgen.setText("");
-            tfemail.setText("");
-            tfheight.setText("");
-            tfweight.setText("");// TODO add your handling code here:
-        }
-    }//GEN-LAST:event_ClearActionPerformed
 
     private void tfheightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfheightActionPerformed
         // TODO add your handling code here:
@@ -766,6 +554,11 @@ static int xx,yy;
         yy = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
 
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+       
+
+    }//GEN-LAST:event_SaveActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -783,31 +576,26 @@ static int xx,yy;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdateUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdateUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdateUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdateUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    UIManager.setLookAndFeel(new WindowsClassicLookAndFeel());
-                    new UpdateUser().setVisible(true);
-                } catch (Exception e) {
-                }
+                new View().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
-    private javax.swing.JButton Clear;
     private javax.swing.JLabel DOB;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel Firstname;
