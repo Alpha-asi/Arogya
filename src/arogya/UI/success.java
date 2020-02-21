@@ -9,6 +9,7 @@ import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import javax.swing.UIManager;
 import arogya.Essencials;
 import static arogya.UI.Login.xx;
+import arogya.UI.UserRegistration;
 
 /**
  *
@@ -135,6 +136,7 @@ public class success extends javax.swing.JFrame {
 
     private void Save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save1ActionPerformed
         this.dispose();
+        
     }//GEN-LAST:event_Save1ActionPerformed
 static int xx,yy;
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed

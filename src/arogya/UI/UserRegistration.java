@@ -684,6 +684,22 @@ public class UserRegistration extends javax.swing.JFrame {
             }
         });
     }
+    public void clear()
+    {
+        
+         tffname.setText("");
+        tflname.setText("");
+        tfuname.setText("");
+        tfpass.setText("");
+        tfmnic.setText("");
+        tfdob.setText("");
+        tfgen.setText("");
+        tfemail.setText("");
+        tfheight.setText("");
+        tfweight.setText("");
+        
+    }
+            
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
