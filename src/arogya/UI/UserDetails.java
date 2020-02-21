@@ -10,7 +10,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
-
+import arogya.UI.UpdateUser;
 /**
  *
  * @author ADMIN
@@ -350,7 +350,8 @@ public class UserDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_Back2MouseClicked
 
     private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
-        // TODO add your handling code here:
+        UpdateUser u1 = new UpdateUser();
+        u1.setVisible(true);
     }//GEN-LAST:event_Back3MouseClicked
 
     private void Back4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back4MouseClicked
