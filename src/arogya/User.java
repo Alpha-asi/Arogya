@@ -19,6 +19,10 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import arogya.ArogyaFinal;
 import arogya.UI.Menu;
 import arogya.DB;
+
+import arogya.UI.success;
+import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
+import javax.swing.UIManager;
 /**
  *
  * @author vimuk
@@ -86,7 +90,12 @@ public class User {
         float wef = Float.parseFloat(we);
         DB.Execute("INSERT INTO user_log VALUES('" + nic + "','" + uname + "','" + pass + "','" + mail + "','" + dob + "','" + gender + "','" + hif + "','" + wef + "','" + fn + "','" + ln + "',101)");
     // (Username,Password,User_email,User_dob,User_gender,User_height,User_weight,User_fname,User_lname)
+        new success().setVisible(true);
+    
+ 
     }
+    
+    
     
     
 }
