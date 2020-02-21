@@ -19,6 +19,7 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import arogya.ArogyaFinal;
 import arogya.UI.Menu;
 import arogya.DB;
+import arogya.UI.Loading;
 
 import arogya.UI.success;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
@@ -57,27 +58,31 @@ public class User {
       //  return null;
         
      Statement stmt=connection.createStatement();  
+     Login m1 = new Login(); Login m2 = new Login(); 
      ResultSet rs=stmt.executeQuery("select * from user_log"); 
      while(rs.next())  
     // System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)); 
      
      if(a.equals(rs.getString(2))){
          if(b.equals(rs.getString(3))){
-       
          Menu m = new Menu();
          m.setVisible(true);
          m.displayName(a);
-         
-         
+         m2.dispose();
+         m1.dispose();
+         connection.close();
      }else{
-         new Login().setVisible(true);
+         
+         m1.setVisible(true);
+       
          }
           
      }else{
-     new Login().setVisible(true);
+            m1.dispose(); m2.setVisible(true);
+            
      }
-     
-     connection.close();
+       
+        connection.close();
          return null;
      
     }
