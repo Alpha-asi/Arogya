@@ -162,15 +162,10 @@ public class Fail extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save1ActionPerformed
-        this.dispose();
+        
 
     }//GEN-LAST:event_Save1ActionPerformed
-
-    private void Save2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save2ActionPerformed
-        this.dispose();
-
-    }//GEN-LAST:event_Save2ActionPerformed
-
+static int xx,yy;
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
@@ -181,6 +176,10 @@ public class Fail extends javax.swing.JFrame {
         xx = evt.getX();
         yy = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
+
+    private void Save2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_Save2ActionPerformed
 
     /**
      * @param args the command line arguments

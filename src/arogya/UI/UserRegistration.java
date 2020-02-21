@@ -25,6 +25,7 @@ import com.sun.glass.events.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import arogya.UI.Fail;
 
 
 /**
@@ -492,8 +493,10 @@ public class UserRegistration extends javax.swing.JFrame {
                     newuser.userUpadate(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
                     clear();
                 } catch (SQLException ex) {
+                    new Fail().setVisible(true);
                     Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
+                    new Fail().setVisible(true);
                     Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
