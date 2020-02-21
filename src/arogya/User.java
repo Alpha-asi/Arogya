@@ -20,7 +20,7 @@ import arogya.ArogyaFinal;
 import arogya.UI.Menu;
 import arogya.DB;
 import arogya.UI.Loading;
-
+import java.util.concurrent.TimeUnit;
 import arogya.UI.success;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import javax.swing.UIManager;
@@ -49,7 +49,7 @@ public class User {
 
    
 
-    public static String userlogin(String a, String b) throws SQLException {
+    public static String userlogin(String a, String b) throws SQLException, InterruptedException {
         
       //  name = String.valueOf(a)
            
@@ -65,7 +65,11 @@ public class User {
      
      if(a.equals(rs.getString(2))){
          if(b.equals(rs.getString(3))){
+         
+         Loading l = new Loading();
+         l.setVisible(true);
          Menu m = new Menu();
+             Thread.holdsLock(l);
          m.setVisible(true);
          m.displayName(a);
          m2.dispose();
