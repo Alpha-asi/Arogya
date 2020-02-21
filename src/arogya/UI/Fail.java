@@ -61,6 +61,11 @@ public class Fail extends javax.swing.JFrame {
         Save2.setForeground(new java.awt.Color(255, 255, 255));
         Save2.setText("OK");
         Save2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
+        Save2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Save2MouseClicked(evt);
+            }
+        });
         Save2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Save2ActionPerformed(evt);
@@ -130,6 +135,10 @@ static int xx,yy;
     private void Save2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save2ActionPerformed
         this.dispose();
     }//GEN-LAST:event_Save2ActionPerformed
+
+    private void Save2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Save2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_Save2MouseClicked
 
     /**
      * @param args the command line arguments
