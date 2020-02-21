@@ -5,7 +5,12 @@
  */
 package arogya.UI;
 
+import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 /**
  *
@@ -17,7 +22,11 @@ public class View extends javax.swing.JFrame {
      * Creates new form View
      */
     public View() {
+          setUndecorated(true);
         initComponents();
+          Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -79,6 +88,7 @@ public class View extends javax.swing.JFrame {
         Firstname.setForeground(new java.awt.Color(153, 153, 153));
         Firstname.setText("User Firstname");
 
+        tffname.setEditable(false);
         tffname.setBackground(new java.awt.Color(33, 33, 33));
         tffname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tffname.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,6 +104,7 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        tflname.setEditable(false);
         tflname.setBackground(new java.awt.Color(33, 33, 33));
         tflname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tflname.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,6 +123,7 @@ public class View extends javax.swing.JFrame {
         Username.setForeground(new java.awt.Color(153, 153, 153));
         Username.setText("Username");
 
+        tfuname.setEditable(false);
         tfuname.setBackground(new java.awt.Color(33, 33, 33));
         tfuname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfuname.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,6 +133,7 @@ public class View extends javax.swing.JFrame {
         nic.setForeground(new java.awt.Color(153, 153, 153));
         nic.setText("User NIC");
 
+        tfmnic.setEditable(false);
         tfmnic.setBackground(new java.awt.Color(33, 33, 33));
         tfmnic.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfmnic.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,6 +166,7 @@ public class View extends javax.swing.JFrame {
         Email.setForeground(new java.awt.Color(153, 153, 153));
         Email.setText("User Email");
 
+        tfemail.setEditable(false);
         tfemail.setBackground(new java.awt.Color(33, 33, 33));
         tfemail.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfemail.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,7 +175,7 @@ public class View extends javax.swing.JFrame {
         Save.setBackground(new java.awt.Color(213, 0, 0));
         Save.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Save.setForeground(new java.awt.Color(255, 255, 255));
-        Save.setText("Save");
+        Save.setText("Back");
         Save.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +191,7 @@ public class View extends javax.swing.JFrame {
         Height.setForeground(new java.awt.Color(153, 153, 153));
         Height.setText("User Height");
 
+        tfheight.setEditable(false);
         tfheight.setBackground(new java.awt.Color(33, 33, 33));
         tfheight.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfheight.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,6 +211,7 @@ public class View extends javax.swing.JFrame {
         Weight.setForeground(new java.awt.Color(153, 153, 153));
         Weight.setText("User Weight");
 
+        tfweight.setEditable(false);
         tfweight.setBackground(new java.awt.Color(33, 33, 33));
         tfweight.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfweight.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,6 +232,7 @@ public class View extends javax.swing.JFrame {
         tfgen.setForeground(new java.awt.Color(255, 255, 255));
         tfgen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
 
+        tfpass.setEditable(false);
         tfpass.setBackground(new java.awt.Color(33, 33, 33));
         tfpass.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         tfpass.setForeground(new java.awt.Color(255, 255, 255));
@@ -588,9 +605,14 @@ static int xx,yy;
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new View().setVisible(true);
+           public void run() {
+                try {
+                    UIManager.setLookAndFeel(new WindowsClassicLookAndFeel());
+                    new View().setVisible(true);
+                } catch (Exception e) {
+                }
             }
+            
         });
     }
 
