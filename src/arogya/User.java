@@ -68,9 +68,9 @@ public class User {
     
     
          Menu m = new Menu();
-         
          m.setVisible(true);
          m.displayName(a);
+         m.sentBmi(a);
          m2.dispose();
          m1.dispose();
          connection.close();

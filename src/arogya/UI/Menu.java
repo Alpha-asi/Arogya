@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import arogya.UI.Login;
 import java.util.concurrent.TimeUnit;
-
+import arogya.UI.Bmi;
 /**
  *
  * @author vimuk
@@ -368,11 +368,15 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Back4MouseClicked
 
     private void Back6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back6MouseClicked
-        // TODO add your handling code here:
+        // TODO add your handling code here:mjmhmbmbjm
+        openBmi();
+        this.dispose();
     }//GEN-LAST:event_Back6MouseClicked
 
     private void Back7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back7MouseClicked
-        // TODO add your handling code here:
+        UserDetails ud = new UserDetails();
+        ud.setVisible(true);
+        displayName(null);
     }//GEN-LAST:event_Back7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -397,8 +401,21 @@ public class Menu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+ String tempName;
     public void displayName(String name){
        accName.setText("Welcome! "+name);
+        
+    }
+    
+    public void sentBmi(String n){
+        tempName = n;
+         
+    }
+    public void openBmi(){
+
+         Bmi b = new Bmi();
+         b.setVisible(true);
+         b.displayBmi(tempName);
     }
     
     public static void main(String args[]) {
