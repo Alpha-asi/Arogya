@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import arogya.UI.Delete;
 /**
  *
  * @author ADMIN
@@ -370,7 +371,9 @@ DisValue();
     }//GEN-LAST:event_Back4MouseClicked
 
     private void Back5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back5MouseClicked
-        // TODO add your handling code here:
+
+            userDel();
+        
     }//GEN-LAST:event_Back5MouseClicked
 
     private void Back6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back6MouseClicked
@@ -412,16 +415,18 @@ DisValue();
     } 
     }
     public void DisValue(){
-    UpdateUser u1 = new UpdateUser();
-    u1.setVisible(true);
-    u1.setValue(x, y, g);
-    this.dispose();
+   Delete del = new Delete();
+   del.delVal(z);
     }
     
     public void viewData() throws ClassNotFoundException, SQLException{  
     User u = new User();
     u.view(z);
-    
+    }
+    public void userDel(){
+    Delete del = new Delete();
+    del.setVisible(true);
+    del.delVal(z);
     }
     /**
      * @param args the command line arguments

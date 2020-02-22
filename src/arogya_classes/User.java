@@ -137,6 +137,25 @@ public class User {
     } 
     }
     
+    public void deleteUser(String name,String pass) throws ClassNotFoundException, SQLException{
+    //;
+    //String upass;
+    
+    DB.getConnection();
+     ResultSet rs = DB.search("SELECT * FROM user_log WHERE Username='" + name + "'");
+     while(rs.next()){
+     if(pass.equals(rs.getString(3))){
+         DB.Execute("DELETE FROM user_log WHERE Username='" + name + "'");
+         //connection.close();  
+     }
+    }
+    // System.out.print(name);
+    // System.out.print(name);
+     
+   // System.out.print(name);
+    
+    }
+    
     
     
     

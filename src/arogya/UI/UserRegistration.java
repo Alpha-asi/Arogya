@@ -644,30 +644,30 @@ public class UserRegistration extends javax.swing.JFrame {
                 showDate(year, "10", "0" + Day);
             } else if (Day > 244) {
                 Day = Day - 244;
-                showDate(year, "09", "0" + Day);
+                showDate(year, "09", "" + Day);
             } else if (Day > 213) {
                 Day = Day - 213;
-                showDate(year, "08", "0" + Day);
+                showDate(year, "08", "" + Day);
             } else if (Day > 182) {
                 Day = Day - 182;
-                showDate(year, "07", "0" + Day);
+                showDate(year, "07", "" + Day);
             } else if (Day > 152) {
                 Day = Day - 152;
-                showDate(year, "06", "0" + Day);
+                showDate(year, "06", "" + Day);
             } else if (Day > 121) {
                 Day = Day - 121;
-                showDate(year, "05", "0" + Day);
+                showDate(year, "05", "" + Day);
             } else if (Day > 91) {
                 Day = Day - 91;
-                showDate(year, "04", "0" + Day);
+                showDate(year, "04", "" + Day);
             } else if (Day > 60) {
                 Day = Day - 60;
-                showDate(year, "03", "0" + Day);
+                showDate(year, "03", "" + Day);
             } else if (Day < 32) {
-                showDate(year, "-01", "0" + Day);
+                showDate(year, "01", "" + Day);
             } else if (Day > 31) {
                 Day = Day - 31;
-                showDate(year, "02", "0" + Day);
+                showDate(year, "02", "" + Day);
             }
         }
     }//GEN-LAST:event_tfmnicActionPerformed
