@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import arogya.DB;
+import java.awt.Toolkit;
 import java.sql.ResultSet;
 /**
  *
@@ -29,6 +30,7 @@ public class Delete extends javax.swing.JFrame {
         initComponents();
         this.setSize(405,150);
         es.setCenter(this);
+        setIconImage();
     }
 
     /**
@@ -258,6 +260,11 @@ String g;
             }
         });
     }
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Save1;

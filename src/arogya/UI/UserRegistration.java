@@ -27,6 +27,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import arogya.UI.Fail;
 import static arogya.UI.Login.xx;
+import java.awt.Toolkit;
 
 
 /**
@@ -44,6 +45,7 @@ public class UserRegistration extends javax.swing.JFrame {
           Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setIconImage();
     }
     
       public void toolt(final JComponent tf, String message) {
@@ -792,6 +794,11 @@ static int xx,yy;
         tfweight.setText("");
         
     }
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
             
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

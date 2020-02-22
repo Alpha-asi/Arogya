@@ -11,6 +11,7 @@ import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.util.Vector;
 import javax.swing.JFrame;
@@ -34,6 +35,7 @@ public class Bfist extends javax.swing.JFrame {
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         es = new Essencials();
+        setIconImage();
      //   es.setCenter(this);
      
       //  String headings[] = {"Food ID", "Food Name", "Food Status", "Reamark"};
@@ -361,6 +363,11 @@ static int xx,yy;
             }
         });
     }
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;

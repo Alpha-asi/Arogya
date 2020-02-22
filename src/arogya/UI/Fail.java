@@ -7,6 +7,7 @@ package arogya.UI;
 
 import arogya.Essencials;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
+import java.awt.Toolkit;
 import javax.swing.UIManager;
 
 /**
@@ -25,6 +26,7 @@ public class Fail extends javax.swing.JFrame {
         initComponents();
         this.setSize(400, 200);
         es.setCenter(this);
+        setIconImage();
     }
 
     /**
@@ -179,7 +181,11 @@ static int xx,yy;
             }
         });
     }
-
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Save2;
     private javax.swing.JLabel jLabel4;

@@ -24,6 +24,7 @@ import arogya.Essencials;
 import javax.swing.table.DefaultTableModel;
 import arogya.JComponentTableCellRenderer;
 import arogya.CustomRenderer;
+import java.awt.Toolkit;
 
 /**
  *
@@ -42,6 +43,7 @@ public class SearchFoods extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         es = new Essencials();
         es.setCenter(this);
+        setIconImage();
      
         String headings[] = {"Food ID", "Food Name", "Food Status", "Reamark"};
         es.customTBHEAD(jTable1, headings, 4, new Color(220, 220, 220));
@@ -247,6 +249,11 @@ public class SearchFoods extends javax.swing.JFrame {
         });
     }
 
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton4;

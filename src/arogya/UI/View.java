@@ -8,6 +8,7 @@ package arogya.UI;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -27,6 +28,7 @@ public class View extends javax.swing.JFrame {
           Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setIconImage();
     }
 
     /**
@@ -596,7 +598,10 @@ static int xx,yy;
             
         });
     }
-
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
     private javax.swing.JLabel DOB;

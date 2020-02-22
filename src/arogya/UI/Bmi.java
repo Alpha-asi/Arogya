@@ -8,6 +8,7 @@ package arogya.UI;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import javax.swing.UIManager;
 import arogya.DB;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 /**
  *
@@ -21,6 +22,7 @@ public class Bmi extends javax.swing.JFrame {
     DB d = new DB();
     public Bmi() {
         initComponents();
+        setIconImage();
     }
     
     public void displayBmi(String x) throws ClassNotFoundException, SQLException{
@@ -114,6 +116,11 @@ public class Bmi extends javax.swing.JFrame {
             }
         });
     }
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

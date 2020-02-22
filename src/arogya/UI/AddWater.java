@@ -9,6 +9,7 @@ import static arogya.UI.Login.xx;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import javax.swing.UIManager;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;    
@@ -29,6 +30,7 @@ public class AddWater extends javax.swing.JFrame {
           Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setIconImage();
     }
 
     public void x(){
@@ -271,6 +273,11 @@ static int xx,yy;
             }
         });
     }
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Firstname;

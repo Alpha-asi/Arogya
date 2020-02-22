@@ -11,6 +11,7 @@ import arogya.Essencials;
 import arogya.Essencials;
 import static arogya.UI.Login.xx;
 import arogya.UI.UserRegistration;
+import java.awt.Toolkit;
 
 /**
  *
@@ -28,6 +29,7 @@ public class Supdate extends javax.swing.JFrame {
         initComponents();
         this.setSize(400, 200);
         es.setCenter(this);
+        setIconImage();
     }
 
     /**
@@ -189,6 +191,11 @@ static int xx,yy;
             }
         });
     }
+    
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Save;
