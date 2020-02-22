@@ -33,8 +33,8 @@ import arogya.UI.View;
 
 public class User {
  
-
-     String name,pass;
+private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
+  //
     public static Connection connection;
   
      public static void User() throws ClassNotFoundException, SQLException {
@@ -114,7 +114,7 @@ public class User {
       Supdate su = new Supdate();
       su.setVisible(true);
     }
-    String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
+    
     public void view(String name) throws ClassNotFoundException, SQLException{
     DB.getConnection();
     ResultSet rs = DB.search("SELECT * FROM user_log WHERE Username='" + name + "'");
