@@ -28,6 +28,7 @@ import java.util.logging.Logger;
 import arogya.UI.Fail;
 import static arogya.UI.Login.xx;
 import java.awt.Toolkit;
+import arogya_classes.UserIllness;
 
 
 /**
@@ -228,7 +229,7 @@ public class UserRegistration extends javax.swing.JFrame {
         Save.setBackground(new java.awt.Color(213, 0, 0));
         Save.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Save.setForeground(new java.awt.Color(255, 255, 255));
-        Save.setText("Save");
+        Save.setText("Next");
         Save.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -558,6 +559,8 @@ public class UserRegistration extends javax.swing.JFrame {
          User newuser = new User();
                 try {
                     newuser.userRegistration(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
+                    UserIllness ui = new UserIllness();
+                                  
                     clear();
                 } catch (SQLException ex) {
                     new Fail().setVisible(true);
