@@ -47,7 +47,7 @@ public class Lunch extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -305,12 +305,12 @@ public class Lunch extends javax.swing.JFrame {
 
     private void tfsearch1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfsearch1KeyReleased
         try {
-            ResultSet rs = DB.search("SELECT Food_name FROM food WHERE Food_name LIKE '%" + tfsearch.getText() + "%'");
+            ResultSet rs = DB.search("SELECT Food_name FROM food WHERE Food_name LIKE '%" + tfsearch1.getText() + "%'");
             Vector v = new Vector();
             while (rs.next()) {
                 v.add(rs.getString(1));
             }
-            es.JSuggestionField(evt, v, tfsearch, jPanel2, jPopupMenu1,null, null);
+            es.JSuggestionField(evt, v, tfsearch1, jPanel10, jPopupMenu2,null, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -366,41 +366,20 @@ public class Lunch extends javax.swing.JFrame {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Back;
-    private javax.swing.JLabel Back1;
     private javax.swing.JLabel Back2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JLabel qty;
+    private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JLabel qty1;
-    private javax.swing.JTextField tfqty;
     private javax.swing.JTextField tfqty1;
-    private javax.swing.JTextField tfsearch;
     private javax.swing.JTextField tfsearch1;
     // End of variables declaration//GEN-END:variables
 }

@@ -50,9 +50,7 @@ public class Dinner extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popupMenu1 = new java.awt.PopupMenu();
-        popupMenu2 = new java.awt.PopupMenu();
-        popupMenu3 = new java.awt.PopupMenu();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -67,12 +65,6 @@ public class Dinner extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         qty = new javax.swing.JLabel();
         tfqty = new javax.swing.JTextField();
-
-        popupMenu1.setLabel("popupMenu1");
-
-        popupMenu2.setLabel("popupMenu2");
-
-        popupMenu3.setLabel("popupMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -321,7 +313,7 @@ static int xx,yy;
             while (rs.next()) {
                 v.add(rs.getString(1));
             }
-            es.JSuggestionField(evt, v, tfsearch, jPanel2, jPopupMenu,null, null);
+            es.JSuggestionField(evt, v, tfsearch, jPanel2,jPopupMenu1,null, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -387,9 +379,7 @@ static int xx,yy;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private java.awt.PopupMenu popupMenu1;
-    private java.awt.PopupMenu popupMenu2;
-    private java.awt.PopupMenu popupMenu3;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JLabel qty;
     private javax.swing.JTextField tfqty;
     private javax.swing.JTextField tfsearch;
