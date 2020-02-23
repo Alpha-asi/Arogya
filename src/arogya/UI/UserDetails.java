@@ -281,7 +281,7 @@ public class UserDetails extends javax.swing.JFrame {
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        Back5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-settings-64(1).png"))); // NOI18N
+        Back5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-trash-64.png"))); // NOI18N
         Back5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Back5MouseClicked(evt);

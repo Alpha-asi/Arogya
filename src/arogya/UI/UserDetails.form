@@ -436,7 +436,7 @@
         <Component class="javax.swing.JLabel" name="Back5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/arogya/Icons/icons8-settings-64(1).png"/>
+              <Image iconType="3" name="/arogya/Icons/icons8-trash-64.png"/>
             </Property>
           </Properties>
           <Events>
