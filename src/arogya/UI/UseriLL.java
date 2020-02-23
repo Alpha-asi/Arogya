@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Illness;
+package arogya.UI;
 
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.GraphicsEnvironment;
@@ -22,13 +22,13 @@ import arogya.UI.UserRegistration;
  *
  * @author User
  */
-public class Illness extends javax.swing.JFrame {
+public class UseriLL extends javax.swing.JFrame {
 
     //public String[] illnessId;
     /**
      * Creates new form Illness
      */
-    public Illness() {
+    public UseriLL() {
        setUndecorated(true);
         initComponents();
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -337,7 +337,7 @@ public class Illness extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-String v1, v2, v3, v4, v5, v6, v7, v8, v9, v10;
+String v1, v2, v3, v4, v5, v6, v7, v8, v9, v10,Uid;
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
         
       int a = 0;
@@ -424,11 +424,11 @@ String v1, v2, v3, v4, v5, v6, v7, v8, v9, v10;
       }
       UserIllness il = new UserIllness();
         try {
-            il.addUserIllness(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10);
+            il.addUserIllness(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10,Uid);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Illness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserIllness.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Illness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserIllness.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_SaveMouseClicked
 
@@ -442,8 +442,8 @@ String v1, v2, v3, v4, v5, v6, v7, v8, v9, v10;
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
-        if (this.getExtendedState()!= Illness.MAXIMIZED_BOTH) {
-            this.setExtendedState(Illness.MAXIMIZED_BOTH);
+        if (this.getExtendedState()!= UseriLL.MAXIMIZED_BOTH) {
+            this.setExtendedState(UseriLL.MAXIMIZED_BOTH);
 
         }else{
 
@@ -472,7 +472,7 @@ static int xx,yy;
      */
     
     public void getId(String id){
-    
+    Uid=id;
     }
     
     
@@ -490,14 +490,15 @@ static int xx,yy;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Illness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserIllness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Illness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserIllness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Illness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserIllness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Illness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserIllness.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -505,7 +506,7 @@ static int xx,yy;
              public void run() {
                 try {
                     UIManager.setLookAndFeel(new WindowsClassicLookAndFeel());
-                    new Illness().setVisible(true);
+                    new UseriLL().setVisible(true);
                 } catch (Exception e) {
                 }
             }

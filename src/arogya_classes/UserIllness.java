@@ -17,8 +17,9 @@ public class UserIllness {
     private String userId;
     String i1, i2, i3, i4, i5, i6, i7, i8, i9, i10;
     String[] illnessId = new String[10];
-    public void addUserIllness(String v1,String v2,String v3,String v4,String v5,String v6,String v7,String v8,String v9,String v10) throws ClassNotFoundException, SQLException
+    public void addUserIllness(String v1,String v2,String v3,String v4,String v5,String v6,String v7,String v8,String v9,String v10,String Uid) throws ClassNotFoundException, SQLException
     {
+        userId=Uid;
         illnessId[0]=v1;
         illnessId[1]=v2;
         illnessId[2]=v3;
@@ -37,7 +38,7 @@ public class UserIllness {
     {
        DB.getConnection();
        for(int i=0;i<11;i++){
-       IllDB.Execute("INSERT INTO illness (Illness_name,User_id) VALUES('" + illnessId[i] + "',108)");
+       IllDB.Execute("INSERT INTO illness (Illness_name,User_id) VALUES('" + illnessId[i] + "','" + userId + "')");
        System.out.print(illnessId[1]);
        
        }
