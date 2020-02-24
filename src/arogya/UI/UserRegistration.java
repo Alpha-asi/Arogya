@@ -532,7 +532,7 @@ public class UserRegistration extends javax.swing.JFrame {
     private void tfdobKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdobKeyReleased
 
     }//GEN-LAST:event_tfdobKeyReleased
-String Unic;
+String Unic;int i1 = 1;
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
          boolean rt = false;
          JTextField tf[] = {tflname,tffname,tfpass,tfdob,tfmnic,tfheight,tfweight,tfemail,tfuname};
@@ -555,16 +555,21 @@ String Unic;
        String ln = tflname.getText();
         String nic = tfmnic.getText();
          Unic=nic;
+         
          User newuser = new User();
                 try {
-                    newuser.userRegistration(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
-                                        
+                    newuser.userRegistration(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);              
                     clear();
                 } catch (SQLException ex) {
-                    new Fail().setVisible(true);
+                    if(i1==1){
+                    Fail f=new Fail();
+                   f.setVisible(true);
+                    i1=2;
+                    }
+                 //   
                     Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    new Fail().setVisible(true);
+                    System.out.println("b");
                     Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

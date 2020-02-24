@@ -101,8 +101,9 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
         float wef = Float.parseFloat(we);
         DB.Execute("INSERT INTO user_log VALUES('" + nic + "','" + uname + "','" + pass + "','" + mail + "','" + dob + "','" + gender + "','" + hif + "','" + wef + "','" + fn + "','" + ln + "',101)");
     // (Username,Password,User_email,User_dob,User_gender,User_height,User_weight,User_fname,User_lname)
-        new Supdate().setVisible(true);
-    
+        Supdate su = new Supdate();
+        su.setVisible(true);
+        connection.close();
  
     }
     
