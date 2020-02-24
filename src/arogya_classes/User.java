@@ -26,6 +26,7 @@ import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import javax.swing.UIManager;
 import arogya.UI.Supdate;
 import arogya.UI.View;
+import arogya.UI.Adminpanel;
 /**
  *
  * @author vimuk
@@ -78,14 +79,39 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
          m1.dispose();
          connection.close();
      }else{
+         ResultSet rs1=stmt.executeQuery("select * from admin_log");
+         while(rs1.next())
+             if(a.equals(rs1.getString(2))){
+         if(b.equals(rs1.getString(3))){ 
+         //m1.setVisible(true);
+         Adminpanel m = new Adminpanel();
+         m.setVisible(true);
+     
+        
+        m2.dispose();
+        m1.dispose();
+         connection.close();
+         }else{m1.dispose(); m2.setVisible(true);connection.close();}
+         }else{m1.setVisible(true);m2.dispose();connection.close();}
          
-         m1.setVisible(true);
-       
          }
           
      }else{
-            m1.dispose(); m2.setVisible(true);
-            
+          //  m1.dispose(); m2.setVisible(true);
+            ResultSet rs1=stmt.executeQuery("select * from admin_log");
+         while(rs1.next())   
+             if(a.equals(rs1.getString(2))){
+         if(b.equals(rs1.getString(3))){ 
+         //m1.setVisible(true);
+         Adminpanel m = new Adminpanel();
+         m.setVisible(true);
+         
+         m2.dispose();
+         m1.dispose();
+         connection.close();
+         }else{m1.setVisible(true);m2.dispose();connection.close();}
+         }else{m2.setVisible(true);connection.close();}
+         
      }
        
         connection.close();
