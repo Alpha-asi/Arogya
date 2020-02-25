@@ -5,6 +5,8 @@
  */
 package arogya_classes;
 
+import arogya.DB;
+import java.sql.SQLException;
 /**
  *
  * @author ADMIN
@@ -28,11 +30,12 @@ public class NutritionFact {
         
         
     }
+
     
-    
-    private void insertNutritionFact()
+    public void insertNutritionFact(String foodName,String Calories,String Carbs,String Fat,String Protein,String Vitamin_a,String Vitamin_b,String Vitamin_c,String Fiber,String Potasium,String Magnesium,String Sodium) throws ClassNotFoundException, SQLException
     {
-        
+        DB.getConnection();
+        DB.Execute("INSERT INTO nutrition_fact (Calories,Carbs,Fat,Protein,Vitamin_A,Vitamin_B,Vitamin_C,Fiber,Potasium,Magnesium,Sodium,Admin_id,Food_id) VALUES ('" + Calories + "','" + Carbs + "','" + Fat + "','" + Protein + "','" + Vitamin_a + "','" + Vitamin_b + "','" + Vitamin_c + "','" + Fiber + "','" + Potasium + "','" + Magnesium + "','" + Sodium + "',101,101)");
         
         
     }
