@@ -6,6 +6,7 @@
 package arogya_classes;
 
 import arogya.DB;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
  *
@@ -30,12 +31,22 @@ public class NutritionFact {
         
         
     }
-
+int admn;
     
-    public void insertNutritionFact(String foodName,String Calories,String Carbs,String Fat,String Protein,String Vitamin_a,String Vitamin_b,String Vitamin_c,String Fiber,String Potasium,String Magnesium,String Sodium) throws ClassNotFoundException, SQLException
+    public void insertNutritionFact(String Admin,String Calories,String Carbs,String Fat,String Protein,String Vitamin_a,String Vitamin_b,String Vitamin_c,String Fiber,String Potasium,String Magnesium,String Sodium) throws ClassNotFoundException, SQLException
     {
-        DB.getConnection();
-        DB.Execute("INSERT INTO nutrition_fact (Calories,Carbs,Fat,Protein,Vitamin_A,Vitamin_B,Vitamin_C,Fiber,Potasium,Magnesium,Sodium,Admin_id,Food_id) VALUES ('" + Calories + "','" + Carbs + "','" + Fat + "','" + Protein + "','" + Vitamin_a + "','" + Vitamin_b + "','" + Vitamin_c + "','" + Fiber + "','" + Potasium + "','" + Magnesium + "','" + Sodium + "',101,101)");
+         DB.getConnection();
+      String x1;
+   ResultSet rs = DB.search("SELECT * FROM admin_log WHERE Username='" + Admin + "'");
+    while(rs.next()){
+     x1=rs.getString(1);
+      admn = Integer.parseInt(x1);
+ 
+    }
+        System.out.print("cdsacascasc"+admn);
+        
+       
+        DB.Execute("INSERT INTO nutrition_fact(Calories,Carbs,Fat,Protein,Vitamin_A,Vitamin_B,Vitamin_C,Fiber,Potasium,Magnesium,Sodium,Admin_id,Food_id) VALUES ('" + Calories + "','" + Carbs + "','" + Fat + "','" + Protein + "','" + Vitamin_a + "','" + Vitamin_b + "','" + Vitamin_c + "','" + Fiber + "','" + Potasium + "','" + Magnesium + "','" + Sodium + "','" + admn + "',101)");
         
         
     }

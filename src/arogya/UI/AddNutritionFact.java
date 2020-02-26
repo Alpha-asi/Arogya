@@ -1,4 +1,4 @@
-package Nutrition_facts;
+package arogya.UI;
 
 
 import arogya_classes.NutritionFact;
@@ -7,6 +7,11 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import arogya_classes.NutritionFact;
+import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 
 /**
@@ -14,21 +19,22 @@ import arogya_classes.NutritionFact;
  * @author ADMIN
  */
 public class AddNutritionFact extends javax.swing.JFrame {
-
+ String g;
     /**
      * Creates new form NewJFrame
      */
     public AddNutritionFact() 
     {
-        initComponents();
+       setUndecorated(true);
+       initComponents();
+        Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
-    
-    public AddNutritionFact(String fd)
-    {
-        initComponents();
-        String foodname = fd;
-        foodTxt.setText(foodname);
-    }
+   
+   public void adName(String nam){
+  g = nam;
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,6 +81,10 @@ public class AddNutritionFact extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -508,6 +518,52 @@ public class AddNutritionFact extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
+        jPanel9.setBackground(new java.awt.Color(213, 0, 0));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/minimizepgg.png"))); // NOI18N
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/expandpgg.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel13MousePressed(evt);
+            }
+        });
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/exitpgg.png"))); // NOI18N
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -516,8 +572,10 @@ public class AddNutritionFact extends javax.swing.JFrame {
                 .addComponent(Back)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 762, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 610, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -530,8 +588,10 @@ public class AddNutritionFact extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -568,14 +628,14 @@ public class AddNutritionFact extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-        String foodName = foodTxt.getText();
+       // String foodName = foodTxt.getText();
         String Calories = caloriesTxt.getText();
         String Carbs = carbsTxt.getText();
         String Fat = fatTxt.getText();
@@ -588,10 +648,11 @@ public class AddNutritionFact extends javax.swing.JFrame {
         String Magnesium = magnesiumTxt.getText();
         String Sodium = sodiumTxt.getText();
         
-        NutritionFact n = new NutritionFact();
-        
+        NutritionFact nx = new NutritionFact();
+       
         try {
-            n.insertNutritionFact(foodName, Calories, Carbs, Fat, Protein, Vitamin_a, Vitamin_b, Vitamin_c, Fiber, Potasium, Magnesium, Sodium);
+            String aname=g;
+            nx.insertNutritionFact(aname, Calories, Carbs, Fat, Protein, Vitamin_a, Vitamin_b, Vitamin_c, Fiber, Potasium, Magnesium, Sodium);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AddNutritionFact.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -742,6 +803,25 @@ public class AddNutritionFact extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_foodTxtKeyTyped
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        this.setExtendedState(AddFood.ICONIFIED);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
+        if (this.getExtendedState()!= AddFood.MAXIMIZED_BOTH) {
+            this.setExtendedState(AddFood.MAXIMIZED_BOTH);
+
+        }else{
+
+            this.setSize(1280, 720);
+
+        }
+    }//GEN-LAST:event_jLabel13MousePressed
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel14MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -778,9 +858,12 @@ public class AddNutritionFact extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddNutritionFact().setVisible(true);
-            }
+             public void run() {
+                 try {
+                    UIManager.setLookAndFeel(new WindowsClassicLookAndFeel());
+                    new AddNutritionFact().setVisible(true);
+                } catch (Exception e) {
+                }}
         });
     }
 
@@ -799,6 +882,9 @@ public class AddNutritionFact extends javax.swing.JFrame {
     private javax.swing.JLabel fname;
     private javax.swing.JTextField foodTxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -807,6 +893,7 @@ public class AddNutritionFact extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel magnesium;
     private javax.swing.JTextField magnesiumTxt;
     private javax.swing.JLabel potasium;

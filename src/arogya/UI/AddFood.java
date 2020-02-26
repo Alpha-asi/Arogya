@@ -1,11 +1,18 @@
-package Nutrition_facts;
+package arogya.UI;
 
-
+import arogya.Essencials;
+import arogya.UI.Adminpanel;
 import arogya_classes.Food;
+import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+import arogya_classes.Food;
+import arogya.UI.AddNutritionFact;
 
 public class AddFood extends javax.swing.JFrame {
 
@@ -13,7 +20,17 @@ public class AddFood extends javax.swing.JFrame {
      * Creates new form AddFood
      */
     public AddFood() {
-        initComponents();
+        setUndecorated(true);
+       initComponents();
+        Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+      //  es = new Essencials();
+       // setIconImage();
+    }
+    String AdminNamex;
+    public void adName(String n){
+    AdminNamex = n;
     }
 
     /**
@@ -30,9 +47,7 @@ public class AddFood extends javax.swing.JFrame {
         bla = new javax.swing.JPanel();
         Firstname = new javax.swing.JLabel();
         fname = new javax.swing.JTextField();
-        wlimit = new javax.swing.JTextField();
         Lastname = new javax.swing.JLabel();
-        Username = new javax.swing.JLabel();
         Save = new javax.swing.JButton();
         Clear = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -44,6 +59,10 @@ public class AddFood extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(655, 745));
@@ -77,23 +96,9 @@ public class AddFood extends javax.swing.JFrame {
             }
         });
 
-        wlimit.setBackground(new java.awt.Color(33, 33, 33));
-        wlimit.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        wlimit.setForeground(new java.awt.Color(255, 255, 255));
-        wlimit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        wlimit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                wlimitActionPerformed(evt);
-            }
-        });
-
         Lastname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lastname.setForeground(new java.awt.Color(153, 153, 153));
         Lastname.setText("Food Status");
-
-        Username.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Username.setForeground(new java.awt.Color(153, 153, 153));
-        Username.setText("Water Limit");
 
         Save.setBackground(new java.awt.Color(213, 0, 0));
         Save.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -117,6 +122,7 @@ public class AddFood extends javax.swing.JFrame {
             }
         });
 
+        fstatus.setBackground(new java.awt.Color(33, 33, 33));
         fstatus.setColumns(20);
         fstatus.setRows(5);
         jScrollPane1.setViewportView(fstatus);
@@ -127,19 +133,16 @@ public class AddFood extends javax.swing.JFrame {
             blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(blaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Firstname)
-                        .addGroup(blaLayout.createSequentialGroup()
-                            .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(fname, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                        .addComponent(Lastname)
-                        .addComponent(jScrollPane1))
-                    .addComponent(Username)
-                    .addComponent(wlimit, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addGroup(blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
+                    .addComponent(Firstname)
+                    .addGroup(blaLayout.createSequentialGroup()
+                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Lastname)
+                    .addComponent(fname))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         blaLayout.setVerticalGroup(
             blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,12 +154,8 @@ public class AddFood extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Lastname)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Username)
-                .addGap(18, 18, 18)
-                .addComponent(wlimit, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(268, 268, 268)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(252, 252, 252)
                 .addGroup(blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -228,6 +227,52 @@ public class AddFood extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
+        jPanel9.setBackground(new java.awt.Color(213, 0, 0));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/minimizepgg.png"))); // NOI18N
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/expandpgg.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel13MousePressed(evt);
+            }
+        });
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/exitpgg.png"))); // NOI18N
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -238,6 +283,8 @@ public class AddFood extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -250,8 +297,10 @@ public class AddFood extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -326,7 +375,7 @@ public class AddFood extends javax.swing.JFrame {
         {
             fname.setText("");
             fstatus.setText("");
-            wlimit.setText("");
+           
             
             // TODO add your handling code here:
         }
@@ -334,13 +383,22 @@ public class AddFood extends javax.swing.JFrame {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
      
-          
-          
+          String foodname = fname.getText();
+            String foodstatus = fstatus.getText();
+           Food fd = new Food();
+        try {
+            fd.sendFood(foodname, foodstatus,AdminNamex);
+            AddNutritionFact anf = new AddNutritionFact();
+             anf.adName(AdminNamex);
+            anf.setVisible(true);
+           
+            this.dispose();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddFood.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddFood.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_SaveActionPerformed
-
-    private void wlimitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wlimitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_wlimitActionPerformed
 
     private void fnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnameKeyTyped
         // TODO add your handling code here:
@@ -349,6 +407,25 @@ public class AddFood extends javax.swing.JFrame {
     private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fnameActionPerformed
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        this.setExtendedState(AddFood.ICONIFIED);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
+        if (this.getExtendedState()!= AddFood.MAXIMIZED_BOTH) {
+            this.setExtendedState(AddFood.MAXIMIZED_BOTH);
+
+        }else{
+
+            this.setSize(1280, 720);
+
+        }
+    }//GEN-LAST:event_jLabel13MousePressed
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel14MouseClicked
 
     /**
      * @param args the command line arguments
@@ -380,8 +457,11 @@ public class AddFood extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddFood().setVisible(true);
-            }
+                 try {
+                    UIManager.setLookAndFeel(new WindowsClassicLookAndFeel());
+                    new AddFood().setVisible(true);
+                } catch (Exception e) {
+                }}
         });
     }
 
@@ -391,11 +471,13 @@ public class AddFood extends javax.swing.JFrame {
     private javax.swing.JLabel Firstname;
     private javax.swing.JLabel Lastname;
     private javax.swing.JButton Save;
-    private javax.swing.JLabel Username;
     private javax.swing.JPanel bla;
     private javax.swing.JTextField fname;
     private javax.swing.JTextArea fstatus;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -403,7 +485,7 @@ public class AddFood extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField wlimit;
     // End of variables declaration//GEN-END:variables
 }
