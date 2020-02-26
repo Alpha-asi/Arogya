@@ -492,7 +492,7 @@ public class UserRegistration extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -524,6 +524,104 @@ public class UserRegistration extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+String Unic;int i1 = 1;
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        this.dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_BackMouseClicked
+static int xx,yy;
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+        xx = evt.getX();
+        yy = evt.getY();
+    }//GEN-LAST:event_jPanel2MousePressed
+
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+         int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x-xx, y-yy);
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
+         if (this.getExtendedState()!= Login.MAXIMIZED_BOTH) {
+            this.setExtendedState(Login.MAXIMIZED_BOTH);
+            
+        }else{
+        
+        this.setSize(1280, 720);
+        
+        }
+    }//GEN-LAST:event_jLabel3MousePressed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.setExtendedState(Login.ICONIFIED);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jPanel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3KeyTyped
+
+    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
+        {
+            tffname.setText("");
+            tflname.setText("");
+            tfuname.setText("");
+            tfpass.setText("");
+            tfmnic.setText("");
+            tfdob.setText("");
+            tfgen.setText("");
+            tfemail.setText("");
+            tfheight.setText("");
+            tfweight.setText("");// TODO add your handling code here:
+        }
+    }//GEN-LAST:event_ClearActionPerformed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        boolean rt = false;
+        JTextField tf[] = {tflname,tffname,tfpass,tfdob,tfmnic,tfheight,tfweight,tfemail,tfuname};
+        for (int i = 0; i < tf.length; i++) {
+            if (tf[i].getText().equals("")) {
+                System.out.println(tf[i].getText());
+                toolt(tf[i], "This field cannot be empty");
+                rt = true;
+
+            }else{
+
+                String uname = tfuname.getText();
+                String pass = tfpass.getText();
+                String mail = tfemail.getText();
+                String dob = tfdob.getText();
+                String gender = tfgen.getText();
+                String hi = tfheight.getText();
+                String we = tfweight.getText();
+                String fn = tffname.getText();
+                String ln = tflname.getText();
+                String nic = tfmnic.getText();
+                Unic=nic;
+
+                User newuser = new User();
+                try {
+                    newuser.userRegistration(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);
+                    clear();
+                } catch (SQLException ex) {
+                    if(i1==1){
+                        Fail f=new Fail();
+                        f.setVisible(true);
+                        i1=2;
+                    }
+                    //
+                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    System.out.println("b");
+                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+        }
+    }//GEN-LAST:event_SaveActionPerformed
 
     private void tfdobKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdobKeyTyped
 
@@ -532,77 +630,12 @@ public class UserRegistration extends javax.swing.JFrame {
     private void tfdobKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdobKeyReleased
 
     }//GEN-LAST:event_tfdobKeyReleased
-String Unic;int i1 = 1;
-    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-         boolean rt = false;
-         JTextField tf[] = {tflname,tffname,tfpass,tfdob,tfmnic,tfheight,tfweight,tfemail,tfuname};
-        for (int i = 0; i < tf.length; i++) {
-            if (tf[i].getText().equals("")) {
-                System.out.println(tf[i].getText());
-                toolt(tf[i], "This field cannot be empty");
-                rt = true;
-                
-            }else{
-                
-       String uname = tfuname.getText();
-       String pass = tfpass.getText();
-       String mail = tfemail.getText();
-       String dob = tfdob.getText();
-       String gender = tfgen.getText();
-       String hi = tfheight.getText();
-       String we = tfweight.getText();
-       String fn = tffname.getText();
-       String ln = tflname.getText();
-        String nic = tfmnic.getText();
-         Unic=nic;
-         
-         User newuser = new User();
-                try {
-                    newuser.userRegistration(nic,uname, pass, mail, dob, gender, hi, we, fn, ln);              
-                    clear();
-                } catch (SQLException ex) {
-                    if(i1==1){
-                    Fail f=new Fail();
-                   f.setVisible(true);
-                    i1=2;
-                    }
-                 //   
-                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ClassNotFoundException ex) {
-                    System.out.println("b");
-                    Logger.getLogger(UserRegistration.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-                
-                }                                            
-                        
-    }//GEN-LAST:event_SaveActionPerformed
-
-    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
-        {
-        tffname.setText("");
-        tflname.setText("");
-        tfuname.setText("");
-        tfpass.setText("");
-        tfmnic.setText("");
-        tfdob.setText("");
-        tfgen.setText("");
-        tfemail.setText("");
-        tfheight.setText("");
-        tfweight.setText("");// TODO add your handling code here:
-        }
-    }//GEN-LAST:event_ClearActionPerformed
-
-    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        this.dispose();
-        new Login().setVisible(true);
-    }//GEN-LAST:event_BackMouseClicked
 
     private void tfmnicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfmnicActionPerformed
-         int Day = 0;
+        int Day = 0;
         String year = "";
-//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//        Calendar c = Calendar.getInstance();
+        //        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        //        Calendar c = Calendar.getInstance();
 
         if (tfmnic.getText().length() == 10) {
             String nic = tfmnic.getText().substring(0, 5);
@@ -620,18 +653,17 @@ String Unic;int i1 = 1;
         } else {
 
         }
-//        String nic = tfmnic.getText().substring(0, 5);
-//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//        Calendar c = Calendar.getInstance();
-//        String year = "19" + nic.substring(0, 2);
-//        System.out.println(date);
-//        String days = nic.substring(2);
-//        System.out.println(days);
-//        c.setTime(new Date(date));
-//        int Day = Integer.parseInt(days);
-//        c.add(Calendar.DATE, (dt));
-//        System.out.println(sdf.format(c.getTime()));
-
+        //        String nic = tfmnic.getText().substring(0, 5);
+        //        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        //        Calendar c = Calendar.getInstance();
+        //        String year = "19" + nic.substring(0, 2);
+        //        System.out.println(date);
+        //        String days = nic.substring(2);
+        //        System.out.println(days);
+        //        c.setTime(new Date(date));
+        //        int Day = Integer.parseInt(days);
+        //        c.add(Calendar.DATE, (dt));
+        //        System.out.println(sdf.format(c.getTime()));
 
         if (Day > 500) //Can Be Women's NIC No
         {
@@ -680,66 +712,29 @@ String Unic;int i1 = 1;
         }
     }//GEN-LAST:event_tfmnicActionPerformed
 
-    private void tfheightKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfheightKeyTyped
-        // TODO add your handling code here:
-      
-    }//GEN-LAST:event_tfheightKeyTyped
-
     private void tflnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tflnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tflnameActionPerformed
 
-    private void jPanel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel3KeyTyped
+    private void tffnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tffnameKeyTyped
         // TODO add your handling code here:
-  
-    }//GEN-LAST:event_jPanel3KeyTyped
+    }//GEN-LAST:event_tffnameKeyTyped
 
     private void tffnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tffnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tffnameActionPerformed
 
-    private void tffnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tffnameKeyTyped
+    private void tfweightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfweightActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_tfweightActionPerformed
 
-    }//GEN-LAST:event_tffnameKeyTyped
+    private void tfheightKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfheightKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfheightKeyTyped
 
     private void tfheightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfheightActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfheightActionPerformed
-
-    private void tfweightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfweightActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfweightActionPerformed
-static int xx,yy;
-    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
-        xx = evt.getX();
-        yy = evt.getY();
-    }//GEN-LAST:event_jPanel2MousePressed
-
-    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
-         int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x-xx, y-yy);
-    }//GEN-LAST:event_jPanel2MouseDragged
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
-         if (this.getExtendedState()!= Login.MAXIMIZED_BOTH) {
-            this.setExtendedState(Login.MAXIMIZED_BOTH);
-            
-        }else{
-        
-        this.setSize(1280, 720);
-        
-        }
-    }//GEN-LAST:event_jLabel3MousePressed
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        this.setExtendedState(Login.ICONIFIED);
-    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments

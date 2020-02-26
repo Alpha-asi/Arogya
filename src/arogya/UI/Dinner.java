@@ -14,6 +14,8 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JPopupMenu;
 import javax.swing.UIManager;
@@ -272,8 +274,12 @@ public class Dinner extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        this.dispose();
-        new Login().setVisible(true);
+         try {
+             this.dispose();
+             new Menu().setVisible(true);
+         } catch (InterruptedException ex) {
+             Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }//GEN-LAST:event_BackMouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked

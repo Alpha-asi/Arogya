@@ -14,6 +14,8 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
@@ -269,8 +271,12 @@ public class Lunch extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-        this.dispose();
-        new Login().setVisible(true);
+     try {
+         this.dispose();
+         new Menu().setVisible(true);
+     } catch (InterruptedException ex) {
+         Logger.getLogger(Lunch.class.getName()).log(Level.SEVERE, null, ex);
+     }
     }//GEN-LAST:event_Back2MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked

@@ -14,6 +14,8 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
@@ -290,11 +292,6 @@ public class Bfist extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfqtyKeyReleased
 
-    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        this.dispose();
-        new Login().setVisible(true);
-    }//GEN-LAST:event_BackMouseClicked
-
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         this.setExtendedState(Login.ICONIFIED);
     }//GEN-LAST:event_jLabel3MouseClicked
@@ -324,6 +321,15 @@ static int xx,yy;
         xx = evt.getX();
         yy = evt.getY();
     }//GEN-LAST:event_jPanel3MousePressed
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        try {
+            this.dispose();
+            new Menu().setVisible(true);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Bfist.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments

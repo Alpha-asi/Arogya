@@ -77,7 +77,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(655, 745));
 
         jPanel1.setBackground(new java.awt.Color(33, 33, 33));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 1920));
@@ -569,7 +568,7 @@ public class AddNutritionFact extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, Short.MAX_VALUE)
         );
 
         pack();
