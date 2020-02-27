@@ -48,7 +48,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        fname = new javax.swing.JLabel();
         calories = new javax.swing.JLabel();
         carbs = new javax.swing.JLabel();
         protein = new javax.swing.JLabel();
@@ -73,7 +72,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
         potasiumTxt = new javax.swing.JTextField();
         magnesiumTxt = new javax.swing.JTextField();
         sodiumTxt = new javax.swing.JTextField();
-        foodTxt = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         Back = new javax.swing.JLabel();
@@ -97,10 +95,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
                 jPanel3KeyTyped(evt);
             }
         });
-
-        fname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        fname.setForeground(new java.awt.Color(153, 153, 153));
-        fname.setText("Food Name");
 
         calories.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         calories.setForeground(new java.awt.Color(153, 153, 153));
@@ -126,7 +120,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
         Save.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Save.setForeground(new java.awt.Color(255, 255, 255));
         Save.setText("Next");
-        Save.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
@@ -137,7 +130,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
         Clear.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Clear.setForeground(new java.awt.Color(255, 255, 255));
         Clear.setText("Clear");
-        Clear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         Clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClearActionPerformed(evt);
@@ -333,21 +325,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
             }
         });
 
-        foodTxt.setBackground(new java.awt.Color(33, 33, 33));
-        foodTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        foodTxt.setForeground(new java.awt.Color(255, 255, 255));
-        foodTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        foodTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                foodTxtActionPerformed(evt);
-            }
-        });
-        foodTxt.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                foodTxtKeyTyped(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -356,29 +333,26 @@ public class AddNutritionFact extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(vitaminBTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(vitaminATxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(protainTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(fatTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(vitamin_a, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(vitamin_b, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(fname, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(carbs, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(calories, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                            .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(fat, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(fiber, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(potasium, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(caloriesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(protein)))
-                            .addComponent(foodTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(vitaminBTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vitaminATxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(protainTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fatTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(vitamin_a, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vitamin_b, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(carbs, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(calories, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(fat, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(fiber, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(potasium, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(caloriesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(protein)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(magnesiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -399,13 +373,9 @@ public class AddNutritionFact extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fname)
-                    .addComponent(magnesium))
+                .addComponent(magnesium)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(magnesiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(foodTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(magnesiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(calories)
@@ -628,7 +598,7 @@ public class AddNutritionFact extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, Short.MAX_VALUE)
         );
 
         pack();
@@ -795,14 +765,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sodiumTxtKeyTyped
 
-    private void foodTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_foodTxtActionPerformed
-
-    private void foodTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_foodTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_foodTxtKeyTyped
-
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         this.setExtendedState(AddFood.ICONIFIED);
     }//GEN-LAST:event_jLabel12MouseClicked
@@ -879,8 +841,6 @@ public class AddNutritionFact extends javax.swing.JFrame {
     private javax.swing.JTextField fatTxt;
     private javax.swing.JLabel fiber;
     private javax.swing.JTextField fiberTxt;
-    private javax.swing.JLabel fname;
-    private javax.swing.JTextField foodTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;

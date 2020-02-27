@@ -95,33 +95,29 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="vitaminBTxt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="vitaminATxt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="protainTxt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="fatTxt" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Component id="vitamin_a" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="vitamin_b" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="fname" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="carbs" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="calories" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Save" min="-2" pref="88" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="Clear" min="-2" pref="88" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="fat" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="fiber" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="potasium" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="caloriesTxt" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="vitaminBTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="vitaminATxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="protainTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fatTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Component id="vitamin_a" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="vitamin_b" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="carbs" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calories" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="Save" min="-2" pref="88" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="Clear" min="-2" pref="88" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="protein" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="fat" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="fiber" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="potasium" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="caloriesTxt" min="-2" pref="213" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="protein" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="foodTxt" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="35" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -150,15 +146,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="fname" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="magnesium" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="magnesium" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="magnesiumTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="foodTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="magnesiumTxt" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="calories" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -212,17 +202,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="fname">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="99" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Food Name"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="calories">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -290,13 +269,6 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Next"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="0" green="0" red="d5" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveActionPerformed"/>
@@ -314,13 +286,6 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clear"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClearActionPerformed"/>
@@ -654,30 +619,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sodiumTxtActionPerformed"/>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sodiumTxtKeyTyped"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="foodTxt">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="21" green="21" red="21" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="15" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder bottom="1" left="0" right="0" top="0">
-                      <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
-                    </MatteColorBorder>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="foodTxtActionPerformed"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="foodTxtKeyTyped"/>
               </Events>
             </Component>
           </SubComponents>
