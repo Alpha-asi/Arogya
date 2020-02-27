@@ -65,7 +65,6 @@ public class AddFood extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(655, 745));
 
         jPanel1.setBackground(new java.awt.Color(33, 33, 33));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 1920));
@@ -82,7 +81,7 @@ public class AddFood extends javax.swing.JFrame {
         Firstname.setText("Food Name");
 
         fname.setBackground(new java.awt.Color(33, 33, 33));
-        fname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        fname.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         fname.setForeground(new java.awt.Color(255, 255, 255));
         fname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         fname.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +123,8 @@ public class AddFood extends javax.swing.JFrame {
 
         fstatus.setBackground(new java.awt.Color(33, 33, 33));
         fstatus.setColumns(20);
+        fstatus.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        fstatus.setForeground(new java.awt.Color(255, 255, 255));
         fstatus.setRows(5);
         jScrollPane1.setViewportView(fstatus);
 
@@ -333,11 +334,11 @@ public class AddFood extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, Short.MAX_VALUE)
         );
 
         pack();
