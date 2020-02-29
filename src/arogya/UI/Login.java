@@ -51,7 +51,7 @@ public class Login extends javax.swing.JFrame {
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        // systemDate();
+         systemDate();
         setIconImage();
        
         
@@ -59,7 +59,7 @@ public class Login extends javax.swing.JFrame {
     
     public void systemDate(){
         int i = 1;
-   DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm");
+   DateFormat df = new SimpleDateFormat("yy-MM-dd");
    Date dateobj = new Date();
    System.out.println(df.format(dateobj));
    

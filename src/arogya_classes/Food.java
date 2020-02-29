@@ -28,16 +28,16 @@ public class Food {
     }
     int i;
     public void sendFood(String foodname,String foodstatus,String Admin) throws ClassNotFoundException, SQLException
-    {        DB.getConnection();
+    {
+    DB.getConnection();
     String x1; 
     ResultSet rs = DB.search("SELECT * FROM admin_log WHERE Username='" + Admin + "'");
     while(rs.next()){
-     x1=rs.getString(1);
-      i = Integer.parseInt(x1);
+    x1=rs.getString(1);
+    i = Integer.parseInt(x1);
     }
         DB.Execute("INSERT INTO food (Food_name,Food_status,Admin_id) VALUES ('" + foodname + "','" + foodstatus + "','" + i + "')");
-        
-        
+                
     }
     
     

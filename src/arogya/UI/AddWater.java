@@ -6,6 +6,7 @@
 package arogya.UI;
 
 import static arogya.UI.Login.xx;
+import arogya_classes.UserPortionFoodDetail;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
@@ -52,7 +53,7 @@ public class AddWater extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        tffname = new javax.swing.JTextField();
+        waterLimit = new javax.swing.JTextField();
         Firstname = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         expan = new javax.swing.JLabel();
@@ -75,18 +76,18 @@ public class AddWater extends javax.swing.JFrame {
             }
         });
 
-        tffname.setBackground(new java.awt.Color(33, 33, 33));
-        tffname.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        tffname.setForeground(new java.awt.Color(255, 255, 255));
-        tffname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        tffname.addActionListener(new java.awt.event.ActionListener() {
+        waterLimit.setBackground(new java.awt.Color(33, 33, 33));
+        waterLimit.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        waterLimit.setForeground(new java.awt.Color(255, 255, 255));
+        waterLimit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        waterLimit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tffnameActionPerformed(evt);
+                waterLimitActionPerformed(evt);
             }
         });
-        tffname.addKeyListener(new java.awt.event.KeyAdapter() {
+        waterLimit.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tffnameKeyTyped(evt);
+                waterLimitKeyTyped(evt);
             }
         });
 
@@ -145,6 +146,11 @@ public class AddWater extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButton1.setText("Done");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(215, 215, 215)));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-back-arrow-64.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -170,7 +176,7 @@ public class AddWater extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(247, 247, 247)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tffname)
+                        .addComponent(waterLimit)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(Firstname)
                             .addGap(0, 105, Short.MAX_VALUE)))
@@ -192,7 +198,7 @@ public class AddWater extends javax.swing.JFrame {
                     .addGap(195, 195, 195)
                     .addComponent(Firstname)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tffname, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(waterLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(195, Short.MAX_VALUE)))
         );
 
@@ -210,13 +216,13 @@ public class AddWater extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tffnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tffnameActionPerformed
+    private void waterLimitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waterLimitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tffnameActionPerformed
+    }//GEN-LAST:event_waterLimitActionPerformed
 
-    private void tffnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tffnameKeyTyped
+    private void waterLimitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_waterLimitKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_tffnameKeyTyped
+    }//GEN-LAST:event_waterLimitKeyTyped
 
     private void expanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_expanMouseClicked
 
@@ -257,7 +263,26 @@ static int xx,yy;
             Logger.getLogger(AddWater.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_BackMouseClicked
+String foodName;String qty;String UserName;
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+   sendData();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    public void getData(String f,String q,String u){
+    foodName=f;
+       qty=q;
+        UserName=u;
+    }
+    public void sendData(){
+        
+            String water = waterLimit.getText();
+
+    UserPortionFoodDetail upd = new UserPortionFoodDetail();
+       upd.generateMealDetails(foodName, qty,water,UserName);
+        System.out.print(foodName+qty+water+UserName);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -311,6 +336,6 @@ static int xx,yy;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField tffname;
+    private javax.swing.JTextField waterLimit;
     // End of variables declaration//GEN-END:variables
 }

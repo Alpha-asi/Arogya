@@ -19,7 +19,8 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
-
+import arogya_classes.UserPortionFoodDetail;
+import arogya.UI.AddWater;
 /**
  *
  * @author vimuk
@@ -96,6 +97,11 @@ public class Bfist extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButton4.setText("Add Food");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 36, 36)));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         qty.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         qty.setForeground(new java.awt.Color(255, 255, 255));
@@ -331,6 +337,20 @@ static int xx,yy;
         }
     }//GEN-LAST:event_BackMouseClicked
 
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+       String fname=tfsearch.getText();
+       String qty=tfqty.getText();
+       AddWater aw = new AddWater();
+       aw.getData(fname, qty,UserName);
+       aw.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButton4MouseClicked
+    String UserName;
+    public void getUserName(String n){
+    UserName = n;
+    
+    }
+    
     /**
      * @param args the command line arguments
      */

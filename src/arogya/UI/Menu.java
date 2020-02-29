@@ -354,7 +354,10 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseClicked
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-        // TODO add your handling code here:
+Bfist bf = new Bfist();
+bf.getUserName(tempName);
+bf.setVisible(true);
+this.dispose();
     }//GEN-LAST:event_Back1MouseClicked
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
@@ -427,7 +430,7 @@ public class Menu extends javax.swing.JFrame {
  String tempName;
     public void displayName(String name){
        accName.setText("Welcome! "+name);
-        
+        tempName=name;
     }
     
     public void sentBmi(String n){
