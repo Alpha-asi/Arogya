@@ -351,14 +351,15 @@ public class Essencials {
 
         if ("".equals(tf.getText())) {
             tf.setText(Default);
-            tf.setForeground(new Color(200, 200, 200));
-            js.setBorder(new MatteBorder(0, 0, 1, 0, new Color(220, 220, 220)));
+            tf.setForeground(new Color(150, 150, 150));
+            js.setBorder(new MatteBorder(0, 0, 1, 0, new Color(100, 100, 100)));
         }
     }
 
     public void customTBHEAD(JTable table, String tbVals[], int rows, Color c) {
+       
         JTableHeader head = table.getTableHeader();
-        head.setBackground(new java.awt.Color(250, 250, 250));
+        head.setBackground(new java.awt.Color(255, 229, 229));
         head.setPreferredSize(new Dimension(100, 35));
         TableColumnModel tableColumnModel = head.getColumnModel();
         TableCellRenderer renderer = new JComponentTableCellRenderer();
@@ -369,12 +370,14 @@ public class Essencials {
             labelTBH.setFont(tbHFont);
             if (i == (rows - 1)) {
                 labelTBH.setBorder(new MatteBorder(0, 0, 1, 0, c));
+               
             } else {
                 labelTBH.setBorder(new MatteBorder(0, 0, 1, 1, c));
             }
-            labelTBH.setForeground(Color.GRAY);
+            labelTBH.setForeground(Color.BLACK);
             column.setHeaderRenderer(renderer);
             column.setHeaderValue(labelTBH);
+            
         }
     }
 
