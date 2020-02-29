@@ -180,6 +180,7 @@ public class SearchFoods extends javax.swing.JFrame {
         Firstname.setForeground(new java.awt.Color(153, 153, 153));
         Firstname.setText("Food Name");
 
+        fname.setEditable(false);
         fname.setBackground(new java.awt.Color(33, 33, 33));
         fname.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         fname.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,6 +200,7 @@ public class SearchFoods extends javax.swing.JFrame {
         Lastname.setForeground(new java.awt.Color(153, 153, 153));
         Lastname.setText("Food Status");
 
+        fstatus.setEditable(false);
         fstatus.setBackground(new java.awt.Color(33, 33, 33));
         fstatus.setColumns(20);
         fstatus.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -283,6 +285,7 @@ public class SearchFoods extends javax.swing.JFrame {
         sodium.setForeground(new java.awt.Color(153, 153, 153));
         sodium.setText("Sodium");
 
+        carbsTxt.setEditable(false);
         carbsTxt.setBackground(new java.awt.Color(33, 33, 33));
         carbsTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         carbsTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -298,6 +301,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        caloriesTxt.setEditable(false);
         caloriesTxt.setBackground(new java.awt.Color(33, 33, 33));
         caloriesTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         caloriesTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -313,6 +317,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        fatTxt.setEditable(false);
         fatTxt.setBackground(new java.awt.Color(33, 33, 33));
         fatTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         fatTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -328,6 +333,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        protainTxt.setEditable(false);
         protainTxt.setBackground(new java.awt.Color(33, 33, 33));
         protainTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         protainTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -343,6 +349,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        vitaminATxt.setEditable(false);
         vitaminATxt.setBackground(new java.awt.Color(33, 33, 33));
         vitaminATxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         vitaminATxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -358,6 +365,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        vitaminBTxt.setEditable(false);
         vitaminBTxt.setBackground(new java.awt.Color(33, 33, 33));
         vitaminBTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         vitaminBTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -373,6 +381,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        fiberTxt.setEditable(false);
         fiberTxt.setBackground(new java.awt.Color(33, 33, 33));
         fiberTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         fiberTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -388,6 +397,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        vitaminCTxt.setEditable(false);
         vitaminCTxt.setBackground(new java.awt.Color(33, 33, 33));
         vitaminCTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         vitaminCTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -403,6 +413,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        potasiumTxt.setEditable(false);
         potasiumTxt.setBackground(new java.awt.Color(33, 33, 33));
         potasiumTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         potasiumTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -418,6 +429,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        magnesiumTxt.setEditable(false);
         magnesiumTxt.setBackground(new java.awt.Color(33, 33, 33));
         magnesiumTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         magnesiumTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -433,6 +445,7 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        sodiumTxt.setEditable(false);
         sodiumTxt.setBackground(new java.awt.Color(33, 33, 33));
         sodiumTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         sodiumTxt.setForeground(new java.awt.Color(255, 255, 255));

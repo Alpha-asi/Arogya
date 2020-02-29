@@ -263,6 +263,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="fname">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -305,6 +306,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="fstatus">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="21" green="21" red="21" type="rgb"/>
                     </Property>
@@ -546,6 +548,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="carbsTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -570,6 +573,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="caloriesTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -594,6 +598,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="fatTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -618,6 +623,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="protainTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -642,6 +648,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="vitaminATxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -666,6 +673,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="vitaminBTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -690,6 +698,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="fiberTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -714,6 +723,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="vitaminCTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -738,6 +748,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="potasiumTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -762,6 +773,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="magnesiumTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
@@ -786,6 +798,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="sodiumTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
