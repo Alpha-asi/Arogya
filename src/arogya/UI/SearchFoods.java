@@ -819,8 +819,12 @@ public class SearchFoods extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel3KeyTyped
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-        this.dispose();
-        new Adminpanel().setVisible(true);
+          try {
+              this.dispose();
+              new Menu().setVisible(true);
+          } catch (InterruptedException ex) {
+              Logger.getLogger(SearchFoods.class.getName()).log(Level.SEVERE, null, ex);
+          }
     }//GEN-LAST:event_Back2MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked

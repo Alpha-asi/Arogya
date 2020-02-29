@@ -350,8 +350,12 @@ public class UserDetails extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        this.dispose();
-        new Login().setVisible(true);
+        try {
+            this.dispose();
+            new Menu().setVisible(true);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BackMouseClicked
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
