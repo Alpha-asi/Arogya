@@ -39,7 +39,7 @@ public class SearchFoods extends javax.swing.JFrame {
     DefaultTableModel tbcus;
     
     public SearchFoods(){
-              initComponents();
+        initComponents();
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -75,7 +75,42 @@ public class SearchFoods extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         Back2 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        bla = new javax.swing.JPanel();
+        Firstname = new javax.swing.JLabel();
+        fname = new javax.swing.JTextField();
+        Lastname = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        fstatus = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        calories = new javax.swing.JLabel();
+        carbs = new javax.swing.JLabel();
+        protein = new javax.swing.JLabel();
+        vitamin_a = new javax.swing.JLabel();
+        vitamin_b = new javax.swing.JLabel();
+        fat = new javax.swing.JLabel();
+        vitamin_c = new javax.swing.JLabel();
+        fiber = new javax.swing.JLabel();
+        potasium = new javax.swing.JLabel();
+        magnesium = new javax.swing.JLabel();
+        sodium = new javax.swing.JLabel();
+        carbsTxt = new javax.swing.JTextField();
+        caloriesTxt = new javax.swing.JTextField();
+        fatTxt = new javax.swing.JTextField();
+        protainTxt = new javax.swing.JTextField();
+        vitaminATxt = new javax.swing.JTextField();
+        vitaminBTxt = new javax.swing.JTextField();
+        fiberTxt = new javax.swing.JTextField();
+        vitaminCTxt = new javax.swing.JTextField();
+        potasiumTxt = new javax.swing.JTextField();
+        magnesiumTxt = new javax.swing.JTextField();
+        sodiumTxt = new javax.swing.JTextField();
 
         jPopupMenu1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(220, 220, 220)));
 
@@ -117,6 +152,22 @@ public class SearchFoods extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
+        jPanel8.setBackground(new java.awt.Color(213, 0, 0));
+        jPanel8.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel8MouseDragged(evt);
+            }
+        });
+        jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel8MousePressed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Search Foods");
+
         Back2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-back-arrow-64.png"))); // NOI18N
         Back2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -124,38 +175,484 @@ public class SearchFoods extends javax.swing.JFrame {
             }
         });
 
+        jPanel9.setBackground(new java.awt.Color(213, 0, 0));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/minimizepgg.png"))); // NOI18N
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/expandpgg.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel13MousePressed(evt);
+            }
+        });
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/exitpgg.png"))); // NOI18N
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)))
+        );
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(Back2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Back2))
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        bla.setBackground(new java.awt.Color(33, 33, 33));
+        bla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                blaKeyTyped(evt);
+            }
+        });
+
+        Firstname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Firstname.setForeground(new java.awt.Color(153, 153, 153));
+        Firstname.setText("Food Name");
+
+        fname.setBackground(new java.awt.Color(33, 33, 33));
+        fname.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        fname.setForeground(new java.awt.Color(255, 255, 255));
+        fname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        fname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fnameActionPerformed(evt);
+            }
+        });
+        fname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fnameKeyTyped(evt);
+            }
+        });
+
+        Lastname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Lastname.setForeground(new java.awt.Color(153, 153, 153));
+        Lastname.setText("Food Status");
+
+        fstatus.setBackground(new java.awt.Color(33, 33, 33));
+        fstatus.setColumns(20);
+        fstatus.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        fstatus.setForeground(new java.awt.Color(255, 255, 255));
+        fstatus.setRows(5);
+        jScrollPane1.setViewportView(fstatus);
+
+        javax.swing.GroupLayout blaLayout = new javax.swing.GroupLayout(bla);
+        bla.setLayout(blaLayout);
+        blaLayout.setHorizontalGroup(
+            blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
+                    .addComponent(Firstname)
+                    .addComponent(Lastname)
+                    .addComponent(fname)))
+        );
+        blaLayout.setVerticalGroup(
+            blaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Firstname)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Lastname)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(368, 368, 368))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(33, 33, 33));
+        jPanel3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPanel3KeyTyped(evt);
+            }
+        });
+
+        calories.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        calories.setForeground(new java.awt.Color(153, 153, 153));
+        calories.setText("Calories");
+
+        carbs.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        carbs.setForeground(new java.awt.Color(153, 153, 153));
+        carbs.setText("Carbs");
+
+        protein.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        protein.setForeground(new java.awt.Color(153, 153, 153));
+        protein.setText("Protein");
+
+        vitamin_a.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        vitamin_a.setForeground(new java.awt.Color(153, 153, 153));
+        vitamin_a.setText("Vitamin A");
+
+        vitamin_b.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        vitamin_b.setForeground(new java.awt.Color(153, 153, 153));
+        vitamin_b.setText("Vitamin B");
+
+        fat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        fat.setForeground(new java.awt.Color(153, 153, 153));
+        fat.setText("Fat");
+
+        vitamin_c.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        vitamin_c.setForeground(new java.awt.Color(153, 153, 153));
+        vitamin_c.setText("Vitamin C");
+
+        fiber.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        fiber.setForeground(new java.awt.Color(153, 153, 153));
+        fiber.setText("Fiber");
+
+        potasium.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        potasium.setForeground(new java.awt.Color(153, 153, 153));
+        potasium.setText("Potasium");
+
+        magnesium.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        magnesium.setForeground(new java.awt.Color(153, 153, 153));
+        magnesium.setText("Magnesium");
+
+        sodium.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        sodium.setForeground(new java.awt.Color(153, 153, 153));
+        sodium.setText("Sodium");
+
+        carbsTxt.setBackground(new java.awt.Color(33, 33, 33));
+        carbsTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        carbsTxt.setForeground(new java.awt.Color(255, 255, 255));
+        carbsTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        carbsTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                carbsTxtActionPerformed(evt);
+            }
+        });
+        carbsTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                carbsTxtKeyTyped(evt);
+            }
+        });
+
+        caloriesTxt.setBackground(new java.awt.Color(33, 33, 33));
+        caloriesTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        caloriesTxt.setForeground(new java.awt.Color(255, 255, 255));
+        caloriesTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        caloriesTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                caloriesTxtActionPerformed(evt);
+            }
+        });
+        caloriesTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caloriesTxtKeyTyped(evt);
+            }
+        });
+
+        fatTxt.setBackground(new java.awt.Color(33, 33, 33));
+        fatTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        fatTxt.setForeground(new java.awt.Color(255, 255, 255));
+        fatTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        fatTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fatTxtActionPerformed(evt);
+            }
+        });
+        fatTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fatTxtKeyTyped(evt);
+            }
+        });
+
+        protainTxt.setBackground(new java.awt.Color(33, 33, 33));
+        protainTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        protainTxt.setForeground(new java.awt.Color(255, 255, 255));
+        protainTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        protainTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                protainTxtActionPerformed(evt);
+            }
+        });
+        protainTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                protainTxtKeyTyped(evt);
+            }
+        });
+
+        vitaminATxt.setBackground(new java.awt.Color(33, 33, 33));
+        vitaminATxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        vitaminATxt.setForeground(new java.awt.Color(255, 255, 255));
+        vitaminATxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        vitaminATxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vitaminATxtActionPerformed(evt);
+            }
+        });
+        vitaminATxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                vitaminATxtKeyTyped(evt);
+            }
+        });
+
+        vitaminBTxt.setBackground(new java.awt.Color(33, 33, 33));
+        vitaminBTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        vitaminBTxt.setForeground(new java.awt.Color(255, 255, 255));
+        vitaminBTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        vitaminBTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vitaminBTxtActionPerformed(evt);
+            }
+        });
+        vitaminBTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                vitaminBTxtKeyTyped(evt);
+            }
+        });
+
+        fiberTxt.setBackground(new java.awt.Color(33, 33, 33));
+        fiberTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        fiberTxt.setForeground(new java.awt.Color(255, 255, 255));
+        fiberTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        fiberTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fiberTxtActionPerformed(evt);
+            }
+        });
+        fiberTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fiberTxtKeyTyped(evt);
+            }
+        });
+
+        vitaminCTxt.setBackground(new java.awt.Color(33, 33, 33));
+        vitaminCTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        vitaminCTxt.setForeground(new java.awt.Color(255, 255, 255));
+        vitaminCTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        vitaminCTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vitaminCTxtActionPerformed(evt);
+            }
+        });
+        vitaminCTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                vitaminCTxtKeyTyped(evt);
+            }
+        });
+
+        potasiumTxt.setBackground(new java.awt.Color(33, 33, 33));
+        potasiumTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        potasiumTxt.setForeground(new java.awt.Color(255, 255, 255));
+        potasiumTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        potasiumTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                potasiumTxtActionPerformed(evt);
+            }
+        });
+        potasiumTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                potasiumTxtKeyTyped(evt);
+            }
+        });
+
+        magnesiumTxt.setBackground(new java.awt.Color(33, 33, 33));
+        magnesiumTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        magnesiumTxt.setForeground(new java.awt.Color(255, 255, 255));
+        magnesiumTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        magnesiumTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                magnesiumTxtActionPerformed(evt);
+            }
+        });
+        magnesiumTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                magnesiumTxtKeyTyped(evt);
+            }
+        });
+
+        sodiumTxt.setBackground(new java.awt.Color(33, 33, 33));
+        sodiumTxt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        sodiumTxt.setForeground(new java.awt.Color(255, 255, 255));
+        sodiumTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        sodiumTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sodiumTxtActionPerformed(evt);
+            }
+        });
+        sodiumTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sodiumTxtKeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(vitaminBTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(vitaminATxt, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(protainTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(fatTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(vitamin_a, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(vitamin_b, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(carbs, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(calories, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(fat, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(fiber, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(potasium, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(caloriesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(protein)))
+                    .addComponent(carbsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vitamin_c)
+                    .addComponent(fiberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vitaminCTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(potasiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(magnesiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(magnesium)
+                    .addComponent(sodium)
+                    .addComponent(sodiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(calories)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(caloriesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(carbs)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(carbsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fatTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(protein)
+                .addGap(12, 12, 12)
+                .addComponent(protainTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(vitamin_a)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vitaminATxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(vitamin_b)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vitaminBTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(vitamin_c)
+                .addGap(11, 11, 11)
+                .addComponent(vitaminCTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fiber)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fiberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(potasium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(potasiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(magnesium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(magnesiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sodium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sodiumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(tfsearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(78, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Back2)
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tfsearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 56, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Back2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(bla, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(594, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,14 +683,144 @@ public class SearchFoods extends javax.swing.JFrame {
     }//GEN-LAST:event_tfsearchKeyReleased
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-          try {
-              this.dispose();
-              new Menu().setVisible(true);
-          } catch (InterruptedException ex) {
-              Logger.getLogger(SearchFoods.class.getName()).log(Level.SEVERE, null, ex);
-          }
+        this.dispose();
+        new Adminpanel().setVisible(true);
     }//GEN-LAST:event_Back2MouseClicked
-       private void searchAll(String query) {
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        this.setExtendedState(Login.ICONIFIED);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
+        if (this.getExtendedState()!= Login.MAXIMIZED_BOTH) {
+            this.setExtendedState(Login.MAXIMIZED_BOTH);
+
+        }else{
+
+            this.setSize(1280, 720);
+
+        }
+    }//GEN-LAST:event_jLabel13MousePressed
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jPanel8MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x-xx, y-yy);
+    }//GEN-LAST:event_jPanel8MouseDragged
+
+    private void jPanel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MousePressed
+        xx = evt.getX();
+        yy = evt.getY();
+    }//GEN-LAST:event_jPanel8MousePressed
+
+    private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnameActionPerformed
+
+    private void fnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnameKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnameKeyTyped
+
+    private void blaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_blaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_blaKeyTyped
+
+    private void carbsTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carbsTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_carbsTxtActionPerformed
+
+    private void carbsTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carbsTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_carbsTxtKeyTyped
+
+    private void caloriesTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caloriesTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_caloriesTxtActionPerformed
+
+    private void caloriesTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caloriesTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_caloriesTxtKeyTyped
+
+    private void fatTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fatTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fatTxtActionPerformed
+
+    private void fatTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fatTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fatTxtKeyTyped
+
+    private void protainTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_protainTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_protainTxtActionPerformed
+
+    private void protainTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_protainTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_protainTxtKeyTyped
+
+    private void vitaminATxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminATxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminATxtActionPerformed
+
+    private void vitaminATxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminATxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminATxtKeyTyped
+
+    private void vitaminBTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminBTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminBTxtActionPerformed
+
+    private void vitaminBTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminBTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminBTxtKeyTyped
+
+    private void fiberTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiberTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fiberTxtActionPerformed
+
+    private void fiberTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fiberTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fiberTxtKeyTyped
+
+    private void vitaminCTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminCTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminCTxtActionPerformed
+
+    private void vitaminCTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminCTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminCTxtKeyTyped
+
+    private void potasiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potasiumTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_potasiumTxtActionPerformed
+
+    private void potasiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_potasiumTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_potasiumTxtKeyTyped
+
+    private void magnesiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magnesiumTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_magnesiumTxtActionPerformed
+
+    private void magnesiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_magnesiumTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_magnesiumTxtKeyTyped
+
+    private void sodiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sodiumTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sodiumTxtActionPerformed
+
+    private void sodiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sodiumTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sodiumTxtKeyTyped
+
+    private void jPanel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3KeyTyped
+int xx,yy;       private void searchAll(String query) {
         try {
             ResultSet rs = DB.search(query);
             tbcus.setRowCount(0);
@@ -280,12 +907,47 @@ public class SearchFoods extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back2;
+    private javax.swing.JLabel Firstname;
+    private javax.swing.JLabel Lastname;
+    private javax.swing.JPanel bla;
+    private javax.swing.JLabel calories;
+    private javax.swing.JTextField caloriesTxt;
+    private javax.swing.JLabel carbs;
+    private javax.swing.JTextField carbsTxt;
+    private javax.swing.JLabel fat;
+    private javax.swing.JTextField fatTxt;
+    private javax.swing.JLabel fiber;
+    private javax.swing.JTextField fiberTxt;
+    private javax.swing.JTextField fname;
+    private javax.swing.JTextArea fstatus;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel magnesium;
+    private javax.swing.JTextField magnesiumTxt;
+    private javax.swing.JLabel potasium;
+    private javax.swing.JTextField potasiumTxt;
+    private javax.swing.JTextField protainTxt;
+    private javax.swing.JLabel protein;
+    private javax.swing.JLabel sodium;
+    private javax.swing.JTextField sodiumTxt;
     private javax.swing.JTextField tfsearch;
+    private javax.swing.JTextField vitaminATxt;
+    private javax.swing.JTextField vitaminBTxt;
+    private javax.swing.JTextField vitaminCTxt;
+    private javax.swing.JLabel vitamin_a;
+    private javax.swing.JLabel vitamin_b;
+    private javax.swing.JLabel vitamin_c;
     // End of variables declaration//GEN-END:variables
 }
