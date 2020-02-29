@@ -51,17 +51,18 @@ public class Login extends javax.swing.JFrame {
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-         systemDate();
+        // systemDate();
         setIconImage();
        
         
     }
     
     public void systemDate(){
+        int i = 1;
    DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm");
    Date dateobj = new Date();
    System.out.println(df.format(dateobj));
-   sysdate.setText(df.format(dateobj));
+   
     }
 
     /**
@@ -327,9 +328,7 @@ public class Login extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InterruptedException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-     
+        }     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void regMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regMouseClicked

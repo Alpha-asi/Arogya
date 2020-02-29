@@ -12,7 +12,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
-
+import arogya.UI.AdminUpdateSuccess;
 
 /**
  *
@@ -34,6 +34,11 @@ public class AddNutritionFact extends javax.swing.JFrame {
    
    public void adName(String nam){
   g = nam;
+   }
+   String ffname;
+   public void getFoodName(String fname){
+   
+   ffname = fname;
    }
 
     /**
@@ -627,7 +632,9 @@ public class AddNutritionFact extends javax.swing.JFrame {
        
         try {
             String aname=g;
-            nx.insertNutritionFact(aname, Calories, Carbs, Fat, Protein, Vitamin_a, Vitamin_b, Vitamin_c, Fiber, Potasium, Magnesium, Sodium);
+            nx.insertNutritionFact(ffname,aname, Calories, Carbs, Fat, Protein, Vitamin_a, Vitamin_b, Vitamin_c, Fiber, Potasium, Magnesium, Sodium);
+            //adminupdatesuc();
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AddNutritionFact.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -637,6 +644,14 @@ public class AddNutritionFact extends javax.swing.JFrame {
      
     }//GEN-LAST:event_SaveActionPerformed
 
+    public void adminupdatesuc(){
+    AdminUpdateSuccess aus = new AdminUpdateSuccess();
+    aus.setVisible(true);
+    this.dispose();
+    
+    }
+    
+    
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
         {
             caloriesTxt.setText("");

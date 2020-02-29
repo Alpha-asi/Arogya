@@ -59,8 +59,8 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
         System.out.print(a);
         System.out.print(b);
       //  return null;
-        
-     
+       Adminpanel ap = new Adminpanel(); 
+     Adminpanel ap1 = new Adminpanel();
      Login m1 = new Login(); Login m2 = new Login(); 
      ResultSet rs=DB.search("select * from user_log"); 
      while(rs.next())  {
@@ -69,6 +69,7 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
      if(a.equals(rs.getString(2))){
          if(b.equals(rs.getString(3))){
          Menu menu = new Menu();
+         menu.displayName(a);
          menu.setVisible(true);
          }else {
              
@@ -77,9 +78,9 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
                  if(a.equals(rsad.getString(2))){
                        if(b.equals(rsad.getString(3))){
                        
-                       Adminpanel ap = new Adminpanel();
-                       ap.setVisible(true);
-                       
+                       ap1.disAdminName(a);
+                       ap1.setVisible(true);
+                       ap.dispose();
                        }
                  
                  
@@ -98,8 +99,9 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
                  if(a.equals(rsad.getString(2))){
                        if(b.equals(rsad.getString(3))){
                        
-                       Adminpanel ap = new Adminpanel();
+                       ap.disAdminName(a);
                        ap.setVisible(true);
+                       ap1.dispose();
                        
                        }
                  
@@ -123,9 +125,7 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
         float wef = Float.parseFloat(we);
         DB.Execute("INSERT INTO user_log VALUES('" + nic + "','" + uname + "','" + pass + "','" + mail + "','" + dob + "','" + gender + "','" + hif + "','" + wef + "','" + fn + "','" + ln + "',101)");
     // (Username,Password,User_email,User_dob,User_gender,User_height,User_weight,User_fname,User_lname)
-        Supdate su = new Supdate();
-        su.setVisible(true);
-        connection.close();
+        
  
     }
     

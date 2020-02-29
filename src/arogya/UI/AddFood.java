@@ -391,6 +391,7 @@ public class AddFood extends javax.swing.JFrame {
             fd.sendFood(foodname, foodstatus,AdminNamex);
             AddNutritionFact anf = new AddNutritionFact();
              anf.adName(AdminNamex);
+             anf.getFoodName(foodname);
             anf.setVisible(true);
            
             this.dispose();
