@@ -633,6 +633,7 @@ public class AddNutritionFact extends javax.swing.JFrame {
         try {
             String aname=g;
             nx.insertNutritionFact(ffname,aname, Calories, Carbs, Fat, Protein, Vitamin_a, Vitamin_b, Vitamin_c, Fiber, Potasium, Magnesium, Sodium);
+          this.dispose();
             //adminupdatesuc();
             
         } catch (ClassNotFoundException ex) {

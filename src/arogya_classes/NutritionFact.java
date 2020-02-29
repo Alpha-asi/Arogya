@@ -36,6 +36,8 @@ int admn;
     
     public void insertNutritionFact(String ffname,String Admin,String Calories,String Carbs,String Fat,String Protein,String Vitamin_a,String Vitamin_b,String Vitamin_c,String Fiber,String Potasium,String Magnesium,String Sodium) throws ClassNotFoundException, SQLException
     {
+          try {
+        
          DB.getConnection();
       String x1;
    ResultSet rs = DB.search("SELECT * FROM admin_log WHERE Username='" + Admin + "'");
@@ -62,13 +64,18 @@ int admn;
         }
      
      }
+      } catch (Exception e) {
+        }
        
     }
     
     
      private void updateNutritionFact()
     {
-        
+      
+            
+       
+                
         
         
     }
