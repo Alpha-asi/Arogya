@@ -52,6 +52,7 @@ public class SearchFoods extends javax.swing.JFrame {
         es.customTBHEAD(jTable1, headings, 4, new Color(33, 33, 33));
        tbcus = (DefaultTableModel) jTable1.getModel();
         searchAll("SELECT * FROM food");
+        tfsearch.grabFocus();
     }
     
   
@@ -130,6 +131,11 @@ public class SearchFoods extends javax.swing.JFrame {
         tfsearch.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         tfsearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(220, 220, 220)));
         tfsearch.setPreferredSize(new java.awt.Dimension(2, 23));
+        tfsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfsearchActionPerformed(evt);
+            }
+        });
         tfsearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfsearchKeyReleased(evt);
@@ -138,8 +144,13 @@ public class SearchFoods extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 229, 229));
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jButton4.setText("Clear Search");
+        jButton4.setText("Select");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 36, 36)));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jTable1.setBackground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -828,6 +839,74 @@ public class SearchFoods extends javax.swing.JFrame {
         xx = evt.getX();
         yy = evt.getY();
     }//GEN-LAST:event_jPanel8MousePressed
+String i;
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+           try {
+            ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + tfsearch.getText() + "'");
+            
+            while (rs.next()) {
+               String val=tfsearch.getText();
+               if(val.equals(rs.getString(2))){
+                  fname.setText(rs.getString(2));
+                  fstatus.setText(rs.getString(3));
+                  i = rs.getString(1);
+        
+               }
+      
+            }
+             ResultSet rs1 = DB.search("SELECT * FROM nutrition_fact WHERE Food_id='" + i+ "'");
+               while (rs1.next()) {
+               caloriesTxt.setText(rs1.getString(2));
+               carbsTxt.setText(rs1.getString(3));
+               fatTxt.setText(rs1.getString(4));
+               protainTxt.setText(rs1.getString(5));
+               vitaminATxt.setText(rs1.getString(6));
+               vitaminBTxt.setText(rs1.getString(7));
+               vitaminCTxt.setText(rs1.getString(8));
+               fiberTxt.setText(rs1.getString(9));
+               potasiumTxt.setText(rs1.getString(10));
+               magnesiumTxt.setText(rs1.getString(11));
+               sodiumTxt.setText(rs1.getString(12));
+               }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void tfsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsearchActionPerformed
+        try {
+            ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + tfsearch.getText() + "'");
+            
+            while (rs.next()) {
+               String val=tfsearch.getText();
+               if(val.equals(rs.getString(2))){
+                  fname.setText(rs.getString(2));
+                  fstatus.setText(rs.getString(3));
+                  i = rs.getString(1);
+        
+               }
+      
+            }
+             ResultSet rs1 = DB.search("SELECT * FROM nutrition_fact WHERE Food_id='" + i+ "'");
+               while (rs1.next()) {
+               caloriesTxt.setText(rs1.getString(2));
+               carbsTxt.setText(rs1.getString(3));
+               fatTxt.setText(rs1.getString(4));
+               protainTxt.setText(rs1.getString(5));
+               vitaminATxt.setText(rs1.getString(6));
+               vitaminBTxt.setText(rs1.getString(7));
+               vitaminCTxt.setText(rs1.getString(8));
+               fiberTxt.setText(rs1.getString(9));
+               potasiumTxt.setText(rs1.getString(10));
+               magnesiumTxt.setText(rs1.getString(11));
+               sodiumTxt.setText(rs1.getString(12));
+               }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_tfsearchActionPerformed
 int xx,yy;       private void searchAll(String query) {
         try {
             ResultSet rs = DB.search(query);

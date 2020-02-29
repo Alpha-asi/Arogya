@@ -15,13 +15,13 @@ import java.sql.SQLException;
 public class Food {
     
     
-    private String foodid,adminid,foodName,deletefood,foodStatus;
+    private String foodid,adminid,deletefood,foodStatus;
     
     
    
-    public void searchFood()
+    public void searchFood(String foodName)
     {
-        
+       
         
         
         
