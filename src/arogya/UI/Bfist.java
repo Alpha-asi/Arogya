@@ -7,6 +7,7 @@ package arogya.UI;
 
 import arogya.DB;
 import arogya.Essencials;
+import arogya.IllDB;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
@@ -87,6 +88,11 @@ public class Bfist extends javax.swing.JFrame {
         tfsearch.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         tfsearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(220, 220, 220)));
         tfsearch.setPreferredSize(new java.awt.Dimension(2, 23));
+        tfsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfsearchActionPerformed(evt);
+            }
+        });
         tfsearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfsearchKeyReleased(evt);
@@ -112,6 +118,11 @@ public class Bfist extends javax.swing.JFrame {
         tfqty.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         tfqty.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(220, 220, 220)));
         tfqty.setPreferredSize(new java.awt.Dimension(2, 23));
+        tfqty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfqtyActionPerformed(evt);
+            }
+        });
         tfqty.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfqtyKeyReleased(evt);
@@ -283,7 +294,7 @@ public class Bfist extends javax.swing.JFrame {
 
     private void tfsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfsearchKeyReleased
         try {
-            ResultSet rs = DB.search("SELECT Food_name FROM food WHERE Food_name LIKE '%" + tfsearch.getText() + "%'");
+            ResultSet rs = IllDB.search("SELECT Food_name FROM food WHERE Food_name LIKE '%" + tfsearch.getText() + "%'");
             Vector v = new Vector();
             while (rs.next()) {
                 v.add(rs.getString(1));
@@ -330,21 +341,39 @@ static int xx,yy;
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         try {
-            this.dispose();
-            new Menu().setVisible(true);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Bfist.class.getName()).log(Level.SEVERE, null, ex);
-        }
+             
+             Menu m = new Menu();
+             m.displayName(UserName);
+             m.setVisible(true);
+             this.dispose();
+         } catch (InterruptedException ex) {
+             Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }//GEN-LAST:event_BackMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-       String fname=tfsearch.getText();
+          String fname=tfsearch.getText();
        String qty=tfqty.getText();
        AddWater aw = new AddWater();
-       aw.getData(fname, qty,UserName);
+       String po = "Breakfast";
+       aw.getData(fname, qty,UserName,po);
        aw.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void tfsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsearchActionPerformed
+        tfqty.grabFocus();
+    }//GEN-LAST:event_tfsearchActionPerformed
+
+    private void tfqtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfqtyActionPerformed
+        String fname=tfsearch.getText();
+       String qty=tfqty.getText();
+       AddWater aw = new AddWater();
+       String po = "Brekfast";
+       aw.getData(fname, qty,UserName,po);
+       aw.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_tfqtyActionPerformed
     String UserName;
     public void getUserName(String n){
     UserName = n;
