@@ -11,6 +11,7 @@ import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.sql.SQLException;
 import javax.swing.UIManager;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;    
@@ -269,7 +270,13 @@ static int xx,yy;
 String foodName;String qty;String UserName;String po;
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-   sendData();
+        try {
+            sendData();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddWater.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddWater.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1MouseClicked
 
     public void getData(String f,String q,String u,String p){
@@ -278,7 +285,7 @@ String foodName;String qty;String UserName;String po;
         UserName=u;
         po=p;
     }
-    public void sendData(){
+    public void sendData() throws ClassNotFoundException, SQLException{
         
             String water = waterLimit.getText();
 

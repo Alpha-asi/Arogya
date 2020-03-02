@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import arogya.UI.SearchFoods;
 import java.awt.Toolkit;
+import arogya_classes.HealthStatus;
 /**
  *
  * @author vimuk
@@ -386,9 +387,9 @@ this.dispose();
     }//GEN-LAST:event_Back4MouseClicked
 
     private void Back6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back6MouseClicked
+        HealthStatus hs = new HealthStatus();
         try {
-            // TODO add your handling code here:mjmhmbmbjm
-            openBmi();
+            hs.calHealthStatus(tempName);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

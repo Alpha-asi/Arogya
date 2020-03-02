@@ -56,12 +56,29 @@ public class Login extends javax.swing.JFrame {
        
         
     }
-    
+    SimpleDateFormat sdf;
     public void systemDate(){
         int i = 1;
    DateFormat df = new SimpleDateFormat("yy-MM-dd");
    Date dateobj = new Date();
+   sdf = new SimpleDateFormat("hh:mm:ss");
+   new Thread(new Runnable() {
+            @Override
+            public void run() {
+            while(true){
+            Date d = new Date();
+            sysdate.setText(sdf.format(d));
+            
+                try {
+                    Thread.sleep(500);
+                } catch (Exception e) {
+                }
+            }
+            }
+        }).start();
    System.out.println(df.format(dateobj));
+   
+   
    
     }
 
