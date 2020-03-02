@@ -256,30 +256,34 @@ static int xx,yy;
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        try {
-            this.dispose();
-            new Menu().setVisible(true);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(AddWater.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       try {
+             
+             Menu m = new Menu();
+             m.displayName(UserName);
+             m.setVisible(true);
+             this.dispose();
+         } catch (InterruptedException ex) {
+             Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }//GEN-LAST:event_BackMouseClicked
-String foodName;String qty;String UserName;
+String foodName;String qty;String UserName;String po;
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
    sendData();
     }//GEN-LAST:event_jButton1MouseClicked
 
-    public void getData(String f,String q,String u){
+    public void getData(String f,String q,String u,String p){
     foodName=f;
        qty=q;
         UserName=u;
+        po=p;
     }
     public void sendData(){
         
             String water = waterLimit.getText();
 
     UserPortionFoodDetail upd = new UserPortionFoodDetail();
-       upd.generateMealDetails(foodName, qty,water,UserName);
+       upd.generateMealDetails(foodName, qty,water,UserName,po);
         System.out.print(foodName+qty+water+UserName);
     }
     

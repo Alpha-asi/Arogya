@@ -7,6 +7,7 @@ package arogya.UI;
 
 import arogya.DB;
 import arogya.Essencials;
+import arogya.IllDB;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
@@ -60,10 +61,10 @@ public class Lunch extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        tfsearch1 = new javax.swing.JTextField();
+        tfsearch = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         qty1 = new javax.swing.JLabel();
-        tfqty1 = new javax.swing.JTextField();
+        tfqty = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -172,12 +173,17 @@ public class Lunch extends javax.swing.JFrame {
         jLabel15.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 3, 0, 0, new java.awt.Color(213, 0, 0)));
         jLabel15.setPreferredSize(new java.awt.Dimension(60, 12));
 
-        tfsearch1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        tfsearch1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(220, 220, 220)));
-        tfsearch1.setPreferredSize(new java.awt.Dimension(2, 23));
-        tfsearch1.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfsearch.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        tfsearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(220, 220, 220)));
+        tfsearch.setPreferredSize(new java.awt.Dimension(2, 23));
+        tfsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfsearchActionPerformed(evt);
+            }
+        });
+        tfsearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                tfsearch1KeyReleased(evt);
+                tfsearchKeyReleased(evt);
             }
         });
 
@@ -185,6 +191,11 @@ public class Lunch extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButton5.setText("Add Food");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 36, 36)));
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         qty1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         qty1.setForeground(new java.awt.Color(255, 255, 255));
@@ -192,12 +203,17 @@ public class Lunch extends javax.swing.JFrame {
         qty1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 3, 0, 0, new java.awt.Color(213, 0, 0)));
         qty1.setPreferredSize(new java.awt.Dimension(60, 12));
 
-        tfqty1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        tfqty1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(220, 220, 220)));
-        tfqty1.setPreferredSize(new java.awt.Dimension(2, 23));
-        tfqty1.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfqty.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        tfqty.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(220, 220, 220)));
+        tfqty.setPreferredSize(new java.awt.Dimension(2, 23));
+        tfqty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfqtyActionPerformed(evt);
+            }
+        });
+        tfqty.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                tfqty1KeyReleased(evt);
+                tfqtyKeyReleased(evt);
             }
         });
 
@@ -208,12 +224,12 @@ public class Lunch extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfsearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(qty1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                    .addComponent(tfqty1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tfqty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(295, Short.MAX_VALUE))
@@ -227,12 +243,12 @@ public class Lunch extends javax.swing.JFrame {
                         .addComponent(qty1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfqty1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(tfsearch1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
 
@@ -272,11 +288,14 @@ public class Lunch extends javax.swing.JFrame {
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
      try {
-         this.dispose();
-         new Menu().setVisible(true);
-     } catch (InterruptedException ex) {
-         Logger.getLogger(Lunch.class.getName()).log(Level.SEVERE, null, ex);
-     }
+             
+             Menu m = new Menu();
+             m.displayName(UserName);
+             m.setVisible(true);
+             this.dispose();
+         } catch (InterruptedException ex) {
+             Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }//GEN-LAST:event_Back2MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
@@ -309,23 +328,52 @@ public class Lunch extends javax.swing.JFrame {
         yy = evt.getY();
     }//GEN-LAST:event_jPanel8MousePressed
 
-    private void tfsearch1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfsearch1KeyReleased
+    private void tfsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfsearchKeyReleased
         try {
-            ResultSet rs = DB.search("SELECT Food_name FROM food WHERE Food_name LIKE '%" + tfsearch1.getText() + "%'");
+            ResultSet rs = IllDB.search("SELECT Food_name FROM food WHERE Food_name LIKE '%" + tfsearch.getText() + "%'");
             Vector v = new Vector();
             while (rs.next()) {
                 v.add(rs.getString(1));
             }
-            es.JSuggestionField(evt, v, tfsearch1, jPanel10, jPopupMenu2,null, null);
+            es.JSuggestionField(evt, v, tfsearch, jPanel10, jPopupMenu2,null, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_tfsearch1KeyReleased
+    }//GEN-LAST:event_tfsearchKeyReleased
 
-    private void tfqty1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfqty1KeyReleased
+    private void tfqtyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfqtyKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfqty1KeyReleased
+    }//GEN-LAST:event_tfqtyKeyReleased
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       String fname=tfsearch.getText();
+       String qty=tfqty.getText();
+       AddWater aw = new AddWater();
+       String po = "Lunch";
+       aw.getData(fname, qty,UserName,po);
+       aw.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void tfqtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfqtyActionPerformed
+       String fname=tfsearch.getText();
+       String qty=tfqty.getText();
+       AddWater aw = new AddWater();
+       String po = "Lunch";
+       aw.getData(fname, qty,UserName,po);
+       aw.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_tfqtyActionPerformed
+
+    private void tfsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsearchActionPerformed
+        tfqty.grabFocus();
+    }//GEN-LAST:event_tfsearchActionPerformed
+    String UserName;
+    public void getUserName(String n){
+    UserName = n;
+    
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -385,7 +433,7 @@ public class Lunch extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JLabel qty1;
-    private javax.swing.JTextField tfqty1;
-    private javax.swing.JTextField tfsearch1;
+    private javax.swing.JTextField tfqty;
+    private javax.swing.JTextField tfsearch;
     // End of variables declaration//GEN-END:variables
 }

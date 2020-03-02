@@ -367,11 +367,18 @@ this.dispose();
     }//GEN-LAST:event_Back2MouseClicked
 
     private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
-        // TODO add your handling code here:
+        Lunch l = new Lunch();
+        l.getUserName(tempName);
+        l.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_Back3MouseClicked
 
     private void Back5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back5MouseClicked
-        // TODO add your handling code here:
+        Dinner d = new Dinner();
+        d.getUserName(tempName);
+        d.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Back5MouseClicked
 
     private void Back4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back4MouseClicked

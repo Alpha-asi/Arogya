@@ -6,7 +6,10 @@
 package arogya_classes;
 
 import arogya.DB;
+import com.sun.javafx.font.Disposer;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,14 +23,14 @@ public class UserPortionFoodDetail {
      private String pdid,foodid,userid,date,foodName,foodStatus,mealName;
      private int qty,noOFCalory;
     int fid;
-     public void generateMealDetails(String foodName,String qty,String water,String UserName)
+     public void generateMealDetails(String foodName,String qty,String water,String UserName,String portion) throws ClassNotFoundException, SQLException
      {
-      
+      DB.getConnection();
    DateFormat df = new SimpleDateFormat("yy-MM-dd");
    Date dateobj = new Date();
    System.out.println(df.format(dateobj));
    String dateVal= df.format(dateobj);
-         String portion = "Breakfast";
+       //  String portion = "Breakfast";
          try{
           ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + foodName + "'");
     while(rs.next()){
@@ -51,7 +54,7 @@ public class UserPortionFoodDetail {
      }
      
      
-     
+  
      
     
 }
