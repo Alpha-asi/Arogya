@@ -356,7 +356,7 @@ static int xx,yy;
        String qty=tfqty.getText();
        AddWater aw = new AddWater();
        String po = "Breakfast";
-       aw.getData(fname, qty,UserName,po);
+       aw.getData(fname,qty,UserName,po);
        aw.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton4MouseClicked
