@@ -161,11 +161,17 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
     } 
     }
     
-    public void UserPreviousSummery(String i){
+    public void UserPreviousSummery(String i) throws ClassNotFoundException, SQLException{
     
     previousData pd = new previousData();
     pd.setData();
     pd.searchAll("SELECT Meal_name,date,qty,Water_limit FROM portion_detail WHERE Nic='"+i+"'");
+    ResultSet rs = DB.search("SELECT COUNT(Pd_id) FROM portion_detail WHERE Nic='" + i + "'");
+    while(rs.next()){
+      String ii=rs.getString(1);
+      pd.setRecords(ii);
+    
+    }
     pd.setVisible(true);
     
     }

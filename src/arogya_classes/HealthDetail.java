@@ -14,13 +14,13 @@ public class HealthDetail {
     private String hdId,adminId,notification;
     private int healthStatusValue,PortionDetailsValue,nutritionQty;
     
-    private void showHealthDetails()
+    public void showHealthDetails()
     {
        
         
     }
     
-    private void predictFuture()
+    public void predictFuture()
     {
        
         
