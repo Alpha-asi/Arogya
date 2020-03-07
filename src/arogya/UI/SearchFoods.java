@@ -924,7 +924,7 @@ String i;
             e.printStackTrace();
         }
     }//GEN-LAST:event_tfsearchActionPerformed
-int xx,yy;       private void searchAll(String query) {
+int xx,yy;       public void searchAll(String query) {
         try {
             ResultSet rs = DB.search(query);
             tbcus.setRowCount(0);

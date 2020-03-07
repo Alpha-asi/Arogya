@@ -19,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import arogya.UI.Delete;
 import java.awt.Toolkit;
+import arogya.UI.previousData;
 /**
  *
  * @author ADMIN
@@ -373,7 +374,9 @@ DisValue();
     }//GEN-LAST:event_Back3MouseClicked
 
     private void Back4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back4MouseClicked
-        // TODO add your handling code here:
+       User u = new User();
+       u.UserPreviousSummery(x);
+       this.dispose();
     }//GEN-LAST:event_Back4MouseClicked
 
     private void Back5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back5MouseClicked
@@ -411,7 +414,7 @@ DisValue();
      String x,y,z,g;
     public void setValues(String uname) throws ClassNotFoundException, SQLException{
     DB.getConnection();
-    ResultSet rs = DB.search("SELECT User_id,User_dob,User_gender FROM user_log WHERE Username = '"+uname+"'");
+    ResultSet rs = DB.search("SELECT Nic,User_dob,User_gender FROM user_log WHERE Username = '"+uname+"'");
     while(rs.next()){
      x=rs.getString(1);
      y=rs.getString(2);
@@ -424,6 +427,9 @@ DisValue();
    Delete del = new Delete();
    del.delVal(z);
     }
+    
+  
+    
     
     public void viewData() throws ClassNotFoundException, SQLException{  
     User u = new User();

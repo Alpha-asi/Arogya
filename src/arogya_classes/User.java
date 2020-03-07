@@ -27,6 +27,7 @@ import javax.swing.UIManager;
 import arogya.UI.Supdate;
 import arogya.UI.View;
 import arogya.UI.Adminpanel;
+import arogya.UI.previousData;
 /**
  *
  * @author vimuk
@@ -159,6 +160,17 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
         
     } 
     }
+    
+    public void UserPreviousSummery(String i){
+    
+    previousData pd = new previousData();
+    pd.setData();
+    pd.searchAll("SELECT Meal_name,date,qty,Water_limit FROM portion_detail WHERE Nic='"+i+"'");
+    pd.setVisible(true);
+    
+    }
+    
+    
     
     public void deleteUser(String name,String pass) throws ClassNotFoundException, SQLException{
     //;

@@ -120,7 +120,7 @@ String x;String y;String z;
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(33, 33, 33));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         bmi.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         bmi.setForeground(new java.awt.Color(255, 255, 255));
