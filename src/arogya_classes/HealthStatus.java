@@ -8,6 +8,7 @@ import arogya.DB;
 import arogya.UI.Bmi;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import arogya.UI.AchiTarget;
 /**
  *
  * @author ADMIN
@@ -35,11 +36,26 @@ public class HealthStatus {
     }
     
     
-    private void displayHealthDeatails(String name)
+    public void displayHealthDeatails(String name,String weight,String time)
     {
-        
+       System.out.println(name+"-------"+weight);
         
         
     }
     
+    public void getUserData(String name) throws ClassNotFoundException, SQLException{
+    
+        DB.getConnection();
+        ResultSet rs=DB.search("select Username,User_weight,User_gender from user_log where Username = '"+name+"'"); 
+             while(rs.next())  {
+                 if(name.equals(rs.getString(1))){
+                    String uWeight = rs.getString(2);
+                    String uGender =  rs.getString(3);
+                    AchiTarget at = new AchiTarget();
+                    at.getUserData(uWeight, uGender, name);
+                    System.out.print(uGender+"--------"+uWeight);
+                    at.setVisible(true);
+                 }
+    }
+}
 }

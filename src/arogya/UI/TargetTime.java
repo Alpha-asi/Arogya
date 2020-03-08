@@ -23,7 +23,11 @@ import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import arogya_classes.HealthStatus;
 
+
+
+import javax.swing.*;
 
 /**
  *
@@ -50,8 +54,51 @@ group.add(jCheckBox3);
 group.add(jCheckBox4);
 group.add(jCheckBox5);
 
-jCheckBox1.setEnabled(false);
+//jCheckBox1.setEnabled(false);
 
+
+
+    }
+    
+    public void chekBox(){
+    
+        
+        boolean selected = jCheckBox1.isSelected();
+        boolean selected1 = jCheckBox2.isSelected();
+        boolean selected2 = jCheckBox5.isSelected();
+        boolean selected3 = jCheckBox3.isSelected();
+        boolean selected4 = jCheckBox4.isSelected();
+        if (selected) {
+            time = "2week";
+        } else if(selected1){
+            time = "1month";
+        }else if(selected2){
+            time = "3month";
+        }else if(selected3){
+            time = "6month";
+        }else if(selected4){
+            time = "12month";  
+        }
+        
+        System.out.print(time);
+   }
+    
+    public void setChekBox(){
+    
+        if(timeValue==1){
+        
+        }else if(timeValue==2){
+          jCheckBox1.setEnabled(false);
+        }else if(timeValue==3){
+          jCheckBox1.setEnabled(false);
+          jCheckBox2.setEnabled(false);
+        }else if(timeValue==4){
+          jCheckBox1.setEnabled(false);
+          jCheckBox2.setEnabled(false);
+          jCheckBox5.setEnabled(false);
+          jCheckBox3.setEnabled(false);
+        }
+    
     }
 
     /**
@@ -183,6 +230,11 @@ jCheckBox1.setEnabled(false);
         Save.setForeground(new java.awt.Color(255, 255, 255));
         Save.setText("Done");
         Save.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
+        Save.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveMouseClicked(evt);
+            }
+        });
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
@@ -317,6 +369,24 @@ static int xx,yy;
 
     }//GEN-LAST:event_SaveActionPerformed
 
+    private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
+      chekBox();
+    }//GEN-LAST:event_SaveMouseClicked
+String uName,uVal,time; int timeValue;
+    public void getData(String name,String value,String w,String g,int Value){
+    uName=name;
+    uVal=value;
+    timeValue=Value;
+    setChekBox();
+    }
+    
+    public void sendData(){
+    
+    HealthStatus hs = new HealthStatus();
+    
+    hs.displayHealthDeatails(uName, uName,time);
+    this.dispose();
+    }
     /**
      * @param args the command line arguments
      */

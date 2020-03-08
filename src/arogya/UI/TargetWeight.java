@@ -26,6 +26,7 @@ import arogya_classes.HealthStatus;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import arogya.UI.TargetTime;
 
 /**
  *
@@ -47,16 +48,42 @@ public class TargetWeight extends javax.swing.JFrame {
         setIconImage();
    
     }
-    String uName;
-    public void getData(String name){
+    String uName,val,uWeight,uGender;
+    public void getData(String name,String w,String g){
     uName=name;
-    
+    uWeight=w;
+    uGender=g;
     }
     
     public void senData() throws ClassNotFoundException, SQLException{
-    HealthStatus hs = new HealthStatus();
-    hs.calHealthStatus(uName);
+        TargetTime tt = new TargetTime();
+    
+        val=weigt.getText();
         
+        tt.getData(uName, val,uWeight,uGender,timeValue);
+        tt.setVisible(true);
+        this.dispose();
+    }
+    
+    int timeValue;
+    
+    public void timeCal() throws ClassNotFoundException, SQLException{
+    int result = Integer.parseInt(weigt.getText());	
+        if(result<=1){
+        timeValue=1;
+        }else if(result<=2){
+        timeValue=2;
+        }else if(result<=6){
+        timeValue=3;
+        }else if(result<=12){
+        timeValue=4;
+        }else if(result<=24){
+        timeValue=5;
+        }
+        
+    senData();
+    this.dispose();
+    
     }
 
     /**
@@ -69,7 +96,7 @@ public class TargetWeight extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        waterLimit = new javax.swing.JTextField();
+        weigt = new javax.swing.JTextField();
         Firstname = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         expan = new javax.swing.JLabel();
@@ -92,18 +119,18 @@ public class TargetWeight extends javax.swing.JFrame {
             }
         });
 
-        waterLimit.setBackground(new java.awt.Color(33, 33, 33));
-        waterLimit.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
-        waterLimit.setForeground(new java.awt.Color(255, 255, 255));
-        waterLimit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
-        waterLimit.addActionListener(new java.awt.event.ActionListener() {
+        weigt.setBackground(new java.awt.Color(33, 33, 33));
+        weigt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        weigt.setForeground(new java.awt.Color(255, 255, 255));
+        weigt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        weigt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                waterLimitActionPerformed(evt);
+                weigtActionPerformed(evt);
             }
         });
-        waterLimit.addKeyListener(new java.awt.event.KeyAdapter() {
+        weigt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                waterLimitKeyTyped(evt);
+                weigtKeyTyped(evt);
             }
         });
 
@@ -193,7 +220,7 @@ public class TargetWeight extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(247, 247, 247)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(waterLimit)
+                        .addComponent(weigt)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(Firstname)
                             .addGap(0, 105, Short.MAX_VALUE)))
@@ -215,7 +242,7 @@ public class TargetWeight extends javax.swing.JFrame {
                     .addGap(195, 195, 195)
                     .addComponent(Firstname)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(waterLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(weigt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(195, Short.MAX_VALUE)))
         );
 
@@ -233,13 +260,13 @@ public class TargetWeight extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void waterLimitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waterLimitActionPerformed
+    private void weigtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weigtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_waterLimitActionPerformed
+    }//GEN-LAST:event_weigtActionPerformed
 
-    private void waterLimitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_waterLimitKeyTyped
+    private void weigtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_weigtKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_waterLimitKeyTyped
+    }//GEN-LAST:event_weigtKeyTyped
 
     private void expanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_expanMouseClicked
 
@@ -277,13 +304,15 @@ public class TargetWeight extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MousePressed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+    
      try {
-         senData();
+         timeCal();
      } catch (ClassNotFoundException ex) {
          Logger.getLogger(TargetWeight.class.getName()).log(Level.SEVERE, null, ex);
      } catch (SQLException ex) {
          Logger.getLogger(TargetWeight.class.getName()).log(Level.SEVERE, null, ex);
      }
+     
     }//GEN-LAST:event_SaveActionPerformed
 static int xx,yy;
     /**
@@ -338,6 +367,6 @@ static int xx,yy;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField waterLimit;
+    private javax.swing.JTextField weigt;
     // End of variables declaration//GEN-END:variables
 }

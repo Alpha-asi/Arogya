@@ -62,7 +62,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="waterLimit" alignment="0" max="32767" attributes="0"/>
+                          <Component id="weigt" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="Firstname" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="105" max="32767" attributes="0"/>
@@ -92,7 +92,7 @@
                       <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
                       <Component id="Firstname" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="waterLimit" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="weigt" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace pref="195" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -100,7 +100,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="waterLimit">
+        <Component class="javax.swing.JTextField" name="weigt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="21" green="21" red="21" type="rgb"/>
@@ -120,8 +120,8 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="waterLimitActionPerformed"/>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="waterLimitKeyTyped"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="weigtActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="weigtKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Firstname">

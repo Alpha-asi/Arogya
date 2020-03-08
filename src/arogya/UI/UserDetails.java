@@ -21,6 +21,7 @@ import arogya.UI.Delete;
 import java.awt.Toolkit;
 import arogya.UI.previousData;
 import arogya.UI.AchiTarget;
+import arogya_classes.HealthStatus;
 /**
  *
  * @author ADMIN
@@ -444,9 +445,14 @@ DisValue();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void Back7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back7MouseClicked
-        AchiTarget T = new AchiTarget();
-        T.getName(z);
-        T.setVisible(true);
+        HealthStatus hs = new HealthStatus();
+        try {
+            hs.getUserData(z);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_Back7MouseClicked
      String x,y,z,g;

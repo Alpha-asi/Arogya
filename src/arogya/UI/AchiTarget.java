@@ -332,20 +332,24 @@ DefaultTableModel tbcus;
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
 
         TargetWeight tw = new TargetWeight();
-        tw.getData(uName);
+        tw.getData(uName,uWeight,uGender);
 
         tw.setVisible(true);
 
         this.dispose();
 
     }//GEN-LAST:event_Back2MouseClicked
-    String uName;
-    public void getName(String name){
+    String uName,uWeight,uGender;
+    public void getUserData(String weight,String gender,String name){
         uName=name;
+        uWeight=weight;
+        uGender=gender;
         
     jName.setText(name);
     
     }
+    
+    
     /**
      * @param args the command line arguments
      */
