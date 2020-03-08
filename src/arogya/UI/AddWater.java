@@ -31,6 +31,9 @@ public class AddWater extends javax.swing.JFrame {
     public AddWater() {
        setUndecorated(true);
          initComponents();
+         
+         
+         
           Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -152,6 +155,11 @@ public class AddWater extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-back-arrow-64.png"))); // NOI18N
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -267,31 +275,44 @@ static int xx,yy;
              Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
          }
     }//GEN-LAST:event_BackMouseClicked
-String foodName;String qty;String UserName;String po;
+String foodName[];
+String qty[];
+String UserName;
+String portion;
+String water;
+int rowCount;
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        try {
+        try 
+        {
             sendData();
-        } catch (ClassNotFoundException ex) {
+        } 
+        catch (ClassNotFoundException ex) 
+        {
             Logger.getLogger(AddWater.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (SQLException ex) 
+        {
             Logger.getLogger(AddWater.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
-    public void getData(String f,String q,String u,String p){
-    foodName=f;
-       qty=q;
-        UserName=u;
-        po=p;
-    }
-    public void sendData() throws ClassNotFoundException, SQLException{
-        
-            String water = waterLimit.getText();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    UserPortionFoodDetail upd = new UserPortionFoodDetail();
-       upd.generateMealDetails(foodName, qty,water,UserName,po);
-        System.out.print(foodName+qty+water+UserName);
+    public void getData(String[] fn,String[] fq,int rw,String un,String pd){
+        foodName=fn;
+        qty=fq;
+        UserName=un;
+        portion=pd;
+        rowCount=rw;
+        
+    }
+    
+    public void sendData() throws ClassNotFoundException, SQLException{
+        water = waterLimit.getText();
+        UserPortionFoodDetail upd = new UserPortionFoodDetail();
+        upd.generateMealDetails(foodName,qty,rowCount,water,UserName,portion);
     }
     
     /**

@@ -18,6 +18,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
@@ -42,6 +43,15 @@ public class Dinner extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         es = new Essencials();
         setIconImage();
+        
+        String headings[] = {"Food Name", "Qty"};
+      es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
+      tbcus = (DefaultTableModel) jTable2.getModel();
+        //searchAll("SELECT * FROM food");
+        
+        
+        int rows = jTable2.getRowCount();
+        System.out.println(rows);
     }
 
     /**
@@ -68,6 +78,10 @@ public class Dinner extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         qty = new javax.swing.JLabel();
         tfqty = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        Save1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,6 +213,11 @@ public class Dinner extends javax.swing.JFrame {
                 jButton4MouseClicked(evt);
             }
         });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         qty.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         qty.setForeground(new java.awt.Color(255, 255, 255));
@@ -255,11 +274,59 @@ public class Dinner extends javax.swing.JFrame {
                 .addContainerGap(84, Short.MAX_VALUE))
         );
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Food", "Qty"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable2);
+
+        jButton5.setBackground(new java.awt.Color(255, 229, 229));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton5.setText("Remove");
+        jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 36, 36)));
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        Save1.setBackground(new java.awt.Color(213, 0, 0));
+        Save1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Save1.setForeground(new java.awt.Color(255, 255, 255));
+        Save1.setText("Next");
+        Save1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
+        Save1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Save1MouseClicked(evt);
+            }
+        });
+        Save1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Save1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -267,7 +334,13 @@ public class Dinner extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 273, Short.MAX_VALUE))
+                .addGap(83, 83, 83)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(Save1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(111, 111, 111)
@@ -350,28 +423,78 @@ static int xx,yy;
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-       String fname=tfsearch.getText();
-       String qty=tfqty.getText();
-       AddWater aw = new AddWater();
-      String po = "Dinner";
-       aw.getData(fname, qty,UserName,po);
-       aw.setVisible(true);
-       this.dispose();
+       try
+        {
+            if(tfsearch.getText().isEmpty() && tfqty.getText().isEmpty())
+            {
+                JOptionPane.showMessageDialog(this,"values ne bn");
+            }
+            else
+            {
+                DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+                model.addRow(new Object[]{tfsearch.getText(), tfqty.getText()});
+                
+                tfsearch.setText("");
+                tfqty.setText("");
+            }
+        }
+       catch(NumberFormatException e)
+        {
+           JOptionPane.showMessageDialog(this,"Qty eka numbers walin dapan");
+        }
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void tfqtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfqtyActionPerformed
-       String fname=tfsearch.getText();
-       String qty=tfqty.getText();
-       AddWater aw = new AddWater();
-       String po = "Dinner";
-       aw.getData(fname, qty,UserName,po);
-       aw.setVisible(true);
-       this.dispose();
+     
     }//GEN-LAST:event_tfqtyActionPerformed
 
     private void tfsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsearchActionPerformed
        tfqty.grabFocus(); // TODO add your handling code here:
     }//GEN-LAST:event_tfsearchActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        try
+        {
+            int SelectedRowIndex = jTable2.getSelectedRow();
+            model.removeRow(SelectedRowIndex);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void Save1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Save1MouseClicked
+        int rw = jTable2.getRowCount();
+        System.out.println(rw);
+
+        String[] foodName = new String[rw];
+        String[] foodQty = new String[rw];
+
+        for(int row = 0; row<rw; row++)
+        {
+            foodName[row] = (String)jTable2.getValueAt(row, 0);
+            foodQty[row] = (String)jTable2.getValueAt(row,1);
+        }
+        AddWater aw = new AddWater();
+        String portion = "Dinner";
+        aw.getData(foodName, foodQty,rw,UserName,portion);
+        aw.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Save1MouseClicked
+
+    private void Save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save1ActionPerformed
+
+    }//GEN-LAST:event_Save1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
     String UserName;
     public void getUserName(String n){
     UserName = n;
@@ -424,7 +547,9 @@ static int xx,yy;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
+    private javax.swing.JButton Save1;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -435,6 +560,8 @@ static int xx,yy;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JLabel qty;
     private javax.swing.JTextField tfqty;
     private javax.swing.JTextField tfsearch;

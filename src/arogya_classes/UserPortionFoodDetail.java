@@ -6,6 +6,7 @@
 package arogya_classes;
 
 import arogya.DB;
+import arogya.IllDB;
 import com.sun.javafx.font.Disposer;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -20,41 +21,47 @@ import java.util.Date;
  */
 public class UserPortionFoodDetail {
     
-     private String pdid,foodid,userid,date,foodName,foodStatus,mealName;
-     private int qty,noOFCalory;
-    int fid;
-     public void generateMealDetails(String foodName,String qty,String water,String UserName,String portion) throws ClassNotFoundException, SQLException
+     private String pdid,foodid,userid,date,foodStatus,mealName,nic,userName;
+     private String[] foodName;
+     private int qty,noOFCalory,rawCount;
+     int fid;
+     public void generateMealDetails(String[] FoodName,String[] qty,int rw,String water,String UserName,String portion) throws ClassNotFoundException, SQLException
      {
-      DB.getConnection();
-   DateFormat df = new SimpleDateFormat("yy-MM-dd");
-   Date dateobj = new Date();
-   System.out.println(df.format(dateobj));
-   String dateVal= df.format(dateobj);
-       //  String portion = "Breakfast";
-         try{
-          ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + foodName + "'");
-    while(rs.next()){
-    if(foodName.equals(rs.getString(2))){
-        String x = rs.getString(1);
-         fid = Integer.parseInt(x);       
-    }
-    
-    }
-     ResultSet rs1 = DB.search("SELECT * FROM user_log WHERE Username='" + UserName + "'");
-     while(rs1.next()){
-            if(UserName.equals(rs1.getString(2))){
-                 String id=rs1.getString(1);
-                 DB.Execute("INSERT INTO portion_detail(Meal_name,date,qty,Water_limit,Food_id,Nic) VALUES ('" + portion + "','" + dateVal + "','" + qty + "','" + water + "','" + fid + "','" + id + "')");
+        foodName = FoodName;
+        userName = UserName;
+        DB.getConnection();
+        rawCount=rw;
+        DateFormat df = new SimpleDateFormat("yy-MM-dd");
+        Date dateobj = new Date();
+        String dateVal= df.format(dateobj);
+
+        try
+        {
+            ResultSet rs1 = DB.search("SELECT Nic FROM user_log WHERE Username='" + userName + "'");
+            while(rs1.next())
+            {
+                
+                nic = rs1.getString(1);
+            }
+                System.out.println(nic);
+                for(int i=0;i<rawCount;i++)
+                {
+                    ResultSet rs = DB.search("SELECT Food_id,Food_name FROM food WHERE Food_name='" + FoodName[i] + "'");
+                    while(rs.next())
+                    {  
+                    if(FoodName[i].equals(rs.getString(2)))
+                    {
+                        foodid = rs.getString(1);
+                        System.out.println(foodid);
+                        IllDB.Execute("INSERT INTO portion_detail(Meal_name,date,qty,Water_limit,Food_id,Nic) VALUES ('" + portion + "','" + dateVal + "','" + qty[i] + "','" + water + "','" + foodid + "','" + nic + "')");
+                    }
+                }
+            }
+            
         }
+        catch(Exception e)
+        {
+             
         }
-         }catch(Exception e){
-         
-         
-         }
-     }
-     
-     
-  
-     
-    
+    }   
 }

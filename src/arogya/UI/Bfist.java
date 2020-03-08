@@ -22,6 +22,8 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import arogya_classes.UserPortionFoodDetail;
 import arogya.UI.AddWater;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author vimuk
@@ -30,7 +32,9 @@ public class Bfist extends javax.swing.JFrame {
  Essencials es;
     DefaultTableModel tbcus;
     /**
-     * Creates new form Bfist
+     * CreatString headings[] = {"Food Name", "Qty"};
+      es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
+      tbcus = (DefaultTableModel) jTable2.getModel();es new form Bfist
      */
     public Bfist() {
         setUndecorated(true);
@@ -46,6 +50,10 @@ public class Bfist extends javax.swing.JFrame {
       es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
       tbcus = (DefaultTableModel) jTable2.getModel();
         //searchAll("SELECT * FROM food");
+        
+        
+        int rows = jTable2.getRowCount();
+        System.out.println(rows);
     }
 
     /**
@@ -67,7 +75,7 @@ public class Bfist extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         qty = new javax.swing.JLabel();
         tfqty = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -76,6 +84,8 @@ public class Bfist extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        Save1 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,6 +135,11 @@ public class Bfist extends javax.swing.JFrame {
                 jButton4MouseClicked(evt);
             }
         });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         qty.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         qty.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,16 +163,13 @@ public class Bfist extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2"
+                "Food", "Qty"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane3.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -165,7 +177,8 @@ public class Bfist extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane3)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,9 +188,8 @@ public class Bfist extends javax.swing.JFrame {
                             .addComponent(qty, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                             .addComponent(tfqty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(363, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,8 +207,7 @@ public class Bfist extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addComponent(tfsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(213, 0, 0));
@@ -276,7 +287,7 @@ public class Bfist extends javax.swing.JFrame {
                 .addComponent(Back)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 532, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 531, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -294,6 +305,37 @@ public class Bfist extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton5.setBackground(new java.awt.Color(255, 229, 229));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton5.setText("Remove");
+        jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 36, 36)));
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        Save1.setBackground(new java.awt.Color(213, 0, 0));
+        Save1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Save1.setForeground(new java.awt.Color(255, 255, 255));
+        Save1.setText("Next");
+        Save1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
+        Save1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Save1MouseClicked(evt);
+            }
+        });
+        Save1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -303,6 +345,12 @@ public class Bfist extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(195, 195, 195))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Save1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +358,11 @@ public class Bfist extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addComponent(Save1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -387,13 +439,25 @@ static int xx,yy;
     }//GEN-LAST:event_BackMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-          String fname=tfsearch.getText();
-       String qty=tfqty.getText();
-       AddWater aw = new AddWater();
-       String po = "Breakfast";
-       aw.getData(fname,qty,UserName,po);
-       aw.setVisible(true);
-       this.dispose();
+      try
+        {
+            if(tfsearch.getText().isEmpty() && tfqty.getText().isEmpty())
+            {
+                JOptionPane.showMessageDialog(this,"values ne bn");
+            }
+            else
+            {
+                DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+                model.addRow(new Object[]{tfsearch.getText(), tfqty.getText()});
+                
+                tfsearch.setText("");
+                tfqty.setText("");
+            }
+        }
+       catch(NumberFormatException e)
+        {
+           JOptionPane.showMessageDialog(this,"Qty eka numbers walin dapan");
+        }
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void tfsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsearchActionPerformed
@@ -401,14 +465,53 @@ static int xx,yy;
     }//GEN-LAST:event_tfsearchActionPerformed
 
     private void tfqtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfqtyActionPerformed
-        String fname=tfsearch.getText();
-       String qty=tfqty.getText();
-       AddWater aw = new AddWater();
-       String po = "Brekfast";
-       aw.getData(fname, qty,UserName,po);
-       aw.setVisible(true);
-       this.dispose();
+
     }//GEN-LAST:event_tfqtyActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        try 
+        {
+            int SelectedRowIndex = jTable2.getSelectedRow();
+            model.removeRow(SelectedRowIndex);
+        } 
+        catch (Exception e) 
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void Save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save1ActionPerformed
+        
+    }//GEN-LAST:event_Save1ActionPerformed
+
+    private void Save1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Save1MouseClicked
+        int rw = jTable2.getRowCount();
+        System.out.println(rw);
+        
+        String[] foodName = new String[rw];
+        String[] foodQty = new String[rw];
+        
+        for(int row = 0; row<rw; row++)
+        {
+            foodName[row] = (String)jTable2.getValueAt(row, 0);
+            foodQty[row] = (String)jTable2.getValueAt(row,1);
+        }
+        AddWater aw = new AddWater();
+        String portion = "Brekfast";
+        aw.getData(foodName, foodQty,rw,UserName,portion);
+        aw.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Save1MouseClicked
+    
     String UserName;
     public void getUserName(String n){
     UserName = n;
@@ -461,7 +564,10 @@ static int xx,yy;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;
+    private javax.swing.JButton Save;
+    private javax.swing.JButton Save1;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -473,7 +579,7 @@ static int xx,yy;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel qty;
