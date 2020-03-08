@@ -24,7 +24,7 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import arogya_classes.HealthStatus;
-
+import arogya_classes.UserTarget;
 
 
 import javax.swing.*;
@@ -71,16 +71,18 @@ group.add(jCheckBox5);
         if (selected) {
             time = "2week";
         } else if(selected1){
-            time = "1month";
+            time = "4week";
         }else if(selected2){
-            time = "3month";
+            time = "12week";
         }else if(selected3){
-            time = "6month";
+            time = "24week";
         }else if(selected4){
-            time = "12month";  
+            time = "48week";  
         }
-        
-        System.out.print(time);
+       
+        UserTarget ut = new UserTarget();
+        ut.setTarget(uVal,time,status);
+        this.dispose();
    }
     
     public void setChekBox(){
@@ -96,7 +98,19 @@ group.add(jCheckBox5);
           jCheckBox1.setEnabled(false);
           jCheckBox2.setEnabled(false);
           jCheckBox5.setEnabled(false);
+          
+        }else if(timeValue==5){
+          jCheckBox1.setEnabled(false);
+          jCheckBox2.setEnabled(false);
+          jCheckBox5.setEnabled(false);
           jCheckBox3.setEnabled(false);
+        }else{
+          jCheckBox1.setEnabled(false);
+          jCheckBox2.setEnabled(false);
+          jCheckBox5.setEnabled(false);
+          jCheckBox3.setEnabled(false);
+          jCheckBox4.setEnabled(false);
+        
         }
     
     }
@@ -247,14 +261,13 @@ group.add(jCheckBox5);
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jCheckBox1)
-                        .addComponent(jCheckBox2)
-                        .addComponent(jCheckBox3)
-                        .addComponent(jCheckBox5)
-                        .addComponent(jCheckBox4)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox4)
+                    .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -270,9 +283,9 @@ group.add(jCheckBox5);
                 .addComponent(jCheckBox3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -292,7 +305,7 @@ group.add(jCheckBox5);
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -372,11 +385,12 @@ static int xx,yy;
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
       chekBox();
     }//GEN-LAST:event_SaveMouseClicked
-String uName,uVal,time; int timeValue;
-    public void getData(String name,String value,String w,String g,int Value){
+String uName,uVal,time,status; int timeValue;
+    public void getData(String name,String value,String w,String g,int Value,String s){
     uName=name;
     uVal=value;
     timeValue=Value;
+    status=s;
     setChekBox();
     }
     

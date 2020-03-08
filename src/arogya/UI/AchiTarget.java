@@ -161,15 +161,6 @@ DefaultTableModel tbcus;
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                    .addGap(23, 23, 23)
-                    .addComponent(Back)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -177,6 +168,15 @@ DefaultTableModel tbcus;
                     .addComponent(jName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addComponent(accName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(Back))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -193,7 +193,7 @@ DefaultTableModel tbcus;
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Continue Weight");
 
-        Back3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-decline-64.png"))); // NOI18N
+        Back3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-increase-64.png"))); // NOI18N
         Back3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Back3MouseClicked(evt);
@@ -202,9 +202,9 @@ DefaultTableModel tbcus;
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("   Decrease Weight");
+        jLabel1.setText("  Increase Weight");
 
-        Back2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-increase-64.png"))); // NOI18N
+        Back2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-decline-64.png"))); // NOI18N
         Back2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Back2MouseClicked(evt);
@@ -213,20 +213,20 @@ DefaultTableModel tbcus;
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("  Increase Weight");
+        jLabel2.setText("  Decrease Weight");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(Back2)
-                        .addGap(85, 85, 85)
+                        .addGap(95, 95, 95)
                         .addComponent(Back3)
-                        .addGap(24, 24, 24))
+                        .addGap(14, 14, 14))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(55, 55, 55)
@@ -266,9 +266,9 @@ DefaultTableModel tbcus;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,27 +325,43 @@ DefaultTableModel tbcus;
        
     }//GEN-LAST:event_Back4MouseClicked
 
-    private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
-        
-    }//GEN-LAST:event_Back3MouseClicked
-
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-
-        TargetWeight tw = new TargetWeight();
-        tw.getData(uName,uWeight,uGender);
+String status="dic";
+         TargetWeight tw = new TargetWeight();
+        tw.getData(uName,uWeight,uGender,status);
 
         tw.setVisible(true);
 
         this.dispose();
 
     }//GEN-LAST:event_Back2MouseClicked
-    String uName,uWeight,uGender;
-    public void getUserData(String weight,String gender,String name){
+
+    private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
+       String status="inc";
+        TargetWeight tw = new TargetWeight();
+        tw.getData(uName,uWeight,uGender,status);
+
+        tw.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_Back3MouseClicked
+    String uName,uWeight,uGender,uHeight; float bmi;
+    public void getUserData(String weight,String height,String gender,String name){
         uName=name;
         uWeight=weight;
         uGender=gender;
-        
+        uHeight=height;
     jName.setText(name);
+    
+    float fH=Float.parseFloat(height);  
+         float fW=Float.parseFloat(weight);  
+         float hi = (float) (fH*0.3048);
+         float h2=hi*hi;
+         float bm =fW/h2;
+         bmi=bm;
+    
+         System.out.println(bm);
+         System.out.println(bm);
     
     }
     

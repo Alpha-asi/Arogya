@@ -48,11 +48,15 @@ public class TargetWeight extends javax.swing.JFrame {
         setIconImage();
    
     }
-    String uName,val,uWeight,uGender;
-    public void getData(String name,String w,String g){
+    String uName,val,uWeight,uGender,status;
+    public void getData(String name,String w,String g,String s){
     uName=name;
     uWeight=w;
     uGender=g;
+    status=s;
+       
+    
+    
     }
     
     public void senData() throws ClassNotFoundException, SQLException{
@@ -60,7 +64,7 @@ public class TargetWeight extends javax.swing.JFrame {
     
         val=weigt.getText();
         
-        tt.getData(uName, val,uWeight,uGender,timeValue);
+        tt.getData(uName, val,uWeight,uGender,timeValue,status);
         tt.setVisible(true);
         this.dispose();
     }

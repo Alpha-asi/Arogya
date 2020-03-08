@@ -15,7 +15,7 @@ import arogya.UI.AchiTarget;
  */
 public class HealthStatus {
     
-    private String IllnessId,userId,gender;
+    private String IllnessId,userId,gender; float bmi;
     private int weight,height,age,waterQty,caloryty;
      String h,w;
     public void calHealthStatus(String name) throws ClassNotFoundException, SQLException
@@ -32,6 +32,12 @@ public class HealthStatus {
     }
      Bmi b = new Bmi();
      b.getValues(h, w, name);
+         float fH=Float.parseFloat(h);  
+         float fW=Float.parseFloat(h);  
+         float hi = (float) (fH*0.3048);
+         float h2=hi*hi;
+         float bm =fW/h2;
+         bmi=bm;
      b.setVisible(true);
     }
     
@@ -46,13 +52,14 @@ public class HealthStatus {
     public void getUserData(String name) throws ClassNotFoundException, SQLException{
     
         DB.getConnection();
-        ResultSet rs=DB.search("select Username,User_weight,User_gender from user_log where Username = '"+name+"'"); 
+        ResultSet rs=DB.search("select Username,User_weight,User_gender,User_height from user_log where Username = '"+name+"'"); 
              while(rs.next())  {
                  if(name.equals(rs.getString(1))){
                     String uWeight = rs.getString(2);
                     String uGender =  rs.getString(3);
+                    String uHeight =  rs.getString(4);
                     AchiTarget at = new AchiTarget();
-                    at.getUserData(uWeight, uGender, name);
+                    at.getUserData(uWeight,uHeight,uGender,name);
                     System.out.print(uGender+"--------"+uWeight);
                     at.setVisible(true);
                  }
