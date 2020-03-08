@@ -35,7 +35,7 @@ public class HealthStatus {
     }
     
     
-    private void displayHealthDeatails()
+    private void displayHealthDeatails(String name)
     {
         
         

@@ -7,6 +7,7 @@ package arogya.UI;
 
 import arogya.DB;
 import arogya.Essencials;
+import arogya_classes.HealthDetail;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.Color;
 import java.awt.Component;
@@ -21,7 +22,10 @@ import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-
+import arogya_classes.HealthStatus;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -42,6 +46,17 @@ public class TargetWeight extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setIconImage();
    
+    }
+    String uName;
+    public void getData(String name){
+    uName=name;
+    
+    }
+    
+    public void senData() throws ClassNotFoundException, SQLException{
+    HealthStatus hs = new HealthStatus();
+    hs.calHealthStatus(uName);
+        
     }
 
     /**
@@ -262,7 +277,13 @@ public class TargetWeight extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MousePressed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-
+     try {
+         senData();
+     } catch (ClassNotFoundException ex) {
+         Logger.getLogger(TargetWeight.class.getName()).log(Level.SEVERE, null, ex);
+     } catch (SQLException ex) {
+         Logger.getLogger(TargetWeight.class.getName()).log(Level.SEVERE, null, ex);
+     }
     }//GEN-LAST:event_SaveActionPerformed
 static int xx,yy;
     /**

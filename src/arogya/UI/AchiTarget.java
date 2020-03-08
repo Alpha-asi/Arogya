@@ -24,6 +24,7 @@ import arogya.UI.Delete;
 import java.awt.Toolkit;
 import arogya.UI.previousData;
 import javax.swing.table.DefaultTableModel;
+import arogya.UI.TargetWeight;
 
 /**
  *
@@ -329,11 +330,21 @@ DefaultTableModel tbcus;
     }//GEN-LAST:event_Back3MouseClicked
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-      
-    }//GEN-LAST:event_Back2MouseClicked
 
+        TargetWeight tw = new TargetWeight();
+        tw.getData(uName);
+
+        tw.setVisible(true);
+
+        this.dispose();
+
+    }//GEN-LAST:event_Back2MouseClicked
+    String uName;
     public void getName(String name){
+        uName=name;
+        
     jName.setText(name);
+    
     }
     /**
      * @param args the command line arguments
