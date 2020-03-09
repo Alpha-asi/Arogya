@@ -25,7 +25,7 @@ import java.awt.Toolkit;
 import arogya.UI.previousData;
 import javax.swing.table.DefaultTableModel;
 import arogya.UI.TargetWeight;
-import arogya.IllDB;
+
 /**
  *
  * @author ADMIN
@@ -322,7 +322,10 @@ DefaultTableModel tbcus;
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void Back4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back4MouseClicked
-       
+       Targetpopupdetails tpd = new Targetpopupdetails();
+       tpd.setNotification(2000+"");
+       tpd.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_Back4MouseClicked
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
