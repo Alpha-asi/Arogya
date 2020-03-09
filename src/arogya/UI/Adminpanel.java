@@ -42,6 +42,8 @@ public class Adminpanel extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         es = new Essencials();
         setIconImage();
+        
+        
     }
 
     /**
@@ -170,6 +172,11 @@ public class Adminpanel extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(33, 33, 33));
 
         Back3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-select-users-64.png"))); // NOI18N
+        Back3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Back3MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -304,11 +311,21 @@ public class Adminpanel extends javax.swing.JFrame {
         af.adName(AdminName);
         this.dispose();
     }//GEN-LAST:event_Back7MouseClicked
-String AdminName;
-    public void disAdminName(String name){
-    AdminName = name;
-    adminName.setText("Welcome ! "+name);
+
+    private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
+        AdminControlPanel apl = new AdminControlPanel();
+        apl.adName(AdminName);
+        this.dispose();
+        apl.setVisible(true);
+    }//GEN-LAST:event_Back3MouseClicked
+    String AdminName;
+    
+    public void disAdminName(String name)
+    {
+        AdminName = name;
+        adminName.setText("Welcome ! "+name);
     }
+    
     /**
      * @param args the command line arguments
      */

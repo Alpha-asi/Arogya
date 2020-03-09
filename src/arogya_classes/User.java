@@ -20,6 +20,7 @@ import arogya.ArogyaFinal;
 import arogya.UI.Menu;
 import arogya.DB;
 import arogya.DB;
+import arogya.UI.AdminControlPanel;
 import java.util.concurrent.TimeUnit;
 import arogya.UI.Supdate;
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
@@ -28,6 +29,7 @@ import arogya.UI.Supdate;
 import arogya.UI.View;
 import arogya.UI.Adminpanel;
 import arogya.UI.previousData;
+
 /**
  *
  * @author vimuk
@@ -35,18 +37,22 @@ import arogya.UI.previousData;
 
 public class User {
  
-private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
+private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,adminUsername;
   //
     public static Connection connection;
   
      public static void User() throws ClassNotFoundException, SQLException {
-        try {
+        try 
+        {
             Class.forName("com.mysql.jdbc.Driver");
             
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/arogya","root","");
             //"jdbc:mysql://localhost:3306/tecvision", "root", "123"
           
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
+            
         }
 
     }
@@ -118,10 +124,17 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
     }
     return null;
     }
-
     
     public void userRegistration(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
     
+        System.out.println(nic);
+        System.out.println(uname);
+        System.out.println(pass);
+        System.out.println(mail);
+        System.out.println(dob);
+        System.out.println(gender);
+        System.out.println(hi);
+        
         System.out.println("yyyyyyy");
         float hif = Float.parseFloat(hi);
         float wef = Float.parseFloat(we);
@@ -131,35 +144,82 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
  
     }
     
-    public void userUpdate(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws ClassNotFoundException, SQLException{
-         float hif = Float.parseFloat(hi);
+    public void userUpdate(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln,String usr) throws ClassNotFoundException, SQLException{
+        float hif = Float.parseFloat(hi);
         float wef = Float.parseFloat(we);
         int i = 101;
-      DB.Execute("UPDATE user_log SET User_id='" + nic + "',Username='" + uname + "',Password='" + pass + "',User_email='" + mail + "',User_gender='" + gender + "',User_height='" + hif + "',User_weight='" + wef + "',User_fname='" + fn + "',User_lname='" + ln + "',Admin_id='" + i + "' WHERE User_id='" + nic + "'");
-      Supdate su = new Supdate();
-      su.setVisible(true);
+        DB.Execute("UPDATE user_log SET Nic='" + nic + "',Username='" + uname + "',Password='" + pass + "',User_email='" + mail + "',User_gender='" + gender + "',User_height='" + hif + "',User_weight='" + wef + "',User_fname='" + fn + "',User_lname='" + ln + "',Admin_id='" + i + "' WHERE Nic='" + nic + "'");
+        
+        if(usr.equals("admin update"))
+        {
+            
+        }
+        else
+        {
+            Supdate su = new Supdate();
+            su.setVisible(true);
+        }
     }
     
-    public void view(String name) throws ClassNotFoundException, SQLException{
-    DB.getConnection();
-    ResultSet rs = DB.search("SELECT * FROM user_log WHERE Username='" + name + "'");
-    while(rs.next()){
-     x1=rs.getString(1);
-     x2=rs.getString(2);
-     x3=rs.getString(3);
-     x4=rs.getString(4);
-     x5=rs.getString(5);
-     x6=rs.getString(6);
-     x7=rs.getString(7);
-     x8=rs.getString(8);
-     x9=rs.getString(9);
-     x10=rs.getString(10);
-     
-        View v = new View();
-        v.setVisible(true);
-        v.setValues(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10);
+    public void view(String name,String usr,String adun) throws ClassNotFoundException, SQLException
+    {
+        adminUsername = adun;
+        System.out.println(adminUsername);
         
-    } 
+        DB.getConnection();
+        ResultSet rs = DB.search("SELECT * FROM user_log WHERE Username='" + name + "'");
+        while(rs.next())
+        {
+            x1=rs.getString(1);
+            x2=rs.getString(2);
+            x3=rs.getString(3);
+            x4=rs.getString(4);
+            x5=rs.getString(5);
+            x6=rs.getString(6);
+            x7=rs.getString(7);
+            x8=rs.getString(8);
+            x9=rs.getString(9);
+            x10=rs.getString(10);
+        }
+            System.out.println(x1);
+            System.out.println(x2);
+            System.out.println(x3);
+            System.out.println(x4);
+            System.out.println(x5);
+            System.out.println(x6);
+            System.out.println(x7);
+            System.out.println(x8);
+            System.out.println(x9);
+            System.out.println(x10);
+    
+        if(usr.equals("user"))
+        {
+            View v = new View();
+            v.setVisible(true);
+            v.setValues(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10);
+        }
+        else if(usr.equals("admin view"))
+        {
+            AdminControlPanel acp = new AdminControlPanel();
+            acp.setPositionToView();
+            acp.setValuesToView(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, adminUsername);
+            acp.setVisible(true);
+        }
+        else if(usr.equals("admin delete"))
+        {
+            AdminControlPanel acp = new AdminControlPanel();
+            acp.setPositionToDelete();
+            acp.setValuesToDelete(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10,adminUsername);
+            acp.setVisible(true);
+        }
+        else
+        {
+            AdminControlPanel acp = new AdminControlPanel();
+           
+            acp.setValuesToUpdate(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10,adminUsername);
+            acp.setPositionToUpdate();
+            acp.setVisible(true);
+        }
     }
     
     public void UserPreviousSummery(String i) throws ClassNotFoundException, SQLException{
@@ -180,22 +240,16 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
     
     
     public void deleteUser(String name,String pass) throws ClassNotFoundException, SQLException{
-    //;
-    //String upass;
-    
-    DB.getConnection();
+
+     DB.getConnection();
      ResultSet rs = DB.search("SELECT * FROM user_log WHERE Username='" + name + "'");
-     while(rs.next()){
-     if(pass.equals(rs.getString(3))){
-         DB.Execute("DELETE FROM user_log WHERE Username='" + name + "'");
-         //connection.close();  
+     while(rs.next())
+     {
+        if(pass.equals(rs.getString(3)))
+        {
+            DB.Execute("DELETE FROM user_log WHERE Username='" + name + "'");
+        }
      }
-    }
-    // System.out.print(name);
-    // System.out.print(name);
-     
-   // System.out.print(name);
-    
     }
     
     

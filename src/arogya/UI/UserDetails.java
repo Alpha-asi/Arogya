@@ -22,7 +22,6 @@ import java.awt.Toolkit;
 import arogya.UI.previousData;
 import arogya.UI.AchiTarget;
 import arogya_classes.HealthStatus;
-import arogya_classes.UserTarget;
 /**
  *
  * @author ADMIN
@@ -446,7 +445,7 @@ DisValue();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void Back7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back7MouseClicked
-        UserTarget hs = new UserTarget();
+        HealthStatus hs = new HealthStatus();
         try {
             hs.getUserData(z);
         } catch (ClassNotFoundException ex) {
@@ -478,7 +477,9 @@ DisValue();
     
     public void viewData() throws ClassNotFoundException, SQLException{  
     User u = new User();
-    u.view(z);
+    String usr = "user";
+    String adun = "";
+    u.view(z,usr,adun);
     }
     public void userDel(){
     Delete del = new Delete();

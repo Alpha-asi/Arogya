@@ -183,9 +183,13 @@ static int xx,yy;
          delValSent();
          try {
              dispo();
-         } catch (ClassNotFoundException ex) {
+         } 
+         catch (ClassNotFoundException ex) 
+         {
              Logger.getLogger(Delete.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (SQLException ex) {
+         } 
+         catch (SQLException ex) 
+         {
              Logger.getLogger(Delete.class.getName()).log(Level.SEVERE, null, ex);
          }
     }//GEN-LAST:event_Save2ActionPerformed

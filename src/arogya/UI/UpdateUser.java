@@ -628,10 +628,12 @@ public class UpdateUser extends javax.swing.JFrame {
                 String fn = tffname.getText();
                 String ln = tflname.getText();
                 String nic = tfmnic.getText();
+                
+                String usr = "";
 
                 User newuser = new User();
                 try {
-                    newuser.userUpdate(nic, uname, pass, mail, dob, gender, hi, we, fn, ln);
+                    newuser.userUpdate(nic, uname, pass, mail, dob, gender, hi, we, fn, ln, usr);
                     clear();
                 } catch (SQLException ex) {
                     new Fail().setVisible(true);
