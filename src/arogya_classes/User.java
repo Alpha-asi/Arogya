@@ -118,6 +118,7 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
     }
     return null;
     }
+
     
     public void userRegistration(String nic,String uname,String pass,String mail,String dob,String gender,String hi,String we,String fn,String ln) throws SQLException, ClassNotFoundException {
     

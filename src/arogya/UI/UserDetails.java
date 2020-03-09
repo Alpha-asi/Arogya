@@ -22,6 +22,7 @@ import java.awt.Toolkit;
 import arogya.UI.previousData;
 import arogya.UI.AchiTarget;
 import arogya_classes.HealthStatus;
+import arogya_classes.UserTarget;
 /**
  *
  * @author ADMIN
@@ -445,7 +446,7 @@ DisValue();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void Back7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back7MouseClicked
-        HealthStatus hs = new HealthStatus();
+        UserTarget hs = new UserTarget();
         try {
             hs.getUserData(z);
         } catch (ClassNotFoundException ex) {
