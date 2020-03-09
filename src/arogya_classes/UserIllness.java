@@ -37,8 +37,8 @@ public class UserIllness {
     private void sendUserIllness() throws ClassNotFoundException, SQLException
     {
        DB.getConnection();
-       for(int i=0;i<11;i++){
-       IllDB.Execute("INSERT INTO illness (Illness_name,User_id) VALUES('" + illnessId[i] + "','" + userId + "')");
+       for(int i=0;i<10;i++){
+       IllDB.Execute("INSERT INTO illness (Illness_name,Nic) VALUES('" + illnessId[i] + "','" + userId + "')");
        System.out.print(illnessId[1]);
        
        }

@@ -794,8 +794,10 @@ static int xx,yy;
         tfheight.setText("");
         tfweight.setText("");
         UseriLL ui = new UseriLL();
-         ui.setVisible(true);
-          ui.getId(Unic);
+        ui.getId(Unic);
+        ui.setVisible(true);
+        this.dispose();
+        
         
     
     }
