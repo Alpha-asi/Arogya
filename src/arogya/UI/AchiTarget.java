@@ -25,7 +25,7 @@ import java.awt.Toolkit;
 import arogya.UI.previousData;
 import javax.swing.table.DefaultTableModel;
 import arogya.UI.TargetWeight;
-
+import arogya.IllDB;
 /**
  *
  * @author ADMIN
