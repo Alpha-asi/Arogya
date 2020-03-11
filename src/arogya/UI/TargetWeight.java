@@ -27,6 +27,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import arogya.UI.TargetTime;
+import com.sun.glass.events.KeyEvent;
 
 /**
  *
@@ -270,6 +271,10 @@ public class TargetWeight extends javax.swing.JFrame {
 
     private void weigtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_weigtKeyTyped
         // TODO add your handling code here:
+        int g=evt.getKeyChar();
+        if(!(Character.isDigit(g)||
+        (g==KeyEvent.VK_BACKSPACE)||g==KeyEvent.VK_DELETE))
+        evt.consume();
     }//GEN-LAST:event_weigtKeyTyped
 
     private void expanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_expanMouseClicked
@@ -293,7 +298,10 @@ public class TargetWeight extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-       
+
+              this.dispose();
+              new AchiTarget().setVisible(true);
+             
     }//GEN-LAST:event_BackMouseClicked
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged

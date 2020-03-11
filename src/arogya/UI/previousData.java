@@ -281,12 +281,12 @@ public class previousData extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-        try {
+        
             this.dispose();
-            new Menu().setVisible(true);
-        } catch (InterruptedException ex) {
+            new UserDetails().setVisible(true);
+       
           
-        }
+        
     }//GEN-LAST:event_Back2MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked

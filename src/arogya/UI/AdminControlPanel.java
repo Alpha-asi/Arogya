@@ -14,6 +14,9 @@ import javax.swing.UIManager;
 import arogya_classes.Food;
 import arogya.UI.AddNutritionFact;
 import arogya_classes.User;
+import java.awt.Toolkit;
+
+
 
 public class AdminControlPanel extends javax.swing.JFrame {
 
@@ -26,7 +29,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
+        setIconImage();
     }
     String AdminNamex;
     
@@ -155,6 +158,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
         Save4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        Back = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,7 +172,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
             }
         });
 
-        jTabbedPane1.setBackground(new java.awt.Color(33, 33, 33));
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(33, 33, 33));
 
@@ -1409,21 +1413,35 @@ public class AdminControlPanel extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Admin Control Panel");
 
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-back-arrow-64.png"))); // NOI18N
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(Back)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(447, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Back)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                        .addContainerGap(20, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -1449,7 +1467,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 753, Short.MAX_VALUE)
         );
 
         pack();
@@ -1864,6 +1882,11 @@ public class AdminControlPanel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Save4ActionPerformed
 
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        this.dispose();
+        new Adminpanel().setVisible(true);
+    }//GEN-LAST:event_BackMouseClicked
+
     public void setPositionToView()
     {
       jTabbedPane1.setSelectedComponent(jPanel5);  
@@ -1965,7 +1988,12 @@ public class AdminControlPanel extends javax.swing.JFrame {
         });
     }
 
+     public void setIconImage()
+{
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Back;
     private javax.swing.JButton Clear;
     private javax.swing.JButton Clear1;
     private javax.swing.JButton Clear2;

@@ -360,7 +360,8 @@ group.add(jCheckBox5);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-
+              this.dispose();
+              new TargetWeight().setVisible(true);
     }//GEN-LAST:event_BackMouseClicked
 static int xx,yy;
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged

@@ -294,12 +294,10 @@ DefaultTableModel tbcus;
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        try {
+       
             this.dispose();
-            new Menu().setVisible(true);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            new UserDetails().setVisible(true);
+       
     }//GEN-LAST:event_BackMouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
