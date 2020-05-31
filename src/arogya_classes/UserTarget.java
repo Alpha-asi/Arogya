@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class UserTarget {
     
-    public void setTarget(String uTargetWeight,String uTargetTime,String status){
+    public void setTarget(String uTargetWeight,String uTargetTime,String status,String Uname){
         if(status.equals("inc")){
             
         float fWeight=Float.parseFloat(uTargetWeight);  
@@ -25,7 +25,7 @@ public class UserTarget {
         float val=fWeight/2;
         float ans = 2000+(val*2*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("2week");
     
@@ -35,7 +35,7 @@ public class UserTarget {
         float val=fWeight/4;
         float ans = 2000+(val*2*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("4week");
     
@@ -45,7 +45,7 @@ public class UserTarget {
         float val=fWeight/12;
         float ans = 2000+(val*2*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("12week");
     
@@ -55,7 +55,7 @@ public class UserTarget {
         float val=fWeight/24;
         float ans = 2000+(val*2*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("24week");
     
@@ -65,7 +65,7 @@ public class UserTarget {
         float val=fWeight/48;
         float ans = 2000+(val*2*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
         tpd.setVisible(true);
         System.out.print("48week");
     }
@@ -78,7 +78,7 @@ public class UserTarget {
         float val=fWeight/2;
         float ans = 2000-(val*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("2week");
     
@@ -88,7 +88,7 @@ public class UserTarget {
         float val=fWeight/4;
         float ans = 2000-(val*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("4week");
     
@@ -98,7 +98,7 @@ public class UserTarget {
         float val=fWeight/12;
         float ans = 2000-(val*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("12week");
     
@@ -108,7 +108,7 @@ public class UserTarget {
         float val=fWeight/24;
         float ans = 2000-(val*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
          tpd.setVisible(true);
         System.out.print("24week");
     
@@ -118,7 +118,7 @@ public class UserTarget {
         float val=fWeight/48;
         float ans = 2000-(val*1000);
         String cal=String.valueOf(ans);  
-        tpd.setNotification(cal);
+        tpd.setNotification(cal,uTargetWeight,uTargetTime,status,Uname);
         tpd.setVisible(true);
         System.out.print("48week");
     }
@@ -128,7 +128,7 @@ public class UserTarget {
     }
     
         public void getUserData(String name) throws ClassNotFoundException, SQLException{
-    
+   ;
         DB.getConnection();
         ResultSet rs=DB.search("select Username,User_weight,User_gender,User_height from user_log where Username = '"+name+"'"); 
              while(rs.next())  {
@@ -143,5 +143,46 @@ public class UserTarget {
                  }
     }
 }
+       String nic; String uTargetWeight,val,status,uName,D,uTargetTime;
+        public void saveUserData(String v,String utw,String utt,String st,String un,String date) throws ClassNotFoundException, SQLException{
+              uTargetWeight=utw;
+              val =v;
+              uTargetTime = utt;
+              status = st;
+              uName = un;
+              D = date;
+              
+             DB.getConnection();
+            
+             ResultSet rs = DB.search("SELECT Nic FROM user_log WHERE Username='" + uName + "'");
+             
+        while(rs.next())
+        {
+          nic = rs.getString(1);
+        }        
+          
+        
+
+        }
+        
+        public void checkUserTarget() throws ClassNotFoundException, SQLException{
+            int i = 0;
+             DB.getConnection();
+            
+             ResultSet rs = DB.search("SELECT Nic FROM target");
+             
+           while(rs.next())  {
+     if(nic.equals(rs.getString(1))){  
+         i=1;
+         System.out.print("\n"+i);
+     }else{
+        // DB.Execute("INSERT INTO target (weight,time,daily_calory_intake,Nic,status,date) VALUES ('" + uTargetWeight + "','" + uTargetTime + "','" + val + "','" + nic + "','" + status + "','" + D + "')");
+        i=2;
+        System.out.print("\n"+i);
+     }           
+        }
+           System.out.print("\n"+i);
+        }
+
     
 }
