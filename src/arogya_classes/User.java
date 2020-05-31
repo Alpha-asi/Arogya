@@ -28,6 +28,7 @@ import javax.swing.UIManager;
 import arogya.UI.Supdate;
 import arogya.UI.View;
 import arogya.UI.Adminpanel;
+import arogya.UI.UpdateUser;
 import arogya.UI.previousData;
 
 /**
@@ -235,6 +236,24 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,adminUsername;
     }
     pd.setVisible(true);
     
+    }
+    
+    public void consDataWithoutUpdate(String name) throws ClassNotFoundException, SQLException{
+    
+        String dob = null,gender = null,nic = null;
+        
+      DB.getConnection();
+     ResultSet rs = DB.search("SELECT NIC,User_dob,User_gender FROM user_log WHERE Username='" + name + "'");
+     while(rs.next())
+     {
+        dob = rs.getString(2);
+        gender = rs.getString(3);
+        nic = rs.getString(1);
+     }
+    
+        UpdateUser upu = new UpdateUser();
+        upu.setValue(nic, dob, gender);
+        upu.setVisible(true);
     }
     
     

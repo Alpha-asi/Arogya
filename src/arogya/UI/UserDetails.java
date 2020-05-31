@@ -22,6 +22,7 @@ import java.awt.Toolkit;
 import arogya.UI.previousData;
 import arogya.UI.AchiTarget;
 import arogya_classes.HealthStatus;
+import arogya_classes.HealthDetail;
 /**
  *
  * @author ADMIN
@@ -396,7 +397,22 @@ public class UserDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_Back2MouseClicked
 
     private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
-DisValue();
+//DisValue();
+           //   UpdateUser uu = new UpdateUser();
+            //   uu.setVisible(true);
+            //   this.dispose();
+            
+            User ucd = new User();
+        try {
+            ucd.consDataWithoutUpdate(z);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            
+
     }//GEN-LAST:event_Back3MouseClicked
 
     private void Back4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back4MouseClicked
@@ -422,7 +438,17 @@ DisValue();
     }//GEN-LAST:event_Back6MouseClicked
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-        // TODO add your handling code here:
+        HealthDetail hd = new HealthDetail();
+        try {
+            hd.predictFuture(x);
+            hd.portionDetail();
+            hd.SomOfPDNUT();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_Back1MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -484,7 +510,7 @@ DisValue();
     public void userDel(){
     Delete del = new Delete();
     del.setVisible(true);
-    del.delVal(z);
+   // del.delVal(z);
     }
     /**
      * @param args the command line arguments

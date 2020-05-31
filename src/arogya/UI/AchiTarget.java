@@ -321,7 +321,7 @@ DefaultTableModel tbcus;
 
     private void Back4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back4MouseClicked
        Targetpopupdetails tpd = new Targetpopupdetails();
-       tpd.setNotification(2000+"");
+       tpd.setNotification(2207+"","","","","");
        tpd.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_Back4MouseClicked
@@ -360,7 +360,7 @@ String status="dic";
          float h2=hi*hi;
          float bm =fW/h2;
          bmi=bm;
-    
+        
          System.out.println(bm);
          System.out.println(bm);
     

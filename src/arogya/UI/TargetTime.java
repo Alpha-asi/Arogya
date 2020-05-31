@@ -81,7 +81,7 @@ group.add(jCheckBox5);
         }
        
         UserTarget ut = new UserTarget();
-        ut.setTarget(uVal,time,status);
+        ut.setTarget(uVal,time,status,uName);
         this.dispose();
    }
     
