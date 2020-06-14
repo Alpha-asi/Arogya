@@ -8,6 +8,8 @@ package arogya_classes;
 import arogya.DB;
 import java.sql.SQLException;
 import arogya.IllDB;
+import java.sql.ResultSet;
+import arogya.UI.Suggestionnew;
 /**
  *
  * @author ADMIN
@@ -43,6 +45,103 @@ public class UserIllness {
        
        }
     }
+    
+    public void getUserIllness(String Nic) throws ClassNotFoundException, SQLException{
+     int i =0;
+                  System.out.println(Nic);
+     System.out.println(Nic);
+     System.out.println(Nic);
+     System.out.println(Nic);
+     System.out.println(Nic);
+     System.out.println(Nic);
+     int Ill1 = 0,Ill2 = 0,Ill3 = 0,Ill4 = 0,Ill5 = 0,Ill6 = 0,Ill7 = 0,Ill8 = 0,Ill9 = 0,Ill10 = 0;
+     DB.getConnection();
+     ResultSet rsIll = DB.search("SELECT Illness_name FROM illness WHERE Nic='" + Nic + "'");
+     while(rsIll.next())
+     { 
+         if(i==0){
+         String val1=rsIll.getString(1);    
+         if(val1.equals("Diabetic")){
+               Ill1 = 1;  
+         }
+         }
+         
+         if(i==1){
+         String val2=rsIll.getString(1);    
+         if(val2.equals("Low Blood Presure")){
+                 Ill2 = 1; 
+         }
+         }
+         
+         if(i==2){
+         String val3=rsIll.getString(1);    
+         if(val3.equals("Cold")){
+                 Ill3 = 1; 
+         }
+         }
+         
+         
+         if(i==3){
+         String val4=rsIll.getString(1);    
+         if(val4.equals("Diarrhea")){
+                 Ill4 = 1; 
+         }
+         }
+         
+         if(i==4){
+         String val5=rsIll.getString(1);    
+         if(val5.equals("Cicken Pox")){
+                 Ill5 = 1; 
+         }
+         }
+         
+         if(i==5){
+         String val6=rsIll.getString(1);    
+         if(val6.equals("High Blood Presure")){
+                 Ill6 = 1; 
+         }
+         }
+         
+         
+         if(i==6){
+         String val7=rsIll.getString(1);    
+         if(val7.equals("Cataract")){
+                 Ill7 = 1; 
+         }
+         }
+         
+         
+         if(i==7){
+         String val8=rsIll.getString(1);    
+         if(val8.equals("Fever")){
+                 Ill8 = 1; 
+         }
+         }
+         
+         
+         if(i==8){
+         String val9=rsIll.getString(1);    
+         if(val9.equals("Gastritis")){
+                 Ill9 = 1; 
+         }
+         }
+         
+         
+         if(i==9){
+         String val10=rsIll.getString(1);    
+         if(val10.equals("Migraine")){
+                 Ill10 = 1; 
+         }
+         }
+         i++;
+         
+    }
+     
+     Suggestionnew sug = new Suggestionnew();
+     sug.getUserIllnessData(Ill1, Ill2, Ill3, Ill4, Ill5, Ill6, Ill7, Ill8, Ill9, Ill10);
+     sug.dataShow();
+     sug.setVisible(true);
 
    
+}
 }

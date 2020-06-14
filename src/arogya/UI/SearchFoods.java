@@ -709,8 +709,146 @@ public class SearchFoods extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jPanel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3KeyTyped
+
+    private void sodiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sodiumTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sodiumTxtKeyTyped
+
+    private void sodiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sodiumTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sodiumTxtActionPerformed
+
+    private void magnesiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_magnesiumTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_magnesiumTxtKeyTyped
+
+    private void magnesiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magnesiumTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_magnesiumTxtActionPerformed
+
+    private void potasiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_potasiumTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_potasiumTxtKeyTyped
+
+    private void potasiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potasiumTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_potasiumTxtActionPerformed
+
+    private void vitaminCTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminCTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminCTxtKeyTyped
+
+    private void vitaminCTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminCTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminCTxtActionPerformed
+
+    private void fiberTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fiberTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fiberTxtKeyTyped
+
+    private void fiberTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiberTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fiberTxtActionPerformed
+
+    private void vitaminBTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminBTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminBTxtKeyTyped
+
+    private void vitaminBTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminBTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminBTxtActionPerformed
+
+    private void vitaminATxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminATxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminATxtKeyTyped
+
+    private void vitaminATxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminATxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vitaminATxtActionPerformed
+
+    private void protainTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_protainTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_protainTxtKeyTyped
+
+    private void protainTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_protainTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_protainTxtActionPerformed
+
+    private void fatTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fatTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fatTxtKeyTyped
+
+    private void fatTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fatTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fatTxtActionPerformed
+
+    private void caloriesTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caloriesTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_caloriesTxtKeyTyped
+
+    private void caloriesTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caloriesTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_caloriesTxtActionPerformed
+
+    private void carbsTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carbsTxtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_carbsTxtKeyTyped
+
+    private void carbsTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carbsTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_carbsTxtActionPerformed
+
+    private void blaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_blaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_blaKeyTyped
+
+    private void fnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnameKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnameKeyTyped
+
+    private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnameActionPerformed
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        try {
+            ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + tfsearch.getText() + "'");
+
+            while (rs.next()) {
+                String val=tfsearch.getText();
+                if(val.equals(rs.getString(2))){
+                    fname.setText(rs.getString(2));
+                    fstatus.setText(rs.getString(3));
+                    i = rs.getString(1);
+
+                }
+
+            }
+            ResultSet rs1 = DB.search("SELECT * FROM nutrition_fact WHERE Food_id='" + i+ "'");
+            while (rs1.next()) {
+                caloriesTxt.setText(rs1.getString(2));
+                carbsTxt.setText(rs1.getString(3));
+                fatTxt.setText(rs1.getString(4));
+                protainTxt.setText(rs1.getString(5));
+                vitaminATxt.setText(rs1.getString(6));
+                vitaminBTxt.setText(rs1.getString(7));
+                vitaminCTxt.setText(rs1.getString(8));
+                fiberTxt.setText(rs1.getString(9));
+                potasiumTxt.setText(rs1.getString(10));
+                magnesiumTxt.setText(rs1.getString(11));
+                sodiumTxt.setText(rs1.getString(12));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
     private void tfsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfsearchKeyReleased
-            try {
+        try {
             ResultSet rs = DB.search("SELECT Food_name FROM food WHERE Food_name LIKE '%" + tfsearch.getText() + "%'");
             Vector v = new Vector();
             while (rs.next()) {
@@ -722,122 +860,54 @@ public class SearchFoods extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tfsearchKeyReleased
 
-    private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fnameActionPerformed
+    private void tfsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsearchActionPerformed
+        try {
+            ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + tfsearch.getText() + "'");
 
-    private void fnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnameKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fnameKeyTyped
+            while (rs.next()) {
+                String val=tfsearch.getText();
+                if(val.equals(rs.getString(2))){
+                    fname.setText(rs.getString(2));
+                    fstatus.setText(rs.getString(3));
+                    i = rs.getString(1);
 
-    private void blaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_blaKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_blaKeyTyped
+                }
 
-    private void carbsTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carbsTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_carbsTxtActionPerformed
+            }
+            ResultSet rs1 = DB.search("SELECT * FROM nutrition_fact WHERE Food_id='" + i+ "'");
+            while (rs1.next()) {
+                caloriesTxt.setText(rs1.getString(2));
+                carbsTxt.setText(rs1.getString(3));
+                fatTxt.setText(rs1.getString(4));
+                protainTxt.setText(rs1.getString(5));
+                vitaminATxt.setText(rs1.getString(6));
+                vitaminBTxt.setText(rs1.getString(7));
+                vitaminCTxt.setText(rs1.getString(8));
+                fiberTxt.setText(rs1.getString(9));
+                potasiumTxt.setText(rs1.getString(10));
+                magnesiumTxt.setText(rs1.getString(11));
+                sodiumTxt.setText(rs1.getString(12));
+            }
 
-    private void carbsTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carbsTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_carbsTxtKeyTyped
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_tfsearchActionPerformed
 
-    private void caloriesTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caloriesTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_caloriesTxtActionPerformed
+    private void jPanel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MousePressed
+        xx = evt.getX();
+        yy = evt.getY();
+    }//GEN-LAST:event_jPanel8MousePressed
 
-    private void caloriesTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caloriesTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_caloriesTxtKeyTyped
+    private void jPanel8MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x-xx, y-yy);
+    }//GEN-LAST:event_jPanel8MouseDragged
 
-    private void fatTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fatTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fatTxtActionPerformed
-
-    private void fatTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fatTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fatTxtKeyTyped
-
-    private void protainTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_protainTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_protainTxtActionPerformed
-
-    private void protainTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_protainTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_protainTxtKeyTyped
-
-    private void vitaminATxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminATxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vitaminATxtActionPerformed
-
-    private void vitaminATxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminATxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vitaminATxtKeyTyped
-
-    private void vitaminBTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminBTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vitaminBTxtActionPerformed
-
-    private void vitaminBTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminBTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vitaminBTxtKeyTyped
-
-    private void fiberTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiberTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fiberTxtActionPerformed
-
-    private void fiberTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fiberTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fiberTxtKeyTyped
-
-    private void vitaminCTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitaminCTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vitaminCTxtActionPerformed
-
-    private void vitaminCTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vitaminCTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vitaminCTxtKeyTyped
-
-    private void potasiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potasiumTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_potasiumTxtActionPerformed
-
-    private void potasiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_potasiumTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_potasiumTxtKeyTyped
-
-    private void magnesiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_magnesiumTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_magnesiumTxtActionPerformed
-
-    private void magnesiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_magnesiumTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_magnesiumTxtKeyTyped
-
-    private void sodiumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sodiumTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sodiumTxtActionPerformed
-
-    private void sodiumTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sodiumTxtKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sodiumTxtKeyTyped
-
-    private void jPanel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel3KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel3KeyTyped
-
-    private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-          try {
-              this.dispose();
-              new Menu().setVisible(true);
-          } catch (InterruptedException ex) {
-              Logger.getLogger(SearchFoods.class.getName()).log(Level.SEVERE, null, ex);
-          }
-    }//GEN-LAST:event_Back2MouseClicked
-
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        this.setExtendedState(Login.ICONIFIED);
-    }//GEN-LAST:event_jLabel12MouseClicked
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
         if (this.getExtendedState()!= Login.MAXIMIZED_BOTH) {
@@ -850,89 +920,19 @@ public class SearchFoods extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel13MousePressed
 
-    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        this.dispose();
-    }//GEN-LAST:event_jLabel14MouseClicked
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        this.setExtendedState(Login.ICONIFIED);
+    }//GEN-LAST:event_jLabel12MouseClicked
 
-    private void jPanel8MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x-xx, y-yy);
-    }//GEN-LAST:event_jPanel8MouseDragged
-
-    private void jPanel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MousePressed
-        xx = evt.getX();
-        yy = evt.getY();
-    }//GEN-LAST:event_jPanel8MousePressed
-String i;
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-           try {
-            ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + tfsearch.getText() + "'");
-            
-            while (rs.next()) {
-               String val=tfsearch.getText();
-               if(val.equals(rs.getString(2))){
-                  fname.setText(rs.getString(2));
-                  fstatus.setText(rs.getString(3));
-                  i = rs.getString(1);
-        
-               }
-      
-            }
-             ResultSet rs1 = DB.search("SELECT * FROM nutrition_fact WHERE Food_id='" + i+ "'");
-               while (rs1.next()) {
-               caloriesTxt.setText(rs1.getString(2));
-               carbsTxt.setText(rs1.getString(3));
-               fatTxt.setText(rs1.getString(4));
-               protainTxt.setText(rs1.getString(5));
-               vitaminATxt.setText(rs1.getString(6));
-               vitaminBTxt.setText(rs1.getString(7));
-               vitaminCTxt.setText(rs1.getString(8));
-               fiberTxt.setText(rs1.getString(9));
-               potasiumTxt.setText(rs1.getString(10));
-               magnesiumTxt.setText(rs1.getString(11));
-               sodiumTxt.setText(rs1.getString(12));
-               }
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_jButton4MouseClicked
-
-    private void tfsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsearchActionPerformed
+    private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
         try {
-            ResultSet rs = DB.search("SELECT * FROM food WHERE Food_name='" + tfsearch.getText() + "'");
-            
-            while (rs.next()) {
-               String val=tfsearch.getText();
-               if(val.equals(rs.getString(2))){
-                  fname.setText(rs.getString(2));
-                  fstatus.setText(rs.getString(3));
-                  i = rs.getString(1);
-        
-               }
-      
-            }
-             ResultSet rs1 = DB.search("SELECT * FROM nutrition_fact WHERE Food_id='" + i+ "'");
-               while (rs1.next()) {
-               caloriesTxt.setText(rs1.getString(2));
-               carbsTxt.setText(rs1.getString(3));
-               fatTxt.setText(rs1.getString(4));
-               protainTxt.setText(rs1.getString(5));
-               vitaminATxt.setText(rs1.getString(6));
-               vitaminBTxt.setText(rs1.getString(7));
-               vitaminCTxt.setText(rs1.getString(8));
-               fiberTxt.setText(rs1.getString(9));
-               potasiumTxt.setText(rs1.getString(10));
-               magnesiumTxt.setText(rs1.getString(11));
-               sodiumTxt.setText(rs1.getString(12));
-               }
-            
-        } catch (Exception e) {
-            e.printStackTrace();
+            this.dispose();
+            new Menu().setVisible(true);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(SearchFoods.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_tfsearchActionPerformed
-int xx,yy;       public void searchAll(String query) {
+    }//GEN-LAST:event_Back2MouseClicked
+String i;int xx,yy;       public void searchAll(String query) {
         try {
             ResultSet rs = DB.search(query);
             tbcus.setRowCount(0);

@@ -16,10 +16,10 @@ import java.sql.SQLException;
  */
 public class HealthDetail {
    
-    private String hdId,adminId,notification;
+    private String hdId,adminId,notification,Nic;
     private int healthStatusValue,PortionDetailsValue,nutritionQty;
     private String[] x1;
-    
+  
     String y1 , y2 , y3 , y4 , y5 , y6 , y7 , y8 , y9 , y10 , y11 , y12 ,y13 , y14 ,y15 , y16 , y17 , y18 , y19 ,y20 , y21 ;
     String q1 , q2 , q3 , q4 , q5 , q6 , q7 , q8 , q9 , q10 , q11 , q12 ,q13 , q14 ,q15 , q16 , q17 , q18 , q19 ,q20 , q21;
     String calo1 , calo2 , calo3 , calo4 , calo5 , calo6 , calo7 , calo8 , calo9 , calo10 , calo11 , calo12 ,calo13 , calo14 ,calo15 , calo16 , calo17 , calo18 , calo19 ,calo20 , calo21 ;
@@ -27,6 +27,7 @@ public class HealthDetail {
     String fat1 , fat2 , fat3 , fat4 , fat5 , fat6 , fat7 , fat8 , fat9 , fat10 , fat11 , fat12 ,fat13 , fat14 ,fat15 , fat16 , fat17 , fat18 , fat19 ,fat20 , fat21 ;
     String sod1 , sod2 , sod3 , sod4 , sod5 , sod6 , sod7 , sod8 , sod9 , sod10 , sod11 , sod12 ,sod13 , sod14 ,sod15 , sod16 , sod17 , sod18 , sod19 ,sod20 , sod21 ;
     double fcalo1Sum1 , fcalo1Sum2 , fcalo1Sum3 , fcalo1Sum4 , fcalo1Sum5 , fcalo1Sum6 , fcalo1Sum7 , fcalo1Sum8 , fcalo1Sum9 , fcalo1Sum10 , fcalo1Sum11 , fcalo1Sum12 ,fcalo1Sum13 , fcalo1Sum14 ,fcalo1Sum15 , fcalo1Sum16 , fcalo1Sum17 , fcalo1Sum18 , fcalo1Sum19 ,fcalo1Sum20 , fcalo1Sum21 ;
+     double fcalo1SumAvg,cntD,cntP;
     public void showHealthDetails()
     {
        
@@ -39,8 +40,9 @@ int ii=0;
 int jj=0;
     public void predictFuture(String nic) throws SQLException, ClassNotFoundException
     {
-          
+          Nic=nic;
       DB.getConnection();
+
      ResultSet rs = DB.search("SELECT Food_id FROM portion_detail WHERE Nic='" + nic + "' ORDER BY pd_id DESC");
      while(rs.next())
      {
@@ -134,6 +136,7 @@ int jj=0;
           y21=rs.getString(1);       
          } 
          
+         
                      
           
        
@@ -142,6 +145,25 @@ int jj=0;
          ii++;
          
             }
+     
+     ResultSet rsD = DB.search("SELECT did FROM diet ORDER BY did DESC LIMIT 1");
+     while(rsD.next())
+     {
+       String c =rsD.getString(1);
+       cntD = Double.parseDouble(c);
+       System.out.print("\n"+cntD);
+        System.out.print("\n"+cntD);
+      
+     }
+      ResultSet rsP = DB.search("SELECT Pd_id FROM portion_detail ORDER BY Pd_id DESC LIMIT 1");
+     while(rsP.next())
+     {
+       String c =rsP.getString(1);
+       cntP = Double.parseDouble(c);
+        System.out.print("\n"+cntP);
+        System.out.print("\n"+cntP);
+      
+     }
      
        System.out.print("\n"+y1);
         System.out.print("\n"+y2);
@@ -187,79 +209,79 @@ int jj=0;
          } 
          
          if(jj==3){
-          y4=rs1.getString(1);       
+          q4=rs1.getString(1);       
          } 
          
          if(jj==4){
-          y5=rs1.getString(1);       
+         q5=rs1.getString(1);       
          } 
          
          if(jj==5){
-          y6=rs1.getString(1);       
+          q6=rs1.getString(1);       
          } 
     
          if(jj==6){
-          y7=rs1.getString(1);       
+          q7=rs1.getString(1);       
          } 
          
          if(jj==7){
-          y8=rs1.getString(1);       
+          q8=rs1.getString(1);       
          } 
          
          
          if(jj==8){
-          y9=rs1.getString(1);       
+          q9=rs1.getString(1);       
          } 
          
          
          if(jj==9){
-          y10=rs1.getString(1);       
+          q10=rs1.getString(1);       
          } 
          
          
          if(jj==10){
-          y11=rs1.getString(1);       
+          q11=rs1.getString(1);       
          } 
          
          if(jj==11){
-          y12=rs1.getString(1);       
+          q12=rs1.getString(1);       
          } 
          
          if(jj==12){
-          y13=rs1.getString(1);       
+          q13=rs1.getString(1);       
          } 
          
          if(jj==13){
-          y14=rs1.getString(1);       
+          q14=rs1.getString(1);       
          } 
          
          if(jj==14){
-          y15=rs1.getString(1);       
+          q15=rs1.getString(1);       
          } 
          
          if(jj==15){
-          y16=rs1.getString(1);       
+          q16=rs1.getString(1);       
          } 
          
          if(jj==16){
-          y17=rs1.getString(1);       
+          q17=rs1.getString(1);       
          } 
          
          if(jj==17){
-          y18=rs1.getString(1);       
+          q18=rs1.getString(1);       
          } 
          
          if(jj==18){
-          y19=rs1.getString(1);       
+          q19=rs1.getString(1);       
          } 
          
          if(jj==19){
-          y20=rs1.getString(1);       
+          q20=rs1.getString(1);       
          } 
          
          if(jj==20){
           q21=rs1.getString(1);  
-          portionDetail();
+        //  portionDetail();
          } 
          
                      
@@ -274,7 +296,8 @@ int jj=0;
         System.out.print("\n"+q1);
         System.out.print("\n"+q2);
         System.out.print("\n"+q3); 
-        
+        System.out.print("\n"+q4);
+        System.out.print("\n"+q5); 
         
         
        }
@@ -313,7 +336,7 @@ int jj=0;
           fat2 = rsf2.getString(3);
           sod2 = rsf2.getString(4);
          double fcalo1 = Double.parseDouble(calo2);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q2);
           fcalo1Sum2 = fcalo1 * fq1;
        
      }
@@ -330,7 +353,7 @@ int jj=0;
           fat3 = rsf3.getString(3);
           sod3 = rsf3.getString(4);
          double fcalo1 = Double.parseDouble(calo3);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q3);
           fcalo1Sum3 = fcalo1 * fq1;
        
      }
@@ -347,7 +370,7 @@ int jj=0;
           fat4 = rsf4.getString(3);
           sod4 = rsf4.getString(4);
          double fcalo1 = Double.parseDouble(calo4);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q4);
           fcalo1Sum4 = fcalo1 * fq1;
      
      }
@@ -363,7 +386,7 @@ int jj=0;
           fat5 = rsf5.getString(3);
           sod5 = rsf5.getString(4);
          double fcalo1 = Double.parseDouble(calo5);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q5);
           fcalo1Sum5 = fcalo1 * fq1;
       
      }
@@ -379,7 +402,7 @@ int jj=0;
           fat6 = rsf6.getString(3);
           sod6 = rsf6.getString(4);
          double fcalo1 = Double.parseDouble(calo6);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q6);
           fcalo1Sum6 = fcalo1 * fq1;
     
      }
@@ -395,7 +418,7 @@ int jj=0;
           fat7 = rsf7.getString(3);
           sod7 = rsf7.getString(4);
          double fcalo1 = Double.parseDouble(calo7);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q7);
           fcalo1Sum7 = fcalo1 * fq1;
        
      }
@@ -411,7 +434,7 @@ int jj=0;
           fat8 = rsf8.getString(3);
           sod8 = rsf8.getString(4);
          double fcalo1 = Double.parseDouble(calo8);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q8);
           fcalo1Sum8 = fcalo1 * fq1;
       
      }
@@ -426,7 +449,7 @@ int jj=0;
           fat9 = rsf9.getString(3);
           sod9 = rsf9.getString(4);
          double fcalo1 = Double.parseDouble(calo9);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q9);
           fcalo1Sum9 = fcalo1 * fq1;
       
      }
@@ -442,7 +465,7 @@ int jj=0;
           fat10 = rsf10.getString(3);
           sod10 = rsf10.getString(4);
          double fcalo1 = Double.parseDouble(calo10);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q10);
           fcalo1Sum10 = fcalo1 * fq1;
       
      }
@@ -457,7 +480,7 @@ int jj=0;
           fat11 = rsf11.getString(3);
           sod11 = rsf11.getString(4);
          double fcalo1 = Double.parseDouble(calo11);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q11);
          fcalo1Sum11 = fcalo1 * fq1;
   
      }
@@ -472,7 +495,7 @@ int jj=0;
           fat12 = rsf12.getString(3);
           sod12 = rsf12.getString(4);
          double fcalo1 = Double.parseDouble(calo12);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q12);
           fcalo1Sum12 = fcalo1 * fq1;
           
   
@@ -488,7 +511,7 @@ int jj=0;
           fat13 = rsf13.getString(3);
           sod13 = rsf13.getString(4);
          double fcalo1 = Double.parseDouble(calo13);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q13);
           fcalo1Sum13 = fcalo1 * fq1;
              
 
@@ -505,7 +528,7 @@ int jj=0;
           fat14 = rsf14.getString(3);
           sod14 = rsf14.getString(4);
          double fcalo1 = Double.parseDouble(calo14);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q14);
           fcalo1Sum14 = fcalo1 * fq1;
               
  
@@ -522,7 +545,7 @@ int jj=0;
           fat15 = rsf15.getString(3);
           sod15 = rsf15.getString(4);
          double fcalo1 = Double.parseDouble(calo15);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q15);
           fcalo1Sum15 = fcalo1 * fq1;
            
   
@@ -540,7 +563,7 @@ int jj=0;
           fat16 = rsf16.getString(3);
           sod16 = rsf16.getString(4);
          double fcalo1 = Double.parseDouble(calo16);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q16);
           fcalo1Sum16 = fcalo1 * fq1;
                 
  
@@ -557,7 +580,7 @@ int jj=0;
           fat17 = rsf17.getString(3);
           sod17 = rsf17.getString(4);
          double fcalo1 = Double.parseDouble(calo17);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q17);
           fcalo1Sum17 = fcalo1 * fq1;
                 
 
@@ -574,7 +597,7 @@ int jj=0;
           fat18 = rsf18.getString(3);
           sod18 = rsf18.getString(4);
          double fcalo1 = Double.parseDouble(calo18);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q18);
           fcalo1Sum18 = fcalo1 * fq1;
                 
 
@@ -590,7 +613,7 @@ int jj=0;
           fat19 = rsf19.getString(3);
           sod19 = rsf19.getString(4);
          double fcalo1 = Double.parseDouble(calo19);
-         double fq1 = Double.parseDouble(q1);
+         double fq1 = Double.parseDouble(q19);
           fcalo1Sum19 = fcalo1 * fq1;
          
                    
@@ -631,13 +654,42 @@ int jj=0;
 
      }
      
+    double fcalo1SumTot =  fcalo1Sum1+fcalo1Sum2+fcalo1Sum3+fcalo1Sum4+fcalo1Sum5+fcalo1Sum6+fcalo1Sum7+fcalo1Sum8+fcalo1Sum9+fcalo1Sum10+fcalo1Sum11+fcalo1Sum12+fcalo1Sum13+fcalo1Sum14+fcalo1Sum15+fcalo1Sum16+fcalo1Sum17+fcalo1Sum18+fcalo1Sum19+fcalo1Sum20+fcalo1Sum21;
+   double avgDiets = cntP/cntD;
+    fcalo1SumAvg = fcalo1SumTot/avgDiets;
+     System.out.print("\n"+fcalo1SumAvg);
+      System.out.print("\n"+fcalo1SumAvg);
+       System.out.print("\n"+fcalo1SumAvg);
+        System.out.print("\n"+fcalo1SumAvg);
 }
  
 
-public void SomOfPDNUT()
+public void GenarateHealthDetail() throws ClassNotFoundException, SQLException
 {
     
-    System.out.print("\n"+fcalo1Sum1);
+    String status = null;
+      DB.getConnection();
+      ResultSet rs = DB.search("SELECT status FROM target WHERE Nic='" + Nic + "'");
+     while(rs.next())
+     { 
+          status = rs.getString(1);
+         
+     }
+     double sVal = Double.parseDouble(status);
+     double sValAvg = sVal/3;
+     
+     if (sValAvg <  fcalo1SumAvg){
+     
+     System.out.print("righttttttttttttttttttttttttttt");
+     
+     }else {
+     
+     System.out.print("Wronggggggggggggggg");
+     
+     }
+     
+     }    
+   
     
     
 }
@@ -645,4 +697,4 @@ public void SomOfPDNUT()
 
  
 
-}
+

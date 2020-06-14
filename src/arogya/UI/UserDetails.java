@@ -23,6 +23,8 @@ import arogya.UI.previousData;
 import arogya.UI.AchiTarget;
 import arogya_classes.HealthStatus;
 import arogya_classes.HealthDetail;
+import arogya_classes.UserIllness;
+
 /**
  *
  * @author ADMIN
@@ -72,6 +74,8 @@ public class UserDetails extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         Back7 = new javax.swing.JLabel();
+        Back8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         Back5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -149,7 +153,7 @@ public class UserDetails extends javax.swing.JFrame {
                 .addComponent(Back)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(accName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,7 +227,7 @@ public class UserDetails extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Update Data");
 
-        Back2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-view-64.png"))); // NOI18N
+        Back2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-hint-64(1).png"))); // NOI18N
         Back2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Back2MouseClicked(evt);
@@ -245,17 +249,30 @@ public class UserDetails extends javax.swing.JFrame {
             }
         });
 
+        Back8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arogya/Icons/icons8-view-64.png"))); // NOI18N
+        Back8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Back8MouseClicked(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Suggestions");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Back2)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel2)))
+                    .addComponent(jLabel12)
+                    .addComponent(Back2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Back8, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Back3)
@@ -287,11 +304,14 @@ public class UserDetails extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Back2)
-                            .addComponent(Back3))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Back3)
+                                .addComponent(Back8))
+                            .addComponent(Back2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
                             .addComponent(jLabel2)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel1)
@@ -341,10 +361,10 @@ public class UserDetails extends javax.swing.JFrame {
                         .addComponent(jLabel4))
                     .addComponent(Back6))
                 .addGap(14, 14, 14))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(78, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,13 +407,16 @@ public class UserDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseClicked
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
+UserIllness ui = new UserIllness();
         try {
-            viewData();
+            ui.getUserIllness(x);
+            this.dispose();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
+   
     }//GEN-LAST:event_Back2MouseClicked
 
     private void Back3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back3MouseClicked
@@ -442,7 +465,7 @@ public class UserDetails extends javax.swing.JFrame {
         try {
             hd.predictFuture(x);
             hd.portionDetail();
-            hd.SomOfPDNUT();
+            hd.GenarateHealthDetail();
         } catch (SQLException ex) {
             Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -481,6 +504,10 @@ public class UserDetails extends javax.swing.JFrame {
         }
         this.dispose();
     }//GEN-LAST:event_Back7MouseClicked
+
+    private void Back8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Back8MouseClicked
      String x,y,z,g;
     public void setValues(String uname) throws ClassNotFoundException, SQLException{
     DB.getConnection();
@@ -566,10 +593,12 @@ public class UserDetails extends javax.swing.JFrame {
     private javax.swing.JLabel Back5;
     private javax.swing.JLabel Back6;
     private javax.swing.JLabel Back7;
+    private javax.swing.JLabel Back8;
     private javax.swing.JLabel accName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

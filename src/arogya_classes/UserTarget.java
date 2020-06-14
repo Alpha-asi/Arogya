@@ -143,7 +143,7 @@ public class UserTarget {
                  }
     }
 }
-       String nic; String uTargetWeight,val,status,uName,D,uTargetTime;
+       String nic123; String uTargetWeight,val,status,uName,D,uTargetTime;
         public void saveUserData(String v,String utw,String utt,String st,String un,String date) throws ClassNotFoundException, SQLException{
               uTargetWeight=utw;
               val =v;
@@ -158,7 +158,7 @@ public class UserTarget {
              
         while(rs.next())
         {
-          nic = rs.getString(1);
+          nic123 = rs.getString(1);
         }        
           
         
@@ -166,23 +166,32 @@ public class UserTarget {
         }
         
         public void checkUserTarget() throws ClassNotFoundException, SQLException{
-            int i = 0;
-             DB.getConnection();
-            
-             ResultSet rs = DB.search("SELECT Nic FROM target");
-             
-           while(rs.next())  {
-     if(nic.equals(rs.getString(1))){  
-         i=1;
-         System.out.print("\n"+i);
-     }else{
-        // DB.Execute("INSERT INTO target (weight,time,daily_calory_intake,Nic,status,date) VALUES ('" + uTargetWeight + "','" + uTargetTime + "','" + val + "','" + nic + "','" + status + "','" + D + "')");
-        i=2;
-        System.out.print("\n"+i);
-     }           
+           Targetpopupdetails tpd = new Targetpopupdetails(); 
+        String x1 = null;
+        DB.getConnection();
+        ResultSet rs = DB.search("SELECT Nic FROM target WHERE Nic='" + nic123 + "'");
+        while(rs.next())
+        {
+            x1=rs.getString(1);   
+          
         }
-           System.out.print("\n"+i);
-        }
-
     
+         
+        if(nic123.equals(x1))
+        {
+           System.out.println("yessssssssssssssss");
+           tpd.showTargetStatus(val, uTargetWeight, uTargetTime, status, uName, D, 1);
+          tpd.setVisible(true);
+            
+        }else{
+         
+             DB.Execute("INSERT INTO target (date,weight,time,daily_calory_intake,status,Nic) VALUES ('" + D + "','" + uTargetWeight + "','" + uTargetTime + "','" + status + "','" + val + "','" + nic123 + "')");
+         System.out.println("Noooooooooo");
+         tpd.showTargetStatus(val, uTargetWeight, uTargetTime, status, uName, D, 0);
+          tpd.setVisible(true);
+         }
+
+//    System.out.println(nic123);
+//    System.out.println(nic123);
+}
 }

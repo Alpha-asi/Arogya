@@ -37,7 +37,7 @@ public class UserPortionFoodDetail {
 
         try
         {
-            ResultSet rs1 = DB.search("SELECT Nic FROM user_log WHERE Username='" + userName + "'");
+            ResultSet rs1 = DB.search("SELECT Nic FROM user_log WHERE Username='" + userName + "'");           
             while(rs1.next())
             {
                 
@@ -54,10 +54,13 @@ public class UserPortionFoodDetail {
                         foodid = rs.getString(1);
                         System.out.println(foodid);
                         IllDB.Execute("INSERT INTO portion_detail(Meal_name,date,qty,Water_limit,Food_id,Nic) VALUES ('" + portion + "','" + dateVal + "','" + qty[i] + "','" + water + "','" + foodid + "','" + nic + "')");
+                        
                     }
+                  
                 }
             }
-            
+                 
+            DB.Execute("INSERT INTO diet (dname) VALUES('x')");
         }
         catch(Exception e)
         {
