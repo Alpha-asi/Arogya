@@ -24,7 +24,7 @@ public class SelectMeals extends javax.swing.JFrame {
     public SelectMeals() {
         setUndecorated(true);
         initComponents();
-          Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setIconImage();

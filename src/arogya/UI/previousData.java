@@ -32,14 +32,14 @@ public class previousData extends javax.swing.JFrame {
      * Creates new form previousData
      */
        Essencials es;
-    DefaultTableModel tbcus;
+       DefaultTableModel tbcus;
     
    
     
     public previousData() {
         setUndecorated(true);
         initComponents();
-          Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
    
@@ -54,9 +54,9 @@ public class previousData extends javax.swing.JFrame {
 
     public void setData(){
          
-         es = new Essencials();
-         String headings[] = {"Meal Name", "Date", "Qty", "Water Limit"};
-        es.customTBHEAD(jTable1, headings, 4, new Color(33, 33, 33));
+       es = new Essencials();
+       String headings[] = {"Meal Name", "Date", "Qty", "Water Limit"};
+       es.customTBHEAD(jTable1, headings, 4, new Color(33, 33, 33));
        tbcus = (DefaultTableModel) jTable1.getModel(); 
     
     }

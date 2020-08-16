@@ -651,7 +651,7 @@ public class UpdateUser extends javax.swing.JFrame {
     public void clear()
     {
         
-         tffname.setText("");
+        tffname.setText("");
         tflname.setText("");
         tfuname.setText("");
         tfpass.setText("");
@@ -737,7 +737,7 @@ public class UpdateUser extends javax.swing.JFrame {
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         this.dispose();
-        new Login().setVisible(true);
+        new UserDetails().setVisible(true);
     }//GEN-LAST:event_BackMouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

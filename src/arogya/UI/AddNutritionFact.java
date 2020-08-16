@@ -27,9 +27,9 @@ public class AddNutritionFact extends javax.swing.JFrame {
     {
        setUndecorated(true);
        initComponents();
-        Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+       Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+       this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
+       this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
    
    public void adName(String nam){

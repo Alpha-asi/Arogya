@@ -38,7 +38,7 @@ public class Bfist extends javax.swing.JFrame {
      */
     public Bfist() {
         setUndecorated(true);
-          initComponents();
+        initComponents();
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -46,9 +46,9 @@ public class Bfist extends javax.swing.JFrame {
         setIconImage();
      //   es.setCenter(this);
      
-      String headings[] = {"Food Name", "Qty"};
-      es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
-      tbcus = (DefaultTableModel) jTable2.getModel();
+        String headings[] = {"Food Name", "Qty"};
+        es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
+        tbcus = (DefaultTableModel) jTable2.getModel();
         //searchAll("SELECT * FROM food");
         
         

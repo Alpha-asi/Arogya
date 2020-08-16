@@ -64,10 +64,10 @@ private String x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,adminUsername;
         
       //  name = String.valueOf(a)
            
-        System.out.print(a);
-        System.out.print(b);
+     System.out.print(a);
+     System.out.print(b);
       //  return null;
-       Adminpanel ap = new Adminpanel(); 
+     Adminpanel ap = new Adminpanel(); 
      Adminpanel ap1 = new Adminpanel();
      Login m1 = new Login(); Login m2 = new Login(); 
      ResultSet rs=DB.search("select * from user_log"); 

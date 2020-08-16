@@ -30,7 +30,7 @@ import javax.swing.table.DefaultTableModel;
 public class Dinner extends javax.swing.JFrame {
      Essencials es;
      DefaultTableModel tbcus;
-    private JPopupMenu jPopupMenu;
+     private JPopupMenu jPopupMenu;
 
     /**
      * Creates new form Dinner
@@ -45,8 +45,8 @@ public class Dinner extends javax.swing.JFrame {
         setIconImage();
         
         String headings[] = {"Food Name", "Qty"};
-      es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
-      tbcus = (DefaultTableModel) jTable2.getModel();
+        es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
+        tbcus = (DefaultTableModel) jTable2.getModel();
         //searchAll("SELECT * FROM food");
         
         
@@ -369,7 +369,7 @@ public class Dinner extends javax.swing.JFrame {
              m.displayName(UserName);
              m.setVisible(true);
              this.dispose();
-         } catch (InterruptedException ex) {
+         }   catch (InterruptedException ex) {
              Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
          }
     }//GEN-LAST:event_BackMouseClicked

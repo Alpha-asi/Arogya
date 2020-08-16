@@ -29,22 +29,20 @@ public class AddWater extends javax.swing.JFrame {
      * Creates new form AddWater
      */
     public AddWater() {
-       setUndecorated(true);
-         initComponents();
-         
-         
-         
-          Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setIconImage();
+    setUndecorated(true);
+    initComponents();
+    Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();     
+    this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);     
+    this.setExtendedState(JFrame.MAXIMIZED_BOTH);     
+    setIconImage();      
+        
     }
 
     public void x(){
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-   LocalDateTime now = LocalDateTime.now();
-   String x = dtf.format(now);
-   System.out.println(x);  
+    LocalDateTime now = LocalDateTime.now();
+    String x = dtf.format(now);
+    System.out.println(x);  
    
     }
     /**
@@ -255,18 +253,18 @@ public class AddWater extends javax.swing.JFrame {
 static int xx,yy;
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
           xx = evt.getX();
-        yy = evt.getY();
+          yy = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x-xx, y-yy);
+       int y = evt.getYOnScreen();
+       this.setLocation(x-xx, y-yy);
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
        
-              this.dispose();
+            this.dispose();
         try {
             new Menu().setVisible(true);
         } catch (InterruptedException ex) {
@@ -278,12 +276,12 @@ static int xx,yy;
               
          
     }//GEN-LAST:event_BackMouseClicked
-String foodName[];
-String qty[];
-String UserName;
-String portion;
-String water;
-int rowCount;
+            String foodName[];
+            String qty[];
+            String UserName;
+            String portion;
+            String water;
+            int rowCount;
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         try 
@@ -297,18 +295,25 @@ int rowCount;
         {
             Logger.getLogger(AddWater.class.getName()).log(Level.SEVERE, null, ex);
         }
+     
+      
     }//GEN-LAST:event_jButton1MouseClicked
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Addbreakfastsuccess abs = new Addbreakfastsuccess();
+        abs.setVisible(true);
+        this.dispose();
+        
+       
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void getData(String[] fn,String[] fq,int rw,String un,String pd){
-        foodName=fn;
-        qty=fq;
-        UserName=un;
-        portion=pd;
-        rowCount=rw;
+            foodName=fn;
+            qty=fq;
+            UserName=un;
+            portion=pd;
+            rowCount=rw;
         
     }
     

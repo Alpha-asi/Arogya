@@ -328,7 +328,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_tfUsername1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       User u = new User();
+       
+        
+        
+        User u = new User();
         try {
             u.User();
         } catch (ClassNotFoundException ex) {

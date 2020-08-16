@@ -24,6 +24,7 @@ import arogya.UI.AchiTarget;
 import arogya_classes.HealthStatus;
 import arogya_classes.HealthDetail;
 import arogya_classes.UserIllness;
+import arogya_classes.HealthDetailTest;
 
 /**
  *
@@ -407,7 +408,7 @@ public class UserDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseClicked
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-UserIllness ui = new UserIllness();
+       UserIllness ui = new UserIllness();
         try {
             ui.getUserIllness(x);
             this.dispose();
@@ -461,11 +462,9 @@ UserIllness ui = new UserIllness();
     }//GEN-LAST:event_Back6MouseClicked
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-        HealthDetail hd = new HealthDetail();
+    HealthDetailTest hdt = new HealthDetailTest();
         try {
-            hd.predictFuture(x);
-            hd.portionDetail();
-            hd.GenarateHealthDetail();
+            hdt.predictFuture(x);
         } catch (SQLException ex) {
             Logger.getLogger(UserDetails.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

@@ -39,18 +39,18 @@ public class Suggestionnew extends javax.swing.JFrame {
      * Creates new form Suggestionnew
      */
      Essencials es;
-  DefaultTableModel tbcus;
+     DefaultTableModel tbcus;
     
     public Suggestionnew() {
-           setUndecorated(true);
-       initComponents();
+        setUndecorated(true);
+        initComponents();
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
       
         //es.setCenter(this);
 
-     
+      
 
      //   tfsearch.grabFocus();
      
@@ -58,27 +58,29 @@ public class Suggestionnew extends javax.swing.JFrame {
     }
     
     public void dataShow(){
-           es = new Essencials();
         
-           String headings[] = {"Food Name", "Food Status"};
+        
+        es = new Essencials();
+        
+        String headings[] = {"Food Name", "Food Status"};
         es.customTBHEAD(jTable, headings, 2, new Color(33, 33, 33));
-       tbcus = (DefaultTableModel) jTable.getModel();
+        tbcus = (DefaultTableModel) jTable.getModel();
     
-            searchAll("SELECT\n" +
-"food.Food_name,\n" +
-"food.Food_status\n" +
-"FROM\n" +
-"foods_for_diseases\n" +
-"INNER JOIN food ON foods_for_diseases.Ffd_id = food.Food_id WHERE (foods_for_diseases.Diabetic = '" + Dia1 + "' OR foods_for_diseases.Diabetic = '" + Dia1 + "' )\n" +
-"AND ( foods_for_diseases.Cold= '" + Cold1 + "' OR foods_for_diseases.Cold = '" + Cold2 + "') \n" +
-"AND (foods_for_diseases.Diarrhea = '" + Diar1 + "' OR foods_for_diseases.Diarrhea = '" + Diar2 + "'  ) \n" +
-"AND ( foods_for_diseases.Cataract = '" + CAT1 + "' OR foods_for_diseases.Cataract = '" + CAT2 + "')\n" +
-"AND ( foods_for_diseases.Low_Blood_Pressure= '" + LBP1 + "' OR foods_for_diseases.Low_Blood_Pressure = '" + LBP2 + "')		\n" +
-"AND ( foods_for_diseases.Chicken_Pox= '" + CP1 + "' OR foods_for_diseases.Chicken_Pox = '" + CP2 + "')\n" +
-"AND ( foods_for_diseases.High_Blood_Pressure= '" + HBP1 + "' OR foods_for_diseases.High_Blood_Pressure = '" + HBP2 + "')																												\n" +
-"AND ( foods_for_diseases.Fever= '" + FEV1 + "' OR foods_for_diseases.Fever = '" + FEV2 + "')			\n" +
-"AND ( foods_for_diseases.Gastritis= '" + Gast1 + "' OR foods_for_diseases.Gastritis = '" + Gast2 + "')	\n" +
-"AND ( foods_for_diseases.Migraine= '" + Mig1 + "' OR foods_for_diseases.Migraine = '" + Mig2 + "')");
+        searchAll("SELECT\n" +
+        "food.Food_name,\n" +
+        "food.Food_status\n" +
+        "FROM\n" +
+        "foods_for_diseases\n" +
+        "INNER JOIN food ON foods_for_diseases.Ffd_id = food.Food_id WHERE (foods_for_diseases.Diabetic = '" + Dia1 + "' OR foods_for_diseases.Diabetic = '" + Dia1 + "' )\n" +
+        "AND ( foods_for_diseases.Cold= '" + Cold1 + "' OR foods_for_diseases.Cold = '" + Cold2 + "') \n" +
+        "AND (foods_for_diseases.Diarrhea = '" + Diar1 + "' OR foods_for_diseases.Diarrhea = '" + Diar2 + "'  ) \n" +
+        "AND ( foods_for_diseases.Cataract = '" + CAT1 + "' OR foods_for_diseases.Cataract = '" + CAT2 + "')\n" +
+        "AND ( foods_for_diseases.Low_Blood_Pressure= '" + LBP1 + "' OR foods_for_diseases.Low_Blood_Pressure = '" + LBP2 + "')		\n" +
+        "AND ( foods_for_diseases.Chicken_Pox= '" + CP1 + "' OR foods_for_diseases.Chicken_Pox = '" + CP2 + "')\n" +
+        "AND ( foods_for_diseases.High_Blood_Pressure= '" + HBP1 + "' OR foods_for_diseases.High_Blood_Pressure = '" + HBP2 + "')																												\n" +
+        "AND ( foods_for_diseases.Fever= '" + FEV1 + "' OR foods_for_diseases.Fever = '" + FEV2 + "')			\n" +
+        "AND ( foods_for_diseases.Gastritis= '" + Gast1 + "' OR foods_for_diseases.Gastritis = '" + Gast2 + "')	\n" +
+        "AND ( foods_for_diseases.Migraine= '" + Mig1 + "' OR foods_for_diseases.Migraine = '" + Mig2 + "')");
     
     }
 
@@ -299,7 +301,8 @@ public class Suggestionnew extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
-        
+          this.dispose();
+          new UserDetails().setVisible(true);
     }//GEN-LAST:event_Back2MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked

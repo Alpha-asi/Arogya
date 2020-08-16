@@ -35,15 +35,15 @@ public class Lunch extends javax.swing.JFrame {
     public Lunch() {
         setUndecorated(true);
         initComponents();
-         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-         es = new Essencials();
+        es = new Essencials();
         setIconImage();
         
         String headings[] = {"Food Name", "Qty"};
-      es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
-      tbcus = (DefaultTableModel) jTable2.getModel();
+        es.customTBHEAD(jTable2, headings, 2, new Color(220, 220, 220));
+        tbcus = (DefaultTableModel) jTable2.getModel();
     }
 
     /**
@@ -472,9 +472,9 @@ public class Lunch extends javax.swing.JFrame {
     private void Save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Save1ActionPerformed
-    String UserName;
-    public void getUserName(String n){
-    UserName = n;
+      String UserName;
+      public void getUserName(String n){
+      UserName = n;
     
     }
     

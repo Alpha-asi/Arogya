@@ -4,31 +4,31 @@
  * and open the template in the editor.
  */
 package arogya.UI;
-
 import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import javax.swing.UIManager;
 import arogya.Essencials;
 import java.awt.Toolkit;
 import arogya.UI.Adminpanel;
 import arogya.UI.AddFood;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
- * @author vimuk
+ * @author ADMIN
  */
-public class AdminUpdateSuccess extends javax.swing.JFrame {
-    Essencials es = new Essencials();
-
+public class Addlunchsuccess extends javax.swing.JFrame {
+Essencials es = new Essencials();
     /**
-     * Creates new form AdminUpdateSuccess
+     * Creates new form Addlunchsuccess
      */
-    public AdminUpdateSuccess() {
+    public Addlunchsuccess() {
+        initComponents();
         setUndecorated(true);
         initComponents();
         this.setSize(400, 200);
         es.setCenter(this);
         setIconImage();
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +40,6 @@ public class AdminUpdateSuccess extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        mainmenu = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         addfood = new javax.swing.JButton();
@@ -60,17 +59,6 @@ public class AdminUpdateSuccess extends javax.swing.JFrame {
             }
         });
 
-        mainmenu.setBackground(new java.awt.Color(213, 0, 0));
-        mainmenu.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        mainmenu.setForeground(new java.awt.Color(255, 255, 255));
-        mainmenu.setText("Admin Menu");
-        mainmenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
-        mainmenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainmenuActionPerformed(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 0, 0));
         jLabel3.setText("Success!");
@@ -82,7 +70,7 @@ public class AdminUpdateSuccess extends javax.swing.JFrame {
         addfood.setBackground(new java.awt.Color(213, 0, 0));
         addfood.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         addfood.setForeground(new java.awt.Color(255, 255, 255));
-        addfood.setText("Add Food");
+        addfood.setText("Main Menu");
         addfood.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 0, 0)));
         addfood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,35 +87,29 @@ public class AdminUpdateSuccess extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(150, 150, 150)
                 .addComponent(addfood, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mainmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(124, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(62, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addGap(30, 30, 30)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mainmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addfood, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(30, 30, 30)
+                .addComponent(addfood, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
@@ -144,13 +126,6 @@ public class AdminUpdateSuccess extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mainmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainmenuActionPerformed
-        Adminpanel ap = new Adminpanel();
-        ap.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_mainmenuActionPerformed
 static int xx,yy;
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
         int x = evt.getXOnScreen();
@@ -164,9 +139,13 @@ static int xx,yy;
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void addfoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addfoodActionPerformed
-       AddFood af =new AddFood();
-       af.setVisible(true);
-       this.dispose();
+    try {
+        Menu men =new Menu();
+        men.setVisible(true);
+        this.dispose();
+    } catch (InterruptedException ex) {
+        Logger.getLogger(Addlunchsuccess.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_addfoodActionPerformed
 
     /**
@@ -186,41 +165,38 @@ static int xx,yy;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminUpdateSuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Addlunchsuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminUpdateSuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Addlunchsuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminUpdateSuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Addlunchsuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminUpdateSuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Addlunchsuccess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
+               try {
                     UIManager.setLookAndFeel(new WindowsClassicLookAndFeel());
-                    new AdminUpdateSuccess().setVisible(true);
+                    new Addlunchsuccess().setVisible(true);
                 } catch (Exception e) {
                 }
             }
         });
     }
+
     
      public void setIconImage()
 {
     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("closelo.png")));
 }
-
-     
-     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addfood;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton mainmenu;
     // End of variables declaration//GEN-END:variables
 }

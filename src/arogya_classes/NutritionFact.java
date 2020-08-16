@@ -32,7 +32,7 @@ public class NutritionFact {
         
         
     }
-int admn;
+    int admn;
     
     public void insertNutritionFact(String ffname,String Admin,String Calories,String Carbs,String Fat,String Protein,String Vitamin_a,String Vitamin_b,String Vitamin_c,String Fiber,String Potasium,String Magnesium,String Sodium) throws ClassNotFoundException, SQLException
     {
@@ -47,20 +47,20 @@ int admn;
       admn = Integer.parseInt(x1);
  
     }
-     ResultSet rsfood = DB.search("SELECT * FROM food WHERE Food_name='" + ffname + "'");
-     while(rsfood.next()){
+      ResultSet rsfood = DB.search("SELECT * FROM food WHERE Food_name='" + ffname + "'");
+      while(rsfood.next()){
          
       
         
-        if(ffname.equals(rsfood.getString(2))){
-            String ffnames = rsfood.getString(1);
+      if(ffname.equals(rsfood.getString(2))){
+           String ffnames = rsfood.getString(1);
            int foodId =Integer.parseInt(ffnames);
-            System.out.print("cdsacascasc"+admn);
-         // int ffnameS = Integer.parseInt(ffname);	
-        DB.Execute("INSERT INTO nutrition_fact(Calories,Carbs,Fat,Protein,Vitamin_A,Vitamin_B,Vitamin_C,Fiber,Potasium,Magnesium,Sodium,Admin_id,Food_id) VALUES ('" + Calories + "','" + Carbs + "','" + Fat + "','" + Protein + "','" + Vitamin_a + "','" + Vitamin_b + "','" + Vitamin_c + "','" + Fiber + "','" + Potasium + "','" + Magnesium + "','" + Sodium + "','" + admn + "','" + foodId + "')");
-         AdminUpdateSuccess aus = new AdminUpdateSuccess();
-         aus.setVisible(true);
-        System.out.print(ffname);
+           System.out.print("cdsacascasc"+admn);
+         //int ffnameS = Integer.parseInt(ffname);	
+           DB.Execute("INSERT INTO nutrition_fact(Calories,Carbs,Fat,Protein,Vitamin_A,Vitamin_B,Vitamin_C,Fiber,Potasium,Magnesium,Sodium,Admin_id,Food_id) VALUES ('" + Calories + "','" + Carbs + "','" + Fat + "','" + Protein + "','" + Vitamin_a + "','" + Vitamin_b + "','" + Vitamin_c + "','" + Fiber + "','" + Potasium + "','" + Magnesium + "','" + Sodium + "','" + admn + "','" + foodId + "')");
+           AdminUpdateSuccess aus = new AdminUpdateSuccess();
+           aus.setVisible(true);
+           System.out.print(ffname);
         }
      
      }

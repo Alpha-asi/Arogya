@@ -48,11 +48,11 @@ DefaultTableModel tbcus;
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         ButtonGroup group = new ButtonGroup();
-group.add(jCheckBox1);
-group.add(jCheckBox2);
-group.add(jCheckBox3);
-group.add(jCheckBox4);
-group.add(jCheckBox5);
+        group.add(jCheckBox1);
+        group.add(jCheckBox2);
+        group.add(jCheckBox3);
+        group.add(jCheckBox4);
+        group.add(jCheckBox5);
 
 //jCheckBox1.setEnabled(false);
 
@@ -380,19 +380,23 @@ static int xx,yy;
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-
+             Targettimesuccess tts = new Targettimesuccess();
+             tts.setVisible(true);
+             this.dispose();
+        
     }//GEN-LAST:event_SaveActionPerformed
 
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
       chekBox();
     }//GEN-LAST:event_SaveMouseClicked
 String uName,uVal,time,status; int timeValue;
-    public void getData(String name,String value,String w,String g,int Value,String s){
-    uName=name;
-    uVal=value;
-    timeValue=Value;
-    status=s;
-    setChekBox();
+        public void getData(String name,String value,String w,String g,int Value,String s){
+        
+        uName=name;
+        uVal=value;
+        timeValue=Value;
+        status=s;
+        setChekBox();
     }
     
     public void sendData(){

@@ -41,11 +41,11 @@ public class UserRegistration extends javax.swing.JFrame {
      */
     public UserRegistration() {
          setUndecorated(true);
-        initComponents();
-          Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setIconImage();
+         initComponents();
+         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
+         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+         setIconImage();
     }
     
       public void toolt(final JComponent tf, String message) {
@@ -783,7 +783,7 @@ static int xx,yy;
     public void clear()
     {
         
-         tffname.setText("");
+        tffname.setText("");
         tflname.setText("");
         tfuname.setText("");
         tfpass.setText("");

@@ -24,11 +24,11 @@ public class View extends javax.swing.JFrame {
      */
     public View() {
           setUndecorated(true);
-        initComponents();
+          initComponents();
           Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-        this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setIconImage();
+          this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
+          this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+          setIconImage();
     }
 
     /**

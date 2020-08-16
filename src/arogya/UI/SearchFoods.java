@@ -39,8 +39,8 @@ public class SearchFoods extends javax.swing.JFrame {
     DefaultTableModel tbcus;
     
     public SearchFoods(){
-         setUndecorated(true);
-       initComponents();
+        setUndecorated(true);
+        initComponents();
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -50,7 +50,7 @@ public class SearchFoods extends javax.swing.JFrame {
      
         String headings[] = {"Food ID", "Food Name", "Food Status", "Reamark"};
         es.customTBHEAD(jTable1, headings, 4, new Color(33, 33, 33));
-       tbcus = (DefaultTableModel) jTable1.getModel();
+        tbcus = (DefaultTableModel) jTable1.getModel();
         searchAll("SELECT * FROM food");
         tfsearch.grabFocus();
     }

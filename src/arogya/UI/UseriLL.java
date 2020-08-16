@@ -191,6 +191,11 @@ public class UseriLL extends javax.swing.JFrame {
                 SaveMouseClicked(evt);
             }
         });
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
 
         jPanel6.setBackground(new java.awt.Color(213, 0, 0));
         jPanel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -430,6 +435,10 @@ String v1, v2, v3, v4, v5, v6, v7, v8, v9, v10,Uid;
         } catch (SQLException ex) {
             Logger.getLogger(UserIllness.class.getName()).log(Level.SEVERE, null, ex);
         }
+    Successmessage suc = new Successmessage();
+    suc.setVisible(true);
+    this.dispose();
+           
     }//GEN-LAST:event_SaveMouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
@@ -466,6 +475,13 @@ static int xx,yy;
         xx = evt.getX();
         yy = evt.getY();
     }//GEN-LAST:event_jPanel6MousePressed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        // TODO add your handling code here: public void adminupdatesuc(){
+//    Successmessage suc = new Successmessage();
+//    suc.setVisible(true);
+//    this.dispose();
+    }//GEN-LAST:event_SaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -512,6 +528,9 @@ static int xx,yy;
             }
         });
     }
+    
+
+           
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back;

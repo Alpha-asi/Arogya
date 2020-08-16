@@ -26,14 +26,14 @@ public class Bmi extends javax.swing.JFrame {
      * Creates new form Bmi
      */
     DB d = new DB();
-    public Bmi() {
-       setUndecorated(true);
+        public Bmi() {
+        setUndecorated(true);
         initComponents();
         Rectangle maximumWindowBounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         this.setBounds(0, 0, maximumWindowBounds.width, maximumWindowBounds.height);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setIconImage();
-         new Thread(new Runnable() {
+        new Thread(new Runnable() {
         @Override
         public void run() {
             float h = Float.parseFloat(x);
