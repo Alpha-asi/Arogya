@@ -300,10 +300,8 @@ static int xx,yy;
     }//GEN-LAST:event_jButton1MouseClicked
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Addbreakfastsuccess abs = new Addbreakfastsuccess();
-        abs.setVisible(true);
-        this.dispose();
-        
+       
+      
        
       
     }//GEN-LAST:event_jButton1ActionPerformed

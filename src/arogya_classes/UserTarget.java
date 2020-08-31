@@ -182,10 +182,11 @@ public class UserTarget {
            System.out.println("yessssssssssssssss");
            tpd.showTargetStatus(val, uTargetWeight, uTargetTime, status, uName, D, 1);
           tpd.setVisible(true);
+         DB.Execute( "UPDATE target SET date='" + D + "',weight='" + uTargetWeight + "',time='" + uTargetTime + "',daily_calory_intake='" + val + "',status='" + status + "',Nic='" + nic123 + "' WHERE Nic='" + nic123 +  "'");
             
         }else{
          
-             DB.Execute("INSERT INTO target (date,weight,time,daily_calory_intake,status,Nic) VALUES ('" + D + "','" + uTargetWeight + "','" + uTargetTime + "','" + status + "','" + val + "','" + nic123 + "')");
+             DB.Execute("INSERT INTO target (date,weight,time,daily_calory_intake,status,Nic) VALUES ('" + D + "','" + uTargetWeight + "','" + uTargetTime + "','" + val + "','" + status + "','" + nic123 + "')");
          System.out.println("Noooooooooo");
          tpd.showTargetStatus(val, uTargetWeight, uTargetTime, status, uName, D, 0);
           tpd.setVisible(true);

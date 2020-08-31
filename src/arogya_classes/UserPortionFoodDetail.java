@@ -23,7 +23,7 @@ public class UserPortionFoodDetail {
     
      private String pdid,foodid,userid,date,foodStatus,mealName,nic,userName;
      private String[] foodName;
-     private int qty,noOFCalory,rawCount;
+     private int qty,noOFCalory,rawCount , pcount;
      int fid;
      public void generateMealDetails(String[] FoodName,String[] qty,int rw,String water,String UserName,String portion) throws ClassNotFoundException, SQLException
      {
@@ -34,6 +34,10 @@ public class UserPortionFoodDetail {
         DateFormat df = new SimpleDateFormat("yy-MM-dd");
         Date dateobj = new Date();
         String dateVal= df.format(dateobj);
+        
+        
+       
+        
 
         try
         {
@@ -44,6 +48,24 @@ public class UserPortionFoodDetail {
                 nic = rs1.getString(1);
             }
                 System.out.println(nic);
+                
+                
+                 ResultSet rsP = DB.search("select Count_Of_Portions from portion_detail where nic = '" + nic + "' order by Count_Of_Portions DESC LIMIT 1");           
+            while(rsP.next())
+            {
+                String cop = rsP.getString(1);
+               int p =Integer.parseInt(cop);
+               pcount = p+1;
+                  System.out.println(cop);
+                  System.out.println(cop);
+                  System.out.println(cop);
+                  System.out.println(cop);System.out.println(cop);
+                  System.out.println(cop);System.out.println(cop);
+                  
+                  
+            }
+                
+                
                 for(int i=0;i<rawCount;i++)
                 {
                     ResultSet rs = DB.search("SELECT Food_id,Food_name FROM food WHERE Food_name='" + FoodName[i] + "'");
@@ -53,7 +75,7 @@ public class UserPortionFoodDetail {
                     {
                         foodid = rs.getString(1);
                         System.out.println(foodid);
-                        IllDB.Execute("INSERT INTO portion_detail(Meal_name,date,qty,Water_limit,Food_id,Nic) VALUES ('" + portion + "','" + dateVal + "','" + qty[i] + "','" + water + "','" + foodid + "','" + nic + "')");
+                        IllDB.Execute("INSERT INTO portion_detail(Meal_name,date,qty,Water_limit,Food_id,Nic,Count_Of_Portions) VALUES ('" + portion + "','" + dateVal + "','" + qty[i] + "','" + water + "','" + foodid + "','" + nic + "','" + pcount + "')");
                         
                     }
                   

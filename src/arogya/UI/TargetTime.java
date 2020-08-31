@@ -380,9 +380,7 @@ static int xx,yy;
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-             Targettimesuccess tts = new Targettimesuccess();
-             tts.setVisible(true);
-             this.dispose();
+           
         
     }//GEN-LAST:event_SaveActionPerformed
 
