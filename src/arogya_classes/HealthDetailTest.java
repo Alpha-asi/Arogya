@@ -65,13 +65,14 @@ int jj=0;
                    while(rs.next())
                                   {
                                          
-                                          foods[ix] = rs.getString(ix+1);
-                                          System.out.println(foods[ix]);    
-                                          ++ix;
-         
+                                          
+                                          
+                                          foods[ix] = rs.getString(1);
+                                          
+                                          ix++;
                                   }
              
-            
+                  
                    String[] calo = new String[PcountInt];
                    
                     System.out.print("\n"+foods[5]);
